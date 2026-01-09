@@ -1,36 +1,52 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Ordenízate Bcn - Professional Organization Website
 
-## Getting Started
+A premium, performant website built for a Professional Organizer in Barcelona.
+Stacks: **Next.js 15 (App Router)**, **TypeScript**, **Tailwind CSS v4**.
 
-First, run the development server:
+## 🚀 Getting Started
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+1.  **Install dependencies:**
+    ```bash
+    npm install
+    ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2.  **Run the development server:**
+    ```bash
+    npm run dev
+    ```
+    Open [http://localhost:3000](http://localhost:3000) with your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📂 Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+-   `app/`: App Router pages and layouts.
+    -   `page.tsx`: Home / Landing Page.
+    -   `servicios/`: Services listings.
+    -   `sobre-mi/`: About page.
+    -   `blog/`: Blog listing and dynamic slug pages.
+    -   `contacto/`: Contact form.
+-   `components/`
+    -   `ui/`: Reusable UI components (Button, Container, Section).
+    -   `layout/`: Navbar, Footer.
+-   `globals.css`: Tailwind v4 theme configuration and CSS variables.
 
-## Learn More
+## 🎨 Design System
 
-To learn more about Next.js, take a look at the following resources:
+-   **Fonts**: Inter (Sans), Playfair Display (Serif).
+-   **Colors**: 
+    -   Sage (Primary accents)
+    -   Sand (Backgrounds/Warmth)
+    -   Charcoal (Text)
+    -   Off-white (Base)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🛠 Deployment to Vercel
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1.  Push repository to GitHub/GitLab.
+2.  Import project in Vercel.
+3.  Framework Preset: **Next.js**.
+4.  Deploy.
 
-## Deploy on Vercel
+No environment variables are required for the static build.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🔗 Placeholder Links
+-   **WhatsApp**: Search for `wa.me` in code to replace phone numbers.
+-   **Calendly**: Search for "Calendly" to replace booking links.
