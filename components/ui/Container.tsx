@@ -1,4 +1,4 @@
-import { clsx } from "clsx";
+import { cn } from "@/lib/utils";
 
 interface ContainerProps extends React.HTMLAttributes<HTMLDivElement> {
     children: React.ReactNode;
@@ -17,7 +17,7 @@ export function Container({ children, className, size = "lg", ...props }: Contai
 
     return (
         <div
-            className={clsx("mx-auto w-full px-4 sm:px-6 lg:px-8", sizes[size], className)}
+            className={cn("mx-auto w-full px-4 sm:px-6 lg:px-8", sizes[size], className)}
             {...props}
         >
             {children}

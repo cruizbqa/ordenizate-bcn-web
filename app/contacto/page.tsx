@@ -34,14 +34,14 @@ export default function ContactPage() {
                                     <ContactItem
                                         icon={<Mail className="text-sage-600" />}
                                         title="Email"
-                                        content="hola@ordenizatebcn.com"
-                                        href="mailto:hola@ordenizatebcn.com"
+                                        content="info@ordenizate.es"
+                                        href="mailto:info@ordenizate.es"
                                     />
                                     <ContactItem
                                         icon={<MessageCircle className="text-sage-600" />}
                                         title="WhatsApp"
-                                        content="+34 000 000 000"
-                                        href="https://wa.me/34000000000"
+                                        content="+34 636 757 684"
+                                        href="whatsapp://send?phone=34636757684"
                                     />
                                     <ContactItem
                                         icon={<MapPin className="text-sage-600" />}
@@ -49,17 +49,6 @@ export default function ContactPage() {
                                         content="Barcelona Provincia (Disponible desplazamientos a toda España)"
                                     />
                                 </div>
-                            </div>
-
-                            <div className="bg-sage-50 rounded-2xl p-8 border border-sage-100 mb-8 lg:mb-0">
-                                <div className="flex items-center gap-3 mb-4">
-                                    <Calendar className="text-sage-600 w-6 h-6" />
-                                    <h3 className="font-serif text-xl font-bold">Reserva Directa</h3>
-                                </div>
-                                <p className="text-gray-600 mb-6 text-sm">
-                                    ¿Prefieres agendar una videollamada de valoración gratuita? Elige el hueco que mejor te venga.
-                                </p>
-                                <Button variant="primary" className="w-full justify-center">Ver Calendario (Calendly)</Button>
                             </div>
                         </div>
 

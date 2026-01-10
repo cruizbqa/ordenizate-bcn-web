@@ -1,4 +1,4 @@
-import { clsx } from "clsx";
+import { cn } from "@/lib/utils";
 import Link from "next/link";
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -36,7 +36,7 @@ export function Button({
         lg: "h-14 px-8 text-lg",
     };
 
-    const styles = clsx(baseStyles, variants[variant], sizes[size], className);
+    const styles = cn(baseStyles, variants[variant], sizes[size], className);
 
     if (href) {
         return (

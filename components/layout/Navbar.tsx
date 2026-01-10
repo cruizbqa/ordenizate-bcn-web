@@ -4,7 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { Container } from "../ui/Container";
 import { Button } from "../ui/Button";
-import { clsx } from "clsx";
+import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
 
 export function Navbar() {
@@ -40,7 +40,7 @@ export function Navbar() {
                                 {item.name}
                             </Link>
                         ))}
-                        <Button variant="primary" size="sm" href="https://wa.me/34000000000" className="ml-4">
+                        <Button variant="primary" size="sm" href="whatsapp://send?phone=34636757684" className="ml-4">
                             WhatsApp
                         </Button>
                     </div>
@@ -78,7 +78,7 @@ export function Navbar() {
                             </Link>
                         ))}
                         <div className="pt-2">
-                            <Button variant="primary" size="md" href="https://wa.me/34000000000" className="w-full">
+                            <Button variant="primary" size="md" href="whatsapp://send?phone=34636757684" className="w-full">
                                 WhatsApp
                             </Button>
                         </div>

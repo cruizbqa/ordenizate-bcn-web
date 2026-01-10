@@ -31,7 +31,7 @@ export default function HomePage() {
             </p>
             <div className="mt-10 flex items-center gap-x-6">
               <Button href="/contacto" size="lg">Reserva una llamada</Button>
-              <Button href="https://wa.me/34000000000" variant="ghost" size="lg" className="group">
+              <Button href="whatsapp://send?phone=34636757684" variant="ghost" size="lg" className="group">
                 WhatsApp <span aria-hidden="true" className="ml-2 group-hover:translate-x-1 transition-transform">→</span>
               </Button>
             </div>
@@ -48,7 +48,7 @@ export default function HomePage() {
       {/* Trust Indicators */}
       <Section className="bg-white border-y border-sand-100" spacing="sm">
         <Container>
-          <div className="grid grid-cols-1 gap-8 sm:grid-cols-3 text-center">
+          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 text-center">
             <div className="flex flex-col items-center gap-2">
               <span className="text-4xl font-serif font-bold text-sage-500">100+</span>
               <span className="text-sm font-medium text-gray-600 uppercase tracking-wide">Espacios Organizados</span>
@@ -56,16 +56,6 @@ export default function HomePage() {
             <div className="flex flex-col items-center gap-2">
               <span className="text-4xl font-serif font-bold text-sage-500">Barcelona</span>
               <span className="text-sm font-medium text-gray-600 uppercase tracking-wide">y Alrededores</span>
-            </div>
-            <div className="flex flex-col items-center gap-2">
-              <div className="flex text-amber-400 gap-1">
-                <Star fill="currentColor" size={24} />
-                <Star fill="currentColor" size={24} />
-                <Star fill="currentColor" size={24} />
-                <Star fill="currentColor" size={24} />
-                <Star fill="currentColor" size={24} />
-              </div>
-              <span className="text-sm font-medium text-gray-600 uppercase tracking-wide">Clientes Felices</span>
             </div>
           </div>
         </Container>
@@ -233,7 +223,7 @@ export default function HomePage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button href="/contacto" variant="secondary" size="lg">Reservar Sesión</Button>
-            <Button href="https://wa.me/34000000000" variant="outline" className="border-white text-white hover:bg-white/10 hover:text-white" size="lg">Contactar por WhatsApp</Button>
+            <Button href="whatsapp://send?phone=34636757684" variant="outline" className="border-white text-white hover:bg-white/10 hover:text-white" size="lg">Contactar por WhatsApp</Button>
           </div>
         </Container>
       </Section>

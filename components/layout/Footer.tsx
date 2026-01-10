@@ -44,7 +44,7 @@ export function Footer() {
                         <h3 className="font-serif text-lg font-semibold text-charcoal-900 mb-4">Contacto</h3>
                         <ul className="space-y-3 text-sm text-gray-600">
                             <li>Barcelona, España</li>
-                            <li><a href="mailto:hola@ordenizatebcn.com" className="hover:text-sage-600 transition-colors">hola@ordenizatebcn.com</a></li>
+                            <li><a href="mailto:info@ordenizate.es" className="hover:text-sage-600 transition-colors">info@ordenizate.es</a></li>
                             <li><a href="https://instagram.com/ordenizatebcn" target="_blank" rel="noopener noreferrer" className="hover:text-sage-600 transition-colors">@ordenizatebcn</a></li>
                         </ul>
                     </div>

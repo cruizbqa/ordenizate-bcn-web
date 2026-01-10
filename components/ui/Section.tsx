@@ -1,4 +1,4 @@
-import { clsx } from "clsx";
+import { cn } from "@/lib/utils";
 
 interface SectionProps extends React.HTMLAttributes<HTMLElement> {
     children: React.ReactNode;
@@ -16,7 +16,7 @@ export function Section({ children, className, spacing = "lg", ...props }: Secti
 
     return (
         <section
-            className={clsx("w-full", spacings[spacing], className)}
+            className={cn("w-full", spacings[spacing], className)}
             {...props}
         >
             {children}
