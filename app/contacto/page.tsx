@@ -5,7 +5,8 @@ import NextImage from 'next/image';
 import { SITE_CONFIG } from '@/lib/constants';
 import { Container } from '@/components/ui/Container';
 import { Section } from '@/components/ui/Section';
-import { ContactForm } from '@/components/ContactForm';
+// TODO: Habilitar formulario de contacto en el futuro
+// import { ContactForm } from '@/components/ContactForm';
 import { MapPin, Mail, MessageCircle, Copy, Check } from 'lucide-react';
 
 export default function ContactPage() {
@@ -24,10 +25,10 @@ export default function ContactPage() {
 
             <Section>
                 <Container>
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-start">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-stretch">
                         {/* Contact Info (Left) */}
                         <div className="order-2 lg:order-1">
-                            <div className="bg-white rounded-2xl p-8 border border-sand-200 shadow-sm mb-8">
+                            <div className="bg-white rounded-2xl p-8 border border-sand-200 shadow-sm h-full">
                                 <h3 className="font-serif text-xl font-bold mb-6">Información de Contacto</h3>
                                 <div className="space-y-6">
                                     <ContactItem
@@ -49,9 +50,11 @@ export default function ContactPage() {
                                     />
                                 </div>
                             </div>
+                        </div>
 
-                            {/* Image Placeholder (Below Info) */}
-                            <div className="relative w-full h-64 md:h-80 rounded-2xl overflow-hidden bg-sand-200">
+                        {/* Image (Right on desktop) */}
+                        <div className="order-1 lg:order-2">
+                            <div className="relative w-full h-64 md:h-80 lg:h-full rounded-2xl overflow-hidden bg-sand-200">
                                 <NextImage
                                     src="/images/contact-office.jpg"
                                     alt="Oficina Ordenada"
@@ -59,11 +62,9 @@ export default function ContactPage() {
                                     className="object-cover"
                                 />
                             </div>
-                        </div>
 
-                        {/* Contact Form (Right) */}
-                        <div className="order-1 lg:order-2">
-                            <ContactForm />
+                            {/* TODO: Habilitar formulario de contacto "Envíame un mensaje" en el futuro */}
+                            {/* <ContactForm /> */}
                         </div>
                     </div>
                 </Container>

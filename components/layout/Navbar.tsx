@@ -3,6 +3,7 @@
 import { SITE_CONFIG } from "@/lib/constants";
 import { useState } from "react";
 import Link from "next/link";
+import NextImage from "next/image";
 import { Container } from "../ui/Container";
 import { Menu, X } from "lucide-react";
 
@@ -42,7 +43,14 @@ export function Navbar() {
                 <div className="flex h-20 items-center justify-between">
                     {/* Logo */}
                     <div className="flex-shrink-0">
-                        <Link href="/" className="font-serif text-2xl font-bold tracking-tight text-charcoal-900">
+                        <Link href="/" className="flex items-center gap-3 font-serif text-2xl font-bold tracking-tight text-charcoal-900">
+                            <NextImage
+                                src="/images/logo.png"
+                                alt="Ordenízate Logo"
+                                width={40}
+                                height={40}
+                                className="rounded-md"
+                            />
                             Ordenízate
                         </Link>
                     </div>
