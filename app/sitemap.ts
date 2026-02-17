@@ -3,7 +3,7 @@ import { MetadataRoute } from 'next';
 export const dynamic = 'force-static';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-    const baseUrl = 'https://ordenizatebcn.com';
+    const baseUrl = 'https://cruizbqa.github.io/ordenizate-bcn-web';
 
     return [
         {
