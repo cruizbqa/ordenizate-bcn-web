@@ -10,5 +10,10 @@ export const SITE_CONFIG = {
             getLink: () => `whatsapp://send?phone=34636757684&text=${encodeURIComponent("Hola Silvia, quiero información sobre organización.")}`,
         },
         address: "Barcelona, España",
+        instagram: {
+            username: "ordenizatebcn",
+            getLink: () => "https://www.instagram.com/_u/ordenizatebcn/",
+        },
     },
+    basePath: '/ordenizate-bcn-web',
 };

@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import NextImage from 'next/image';
+import { SITE_CONFIG } from '@/lib/constants';
 import { Button } from '@/components/ui/Button';
 import { Container } from '@/components/ui/Container';
 import { Section } from '@/components/ui/Section';
@@ -37,7 +38,7 @@ export default function AboutPage() {
                     {/* Image */}
                     <div className="relative aspect-[3/4] bg-sand-200 rounded-lg overflow-hidden">
                         <NextImage
-                            src="/images/about-profile.jpeg"
+                            src={`${SITE_CONFIG.basePath}/images/about-profile.jpeg`}
                             alt="Organizadora Profesional"
                             fill
                             className="object-cover"
