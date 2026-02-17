@@ -1,6 +1,7 @@
 "use client";
 
 import { SITE_CONFIG } from "@/lib/constants";
+import { handleInstagramDeepLink } from "@/lib/utils";
 import { useState } from "react";
 import Link from "next/link";
 import NextImage from "next/image";
@@ -68,7 +69,8 @@ export function Navbar() {
                         ))}
                         <div className="flex items-center gap-2 ml-4">
                             <a
-                                href={SITE_CONFIG.contact.instagram.getLink()}
+                                href={SITE_CONFIG.contact.instagram.webUrl}
+                                onClick={handleInstagramDeepLink}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="p-2 rounded-full bg-sand-100 text-charcoal-700 hover:bg-sage-100 hover:text-sage-700 transition-colors"
@@ -123,7 +125,8 @@ export function Navbar() {
                             ))}
                             <div className="pt-2 flex items-center gap-3 justify-center">
                                 <a
-                                    href={SITE_CONFIG.contact.instagram.getLink()}
+                                    href={SITE_CONFIG.contact.instagram.webUrl}
+                                    onClick={handleInstagramDeepLink}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="p-3 rounded-full bg-sand-100 text-charcoal-700 hover:bg-sage-100 hover:text-sage-700 transition-colors"
