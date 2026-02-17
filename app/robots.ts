@@ -1,5 +1,7 @@
 import { MetadataRoute } from 'next';
 
+export const dynamic = 'force-static';
+
 export default function robots(): MetadataRoute.Robots {
     return {
         rules: {
@@ -7,6 +9,6 @@ export default function robots(): MetadataRoute.Robots {
             allow: '/',
             disallow: '/private/',
         },
-        sitemap: 'https://ordenizatebcn.com/sitemap.xml',
+        sitemap: 'https://cruizbqa.github.io/ordenizate-bcn-web/sitemap.xml',
     };
 }
