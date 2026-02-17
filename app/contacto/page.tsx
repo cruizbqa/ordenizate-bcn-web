@@ -1,13 +1,13 @@
-import { Metadata } from 'next';
-import { Button } from '@/components/ui/Button';
+'use client';
+
+import { useState } from 'react';
+import NextImage from 'next/image';
+import { SITE_CONFIG } from '@/lib/constants';
 import { Container } from '@/components/ui/Container';
 import { Section } from '@/components/ui/Section';
-import { MapPin, Mail, MessageCircle, Calendar } from 'lucide-react';
-
-export const metadata: Metadata = {
-    title: 'Contacto | Reserva tu sesión',
-    description: 'Contacta con Ordenízate Bcn. Pide presupuesto para tu mudanza o proyecto de organización en Barcelona.',
-};
+// TODO: Habilitar formulario de contacto en el futuro
+// import { ContactForm } from '@/components/ContactForm';
+import { MapPin, Mail, MessageCircle, Copy, Check } from 'lucide-react';
 
 export default function ContactPage() {
     return (
@@ -25,74 +25,46 @@ export default function ContactPage() {
 
             <Section>
                 <Container>
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24">
-                        {/* Contact Info */}
-                        <div>
-                            <div className="bg-white rounded-2xl p-8 border border-sand-200 shadow-sm mb-8">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-stretch">
+                        {/* Contact Info (Left) */}
+                        <div className="order-2 lg:order-1">
+                            <div className="bg-white rounded-2xl p-8 border border-sand-200 shadow-sm h-full">
                                 <h3 className="font-serif text-xl font-bold mb-6">Información de Contacto</h3>
                                 <div className="space-y-6">
                                     <ContactItem
                                         icon={<Mail className="text-sage-600" />}
                                         title="Email"
-                                        content="info@ordenizate.es"
-                                        href="mailto:info@ordenizate.es"
+                                        content={SITE_CONFIG.contact.email}
+                                        copyable
                                     />
                                     <ContactItem
                                         icon={<MessageCircle className="text-sage-600" />}
                                         title="WhatsApp"
-                                        content="+34 636 757 684"
-                                        href="whatsapp://send?phone=34636757684"
+                                        content={SITE_CONFIG.contact.phone}
+                                        copyable
                                     />
                                     <ContactItem
                                         icon={<MapPin className="text-sage-600" />}
                                         title="Área de Servicio"
-                                        content="Barcelona Provincia (Disponible desplazamientos a toda España)"
+                                        content="Barcelona Provincia (Disponible desplazamientos a toda Cataluña)"
                                     />
                                 </div>
                             </div>
                         </div>
 
-                        {/* Form Layout */}
-                        <div className="bg-white p-8 md:p-10 rounded-3xl shadow-lg border border-sand-100 h-fit">
-                            <h2 className="text-2xl font-serif font-bold mb-6">Envíame un mensaje</h2>
-                            <form className="space-y-6">
-                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                                    <div className="space-y-2">
-                                        <label htmlFor="name" className="text-sm font-medium text-gray-700">Nombre</label>
-                                        <input type="text" id="name" className="w-full rounded-md border-gray-300 shadow-sm focus:border-sage-500 focus:ring-sage-500 bg-sand-50/50 p-3 text-sm" placeholder="Tu nombre" />
-                                    </div>
-                                    <div className="space-y-2">
-                                        <label htmlFor="email" className="text-sm font-medium text-gray-700">Email</label>
-                                        <input type="email" id="email" className="w-full rounded-md border-gray-300 shadow-sm focus:border-sage-500 focus:ring-sage-500 bg-sand-50/50 p-3 text-sm" placeholder="tu@email.com" />
-                                    </div>
-                                </div>
+                        {/* Image (Right on desktop) */}
+                        <div className="order-1 lg:order-2">
+                            <div className="relative w-full h-64 md:h-80 lg:h-full rounded-2xl overflow-hidden bg-sand-200">
+                                <NextImage
+                                    src="/images/contact-office.jpg"
+                                    alt="Oficina Ordenada"
+                                    fill
+                                    className="object-cover"
+                                />
+                            </div>
 
-                                <div className="space-y-2">
-                                    <label htmlFor="city" className="text-sm font-medium text-gray-700">Ciudad / Zona</label>
-                                    <input type="text" id="city" className="w-full rounded-md border-gray-300 shadow-sm focus:border-sage-500 focus:ring-sage-500 bg-sand-50/50 p-3 text-sm" placeholder="Ej: Eixample, Barcelona" />
-                                </div>
-
-                                <div className="space-y-2">
-                                    <label htmlFor="service" className="text-sm font-medium text-gray-700">Tipo de Servicio</label>
-                                    <select id="service" className="w-full rounded-md border-gray-300 shadow-sm focus:border-sage-500 focus:ring-sage-500 bg-sand-50/50 p-3 text-sm">
-                                        <option>Selecciona una opción</option>
-                                        <option>Mudanza (Pre/Post)</option>
-                                        <option>Organización Hogar</option>
-                                        <option>Cocina / Armarios</option>
-                                        <option>Otro</option>
-                                    </select>
-                                </div>
-
-                                <div className="space-y-2">
-                                    <label htmlFor="message" className="text-sm font-medium text-gray-700">Cuéntame más</label>
-                                    <textarea id="message" rows={4} className="w-full rounded-md border-gray-300 shadow-sm focus:border-sage-500 focus:ring-sage-500 bg-sand-50/50 p-3 text-sm" placeholder="¿Qué necesitas organizar?..." />
-                                </div>
-
-                                <Button type="button" size="lg" className="w-full">Enviar Mensaje</Button>
-                                <p className="text-xs text-gray-400 text-center mt-4">
-                                    Al enviar aceptas nuestra política de privacidad.
-                                </p>
-                            </form>
+                            {/* TODO: Habilitar formulario de contacto "Envíame un mensaje" en el futuro */}
+                            {/* <ContactForm /> */}
                         </div>
                     </div>
                 </Container>
@@ -101,18 +73,41 @@ export default function ContactPage() {
     );
 }
 
-function ContactItem({ icon, title, content, href }: { icon: React.ReactNode, title: string, content: string, href?: string }) {
+function ContactItem({ icon, title, content, copyable }: { icon: React.ReactNode, title: string, content: string, copyable?: boolean }) {
+    const [copied, setCopied] = useState(false);
+
+    const handleCopy = async () => {
+        try {
+            await navigator.clipboard.writeText(content);
+            setCopied(true);
+            setTimeout(() => setCopied(false), 2000);
+        } catch (err) {
+            console.error('Failed to copy:', err);
+        }
+    };
+
     return (
         <div className="flex gap-4">
             <div className="bg-sand-50 p-3 rounded-lg h-fit">
                 {icon}
             </div>
-            <div className="flex flex-col">
+            <div className="flex flex-col flex-1">
                 <span className="text-xs font-semibold text-gray-500 uppercase tracking-wide">{title}</span>
-                {href ? (
-                    <a href={href} className="text-charcoal-900 font-medium hover:text-sage-600 transition-colors" target={href.startsWith('http') ? '_blank' : undefined} rel="noreferrer">
-                        {content}
-                    </a>
+                {copyable ? (
+                    <div className="flex items-center gap-2">
+                        <span className="text-charcoal-900 font-medium">{content}</span>
+                        <button
+                            onClick={handleCopy}
+                            className="p-1.5 rounded-md hover:bg-sand-100 transition-colors text-gray-500 hover:text-sage-600"
+                            title="Copiar al portapapeles"
+                        >
+                            {copied ? (
+                                <Check className="w-4 h-4 text-green-600" />
+                            ) : (
+                                <Copy className="w-4 h-4" />
+                            )}
+                        </button>
+                    </div>
                 ) : (
                     <span className="text-charcoal-900 font-medium">{content}</span>
                 )}

@@ -23,7 +23,6 @@ export function Footer() {
                             <li><Link href="/" className="hover:text-sage-600 transition-colors">Inicio</Link></li>
                             <li><Link href="/servicios" className="hover:text-sage-600 transition-colors">Servicios</Link></li>
                             <li><Link href="/sobre-mi" className="hover:text-sage-600 transition-colors">Sobre Mí</Link></li>
-                            <li><Link href="/blog" className="hover:text-sage-600 transition-colors">Blog</Link></li>
                             <li><Link href="/contacto" className="hover:text-sage-600 transition-colors">Contacto</Link></li>
                         </ul>
                     </div>
