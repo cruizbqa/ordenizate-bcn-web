@@ -5,7 +5,8 @@ import { Redis } from '@upstash/redis';
 import { Ratelimit } from '@upstash/ratelimit';
 
 // Initialize Clients
-const resend = new Resend(process.env.RESEND_API_KEY);
+const resendApiKey = process.env.RESEND_API_KEY;
+const resend = resendApiKey ? new Resend(resendApiKey) : null;
 
 // Use Redis if configured, otherwise we might skip rate limiting (or error out depending on strictness)
 // For this implementation, we assume env vars are present or deal with it gracefully.
@@ -103,6 +104,18 @@ export async function POST(req: NextRequest) {
         }
 
         // 4. Send Email
+        if (!resend) {
+            console.error('Resend API Key missing');
+            return NextResponse.json(
+                {
+                    ok: false,
+                    code: 'SERVER_ERROR',
+                    message: 'Error de configuración del servidor. Por favor, contáctanos por otros medios.',
+                },
+                { status: 500 }
+            );
+        }
+
         const { error } = await resend.emails.send({
             from: process.env.CONTACT_FROM_EMAIL as string,
             to: process.env.CONTACT_TO_EMAIL as string,

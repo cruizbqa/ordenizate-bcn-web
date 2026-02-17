@@ -1,19 +1,23 @@
 import type { Metadata } from "next";
-import { Inter, Playfair_Display } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-  display: 'swap',
-});
-
-const playfair = Playfair_Display({
-  variable: "--font-playfair",
-  subsets: ["latin"],
+const mosk = localFont({
+  src: [
+    { path: './fonts/Mosk Thin 100.ttf', weight: '100', style: 'normal' },
+    { path: './fonts/Mosk Extra-Light 200.ttf', weight: '200', style: 'normal' },
+    { path: './fonts/Mosk Light 300.ttf', weight: '300', style: 'normal' },
+    { path: './fonts/Mosk Normal 400.ttf', weight: '400', style: 'normal' },
+    { path: './fonts/Mosk Medium 500.ttf', weight: '500', style: 'normal' },
+    { path: './fonts/Mosk Semi-Bold 600.ttf', weight: '600', style: 'normal' },
+    { path: './fonts/Mosk Bold 700.ttf', weight: '700', style: 'normal' },
+    { path: './fonts/Mosk Extra-Bold 800.ttf', weight: '800', style: 'normal' },
+    { path: './fonts/Mosk Ultra-Bold 900.ttf', weight: '900', style: 'normal' },
+  ],
+  variable: '--font-mosk',
   display: 'swap',
 });
 
@@ -43,8 +47,7 @@ export default function RootLayout({
       <body
         suppressHydrationWarning
         className={cn(
-          inter.variable,
-          playfair.variable,
+          mosk.variable,
           "antialiased min-h-screen flex flex-col bg-sand-50"
         )}
       >

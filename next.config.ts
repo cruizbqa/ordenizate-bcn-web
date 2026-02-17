@@ -4,9 +4,7 @@ const nextConfig: NextConfig = {
   /* config options here */
   reactCompiler: true,
   experimental: {
-    turbopack: {
-      root: process.cwd(),
-    },
+    // turbopack options if needed
   },
 };
 

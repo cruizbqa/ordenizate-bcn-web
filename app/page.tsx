@@ -200,7 +200,7 @@ export default function HomePage() {
         </Container>
       </Section >
 
-      {/* FAQ */}
+      {/* FAQ *
       < Section >
         <Container className="max-w-3xl">
           <h2 className="text-3xl font-bold text-center mb-12 font-serif text-charcoal-900">Preguntas Frecuentes</h2>
@@ -219,6 +219,7 @@ export default function HomePage() {
           </div>
         </Container>
       </Section >
+      /}
 
       {/* Final CTA */}
       < Section className="bg-sage-600 text-white text-center" >
