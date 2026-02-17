@@ -22,7 +22,6 @@ Stacks: **Next.js 15 (App Router)**, **TypeScript**, **Tailwind CSS v4**.
     -   `page.tsx`: Home / Landing Page.
     -   `servicios/`: Services listings.
     -   `sobre-mi/`: About page.
-    -   `blog/`: Blog listing and dynamic slug pages.
     -   `contacto/`: Contact form.
 -   `components/`
     -   `ui/`: Reusable UI components (Button, Container, Section).

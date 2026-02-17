@@ -33,7 +33,6 @@ export function Navbar() {
         { name: "Inicio", href: "/" },
         { name: "Servicios", href: "/servicios" },
         { name: "Sobre Mí", href: "/sobre-mi" },
-        { name: "Blog", href: "/blog" },
         { name: "Contacto", href: "/contacto" },
     ];
 
