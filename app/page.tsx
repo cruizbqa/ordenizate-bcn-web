@@ -49,11 +49,11 @@ export default function HomePage() {
               />
             </div>
           </div>
-        </Container >
-      </div >
+        </Container>
+      </div>
 
       {/* Trust Indicators */}
-      < Section className="bg-white border-y border-sand-100" spacing="sm" >
+      <Section className="bg-white border-y border-sand-100" spacing="sm">
         <Container>
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-1 text-center">
             <div className="flex flex-col items-center gap-2">
@@ -63,10 +63,10 @@ export default function HomePage() {
             </div>
           </div>
         </Container>
-      </Section >
+      </Section>
 
       {/* Services Preview */}
-      < Section >
+      <Section>
         <Container>
           <div className="mx-auto max-w-2xl text-center mb-16">
             <h2 className="text-3xl font-bold tracking-tight text-charcoal-900 sm:text-4xl font-serif">Nuestros Servicios</h2>
@@ -146,7 +146,7 @@ export default function HomePage() {
       */}
 
       {/* How it Works */}
-      < Section >
+      <Section>
         <Container>
           <div className="mx-auto max-w-2xl text-center mb-16">
             <h2 className="text-3xl font-bold tracking-tight text-charcoal-900 sm:text-4xl font-serif">Cómo Trabajamos</h2>
@@ -170,10 +170,10 @@ export default function HomePage() {
             ))}
           </div>
         </Container>
-      </Section >
+      </Section>
 
       {/* Testimonials */}
-      < Section className="bg-sage-50/50" >
+      <Section className="bg-sage-50/50">
         <Container>
           <h2 className="text-3xl font-bold text-center mb-12 font-serif text-charcoal-900">Lo que dicen mis clientes</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -198,10 +198,10 @@ export default function HomePage() {
             ))}
           </div>
         </Container>
-      </Section >
+      </Section>
 
       {/* FAQ *
-      < Section >
+      <Section>
         <Container className="max-w-3xl">
           <h2 className="text-3xl font-bold text-center mb-12 font-serif text-charcoal-900">Preguntas Frecuentes</h2>
           <div className="space-y-4">
@@ -218,11 +218,11 @@ export default function HomePage() {
             ))}
           </div>
         </Container>
-      </Section >
-      /}
+      </Section>
+      */}
 
       {/* Final CTA */}
-      < Section className="bg-sage-600 text-white text-center" >
+      <Section className="bg-sage-600 text-white text-center">
         <Container className="max-w-2xl">
           <h2 className="text-3xl md:text-4xl font-bold font-serif mb-6">¿Listo para recuperar tu espacio?</h2>
           <p className="text-sage-100 text-lg mb-10">
@@ -232,8 +232,8 @@ export default function HomePage() {
             <Button href="/contacto" variant="secondary" size="lg">Reservar Sesión</Button>
             <Button href={SITE_CONFIG.contact.whatsapp.getLink()} variant="outline" className="border-white text-white hover:bg-white/10 hover:text-white" size="lg">Contactar por WhatsApp</Button>
           </div>
-        </Container >
-      </Section >
+        </Container>
+      </Section>
     </>
   );
 }
