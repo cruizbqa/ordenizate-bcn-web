@@ -52,17 +52,17 @@ export default function AboutPage() {
                     <h2 className="text-3xl font-serif font-bold text-center mb-16">Por qué elegirnos</h2>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                         <ValueCard
-                            icon={<Heart className="w-8 h-8 text-sage-600" />}
+                            icon={<Heart className="w-8 h-8 text-brand-pink" />}
                             title="Sin Juicios"
                             desc="Tu casa es tu refugio. Entro con respeto y empatía, nunca para criticar."
                         />
                         <ValueCard
-                            icon={<Shield className="w-8 h-8 text-sage-600" />}
+                            icon={<Shield className="w-8 h-8 text-brand-purple" />}
                             title="Confidencialidad"
                             desc="Lo que veo en tu casa, se queda en tu casa. Discreción absoluta garantizada."
                         />
                         <ValueCard
-                            icon={<Leaf className="w-8 h-8 text-sage-600" />}
+                            icon={<Leaf className="w-8 h-8 text-brand-yellow" />}
                             title="Sostenibilidad"
                             desc="Fomentamos el consumo responsable y la donación de lo que ya no necesitas."
                         />

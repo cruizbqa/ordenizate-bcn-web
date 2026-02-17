@@ -7,31 +7,48 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
 
-  --color-sage-50: #f4f7f5;
-  --color-sage-100: #e3ebe5;
-  --color-sage-200: #c5d6cb;
-  --color-sage-300: #9eb8a8;
-  --color-sage-400: #769683;
-  --color-sage-500: #557a64;
-  --color-sage-600: #425e4d;
+  /* Replaced Sage with Custom Turquoise #6FB6C9 */
+  --color-sage-50: #f0fdfa;
+  --color-sage-100: #e0f7fa;
+  --color-sage-200: #b2ebf2;
+  --color-sage-300: #80deea;
+  --color-sage-400: #6fb6c9;
+  /* The specific hex */
+  --color-sage-500: #5aa1b5;
+  /* Slightly darker for better text readability */
+  --color-sage-600: #428294;
+  /* Even darker for strong contrast */
 
-  --color-sage-soft: #A3B18A; /* Warm sage */
+  --color-sage-soft: #6fb6c9;
+  /* The user's specific turquoise */
+  /* Teal cyan */
 
-  --color-sand-50: #fdfcfb;
-  --color-sand-100: #f7f3ef;
-  --color-sand-200: #ede5da;
-  --color-sand-300: #dfcfbc;
-  --color-sand-400: #cbb396;
-  --color-sand-500: #b59676;
+  /* Sand - Keeping warm but lighter/cleaner */
+  --color-sand-50: #fafafa;
+  --color-sand-100: #f5f5f5;
+  --color-sand-200: #e5e5e5;
+  --color-sand-300: #d4d4d4;
+  --color-sand-400: #a3a3a3;
+  --color-sand-500: #737373;
 
-  --color-charcoal-50: #f6f7f8;
-  --color-charcoal-900: #1a1d1e;
+  /* Logo Accents */
+  --color-brand-yellow: #fbbf24;
+  /* Bars */
+  --color-brand-purple: #a855f7;
+  /* Z */
+  --color-brand-pink: #ec4899;
+  /* E */
+
+  --color-charcoal-50: #f8fafc;
+  --color-charcoal-900: #0f172a;
 }
 
 :root {
-  --background: #FAF9F6; /* Off-white / Eggshell */
-  --foreground: #2C3333; /* Charcoal */
-  
+  --background: #ffffff;
+  /* Clean White */
+  --foreground: #2C3333;
+  /* Charcoal */
+
   --font-inter: 'Inter', sans-serif;
   --font-playfair: 'Playfair Display', serif;
 }
@@ -49,6 +66,11 @@ body {
   font-family: var(--font-sans);
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-serif);
 }

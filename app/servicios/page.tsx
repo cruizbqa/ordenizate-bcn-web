@@ -32,7 +32,7 @@ export default function ServicesPage() {
                 <Container>
                     <div className="flex flex-col md:flex-row gap-12 items-start">
                         <div className="flex-1">
-                            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sage-100 text-sage-700 text-sm font-medium mb-4">
+                            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-yellow-50 text-brand-yellow text-sm font-medium mb-4">
                                 <Truck size={16} /> Especialidad
                             </div>
                             <h2 className="text-3xl font-serif font-bold text-charcoal-900 mb-6">Gestión de Mudanzas (Pre + Post)</h2>
@@ -81,7 +81,7 @@ export default function ServicesPage() {
                 <Container>
                     <div className="flex flex-col md:flex-row-reverse gap-12 items-start">
                         <div className="flex-1">
-                            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sand-100 text-charcoal-700 text-sm font-medium mb-4">
+                            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-50 text-brand-purple text-sm font-medium mb-4">
                                 <Home size={16} /> Espacios
                             </div>
                             <h2 className="text-3xl font-serif font-bold text-charcoal-900 mb-6">Organización del Hogar</h2>
@@ -93,17 +93,17 @@ export default function ServicesPage() {
                                 <ServiceItem
                                     title="Cocinas y Despensas"
                                     description="Optimización del espacio de almacenaje, categorización de alimentos y utensilios."
-                                    icon={<Box className="text-sage-500" />}
+                                    icon={<Box className="text-brand-pink" />}
                                 />
                                 <ServiceItem
                                     title="Armarios y Vestidores"
                                     description="Doblado vertical, cambio de armario estacional y maximización del espacio."
-                                    icon={<Shirt className="text-sage-500" />}
+                                    icon={<Shirt className="text-brand-pink" />}
                                 />
                                 <ServiceItem
                                     title="Habitaciones Infantiles"
                                     description="Sistemas evolutivos que ayudan a los niños a mantener el orden."
-                                    icon={<Briefcase className="text-sage-500" />}
+                                    icon={<Briefcase className="text-brand-pink" />}
                                 />
                             </div>
 

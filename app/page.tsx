@@ -79,7 +79,7 @@ export default function HomePage() {
             <div className="flex flex-col rounded-3xl bg-sand-50 p-8 ring-1 ring-gray-200 xl:p-10 transition-shadow hover:shadow-lg">
               <div className="flex items-center justify-between gap-x-4">
                 <h3 className="text-lg font-semibold leading-8 text-charcoal-900 font-serif">MUDANZAS (PRE + POST)</h3>
-                <Truck className="h-6 w-6 text-sage-600" />
+                <Truck className="h-6 w-6 text-brand-yellow" />
               </div>
               <p className="mt-4 flex items-baseline gap-x-1">
                 <span className="text-4xl font-bold tracking-tight text-gray-900">Sin Caos</span>
@@ -99,7 +99,7 @@ export default function HomePage() {
             <div className="flex flex-col rounded-3xl bg-white p-8 ring-1 ring-gray-200 xl:p-10 transition-shadow hover:shadow-lg">
               <div className="flex items-center justify-between gap-x-4">
                 <h3 className="text-lg font-semibold leading-8 text-charcoal-900 font-serif">ORGANIZACIÓN DE HOGAR</h3>
-                <Home className="h-6 w-6 text-sage-600" />
+                <Home className="h-6 w-6 text-brand-purple" />
               </div>
               <p className="mt-4 flex items-baseline gap-x-1">
                 <span className="text-4xl font-bold tracking-tight text-gray-900">Armonía</span>
@@ -161,7 +161,7 @@ export default function HomePage() {
               { title: "4. Mantenimiento", desc: "Sistemas fáciles de mantener en el tiempo.", icon: <Check /> }
             ].map((step, idx) => (
               <div key={idx} className="flex flex-col items-center text-center p-6 bg-sand-50 rounded-2xl">
-                <div className="mb-4 p-3 bg-white rounded-full text-sage-600 shadow-sm">
+                <div className={`mb-4 p-3 bg-white rounded-full shadow-sm ${idx === 0 ? 'text-sage-600' : idx === 1 ? 'text-brand-yellow' : idx === 2 ? 'text-brand-purple' : 'text-brand-pink'}`}>
                   {step.icon}
                 </div>
                 <h3 className="font-serif font-bold text-lg mb-2">{step.title}</h3>
