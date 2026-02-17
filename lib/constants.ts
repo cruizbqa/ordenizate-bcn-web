@@ -12,7 +12,7 @@ export const SITE_CONFIG = {
         address: "Barcelona, España",
         instagram: {
             username: "ordenizatebcn",
-            getLink: () => "https://www.instagram.com/_u/ordenizatebcn/",
+            webUrl: "https://www.instagram.com/ordenizatebcn/",
         },
     },
     basePath: '/ordenizate-bcn-web',
