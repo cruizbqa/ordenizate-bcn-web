@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import NextImage from 'next/image';
 import { Button } from '@/components/ui/Button';
 import { Container } from '@/components/ui/Container';
 import { Section } from '@/components/ui/Section';
@@ -20,7 +21,7 @@ export default function AboutPage() {
                             Más que ordenar, <br /><span className="text-sage-600">creo bienestar.</span>
                         </h1>
                         <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                            Hola, soy [Nombre]. Fundadora de Ordenízate Bcn.
+                            Hola, soy <span className="font-bold">Silvia</span>. Fundadora de <span className="font-bold">Ordenízate Bcn</span>.
                         </p>
                         <p className="text-lg text-gray-600 mb-6 leading-relaxed">
                             Mi pasión por el orden nació de la necesidad de encontrar calma en una vida ajetreada. Pronto descubrí que el entorno en el que vivimos tiene un impacto directo en cómo nos sentimos.
@@ -34,8 +35,13 @@ export default function AboutPage() {
                     </div>
 
                     {/* Image */}
-                    <div className="relative aspect-[3/4] bg-sand-200 rounded-lg overflow-hidden flex items-center justify-center text-gray-500">
-                        [Foto Personal Profesional]
+                    <div className="relative aspect-[3/4] bg-sand-200 rounded-lg overflow-hidden">
+                        <NextImage
+                            src="/images/about-profile.jpeg"
+                            alt="Organizadora Profesional"
+                            fill
+                            className="object-cover"
+                        />
                     </div>
                 </div>
             </Container>

@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import Image from 'next/image';
+import NextImage from 'next/image';
 import { Button } from '@/components/ui/Button';
 import { Container } from '@/components/ui/Container';
 import { Section } from '@/components/ui/Section';
@@ -62,8 +62,13 @@ export default function ServicesPage() {
                             <Button href="/contacto" size="lg">Pedir Presupuesto Mudanza</Button>
                         </div>
 
-                        <div className="w-full md:w-1/3 aspect-[3/4] bg-sand-200 rounded-2xl flex items-center justify-center text-gray-400">
-                            [Imagen Mudanza Organizada]
+                        <div className="relative w-full md:w-1/3 aspect-[3/4] bg-sand-200 rounded-2xl overflow-hidden">
+                            <NextImage
+                                src="/images/service-moving.jpg"
+                                alt="Mudanza Organizada"
+                                fill
+                                className="object-cover"
+                            />
                         </div>
                     </div>
                 </Container>
@@ -105,8 +110,13 @@ export default function ServicesPage() {
                             <Button href="/contacto" variant="outline" size="lg">Consultar Disponibilidad</Button>
                         </div>
 
-                        <div className="w-full md:w-1/3 aspect-[3/4] bg-sand-200 rounded-2xl flex items-center justify-center text-gray-400">
-                            [Imagen Armario/Cocina]
+                        <div className="relative w-full md:w-1/3 aspect-[3/4] bg-sand-200 rounded-2xl overflow-hidden">
+                            <NextImage
+                                src="/images/service-home.jpg"
+                                alt="Armario Organizado"
+                                fill
+                                className="object-cover"
+                            />
                         </div>
                     </div>
                 </Container>
@@ -116,7 +126,7 @@ export default function ServicesPage() {
             <Section className="bg-sage-50" spacing="lg">
                 <Container>
                     <div className="text-center mb-12">
-                        <h2 className="text-3xl font-bold font-serif mb-4">Bonos y Packs</h2>
+                        <h2 className="text-3xl font-bold font-serif mb-4">PARA DISCUTIR Bonos y Packs</h2>
                         <p className="text-gray-600">Opciones flexibles para proyectos grandes.</p>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">

@@ -1,9 +1,10 @@
+import { SITE_CONFIG } from "@/lib/constants";
 import Link from "next/link";
-import Image from "next/image";
+import NextImage from "next/image";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
-import { Check, Star, ArrowRight, Package, Home, Sparkles, Clock, Truck } from "lucide-react";
+import { Check, Star, Home, Sparkles, Clock, Truck } from "lucide-react";
 
 export default function HomePage() {
   return (
@@ -30,39 +31,42 @@ export default function HomePage() {
               Especialistas en mudanzas y organización del hogar.
             </p>
             <div className="mt-10 flex items-center gap-x-6">
-              <Button href="/contacto" size="lg">Reserva una llamada</Button>
-              <Button href="whatsapp://send?phone=34636757684" variant="ghost" size="lg" className="group">
+              <Button href="/contacto" size="lg">Contacto</Button>
+              <Button href={SITE_CONFIG.contact.whatsapp.getLink()} variant="ghost" size="lg" className="group">
                 WhatsApp <span aria-hidden="true" className="ml-2 group-hover:translate-x-1 transition-transform">→</span>
               </Button>
             </div>
           </div>
           {/* Hero Image Placeholder */}
           <div className="mt-16 sm:mt-24 lg:mt-0 lg:absolute lg:right-0 lg:top-0 lg:w-1/2 lg:h-full lg:opacity-90">
-            <div className="relative w-full h-[500px] lg:h-full bg-sand-200 overflow-hidden flex items-center justify-center text-charcoal-900/20">
-              <span className="text-lg">[Imagen Hero - Espacio Luminoso y Ordenado]</span>
+            <div className="relative w-full h-[500px] lg:h-full bg-sand-200 overflow-hidden">
+              <NextImage
+                src="/images/hero-home-2.jpg"
+                alt="Espacio Luminoso y Ordenado"
+                fill
+                className="object-cover"
+                priority
+              />
             </div>
           </div>
-        </Container>
-      </div>
+        </Container >
+      </div >
 
       {/* Trust Indicators */}
-      <Section className="bg-white border-y border-sand-100" spacing="sm">
+      < Section className="bg-white border-y border-sand-100" spacing="sm" >
         <Container>
-          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 text-center">
+          <div className="grid grid-cols-1 gap-8 sm:grid-cols-1 text-center">
             <div className="flex flex-col items-center gap-2">
-              <span className="text-4xl font-serif font-bold text-sage-500">100+</span>
-              <span className="text-sm font-medium text-gray-600 uppercase tracking-wide">Espacios Organizados</span>
-            </div>
-            <div className="flex flex-col items-center gap-2">
+              <span className="text-sm font-medium text-gray-600 uppercase tracking-wide">Espacios organizados en</span>
               <span className="text-4xl font-serif font-bold text-sage-500">Barcelona</span>
               <span className="text-sm font-medium text-gray-600 uppercase tracking-wide">y Alrededores</span>
             </div>
           </div>
         </Container>
-      </Section>
+      </Section >
 
       {/* Services Preview */}
-      <Section>
+      < Section >
         <Container>
           <div className="mx-auto max-w-2xl text-center mb-16">
             <h2 className="text-3xl font-bold tracking-tight text-charcoal-900 sm:text-4xl font-serif">Nuestros Servicios</h2>
@@ -112,10 +116,11 @@ export default function HomePage() {
             </div>
           </div>
         </Container>
-      </Section>
+      </Section >
 
       {/* Before / After Placeholder */}
-      <Section className="bg-charcoal-900 text-sand-50" spacing="lg">
+      {/*
+      < Section className="bg-charcoal-900 text-sand-50" spacing="lg" >
         <Container>
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl font-serif">Resultados Reales</h2>
@@ -137,10 +142,11 @@ export default function HomePage() {
             </div>
           </div>
         </Container>
-      </Section>
+      </Section >
+      */}
 
       {/* How it Works */}
-      <Section>
+      < Section >
         <Container>
           <div className="mx-auto max-w-2xl text-center mb-16">
             <h2 className="text-3xl font-bold tracking-tight text-charcoal-900 sm:text-4xl font-serif">Cómo Trabajamos</h2>
@@ -164,10 +170,10 @@ export default function HomePage() {
             ))}
           </div>
         </Container>
-      </Section>
+      </Section >
 
       {/* Testimonials */}
-      <Section className="bg-sage-50/50">
+      < Section className="bg-sage-50/50" >
         <Container>
           <h2 className="text-3xl font-bold text-center mb-12 font-serif text-charcoal-900">Lo que dicen mis clientes</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -180,7 +186,7 @@ export default function HomePage() {
                   <Star fill="currentColor" size={16} />
                   <Star fill="currentColor" size={16} />
                 </div>
-                <p className="text-gray-600 mb-6 italic">"Contratar a Ordenízate Bcn fue la mejor inversión. Mi mudanza fue increíblemente tranquila y ahora mi casa respira paz."</p>
+                <p className="text-gray-600 mb-6 italic">&quot;Contratar a Ordenízate Bcn fue la mejor inversión. Mi mudanza fue increíblemente tranquila y ahora mi casa respira paz.&quot;</p>
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 bg-gray-200 rounded-full" />
                   <div>
@@ -192,10 +198,10 @@ export default function HomePage() {
             ))}
           </div>
         </Container>
-      </Section>
+      </Section >
 
       {/* FAQ */}
-      <Section>
+      < Section >
         <Container className="max-w-3xl">
           <h2 className="text-3xl font-bold text-center mb-12 font-serif text-charcoal-900">Preguntas Frecuentes</h2>
           <div className="space-y-4">
@@ -212,10 +218,10 @@ export default function HomePage() {
             ))}
           </div>
         </Container>
-      </Section>
+      </Section >
 
       {/* Final CTA */}
-      <Section className="bg-sage-600 text-white text-center">
+      < Section className="bg-sage-600 text-white text-center" >
         <Container className="max-w-2xl">
           <h2 className="text-3xl md:text-4xl font-bold font-serif mb-6">¿Listo para recuperar tu espacio?</h2>
           <p className="text-sage-100 text-lg mb-10">
@@ -223,10 +229,10 @@ export default function HomePage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button href="/contacto" variant="secondary" size="lg">Reservar Sesión</Button>
-            <Button href="whatsapp://send?phone=34636757684" variant="outline" className="border-white text-white hover:bg-white/10 hover:text-white" size="lg">Contactar por WhatsApp</Button>
+            <Button href={SITE_CONFIG.contact.whatsapp.getLink()} variant="outline" className="border-white text-white hover:bg-white/10 hover:text-white" size="lg">Contactar por WhatsApp</Button>
           </div>
-        </Container>
-      </Section>
+        </Container >
+      </Section >
     </>
   );
 }

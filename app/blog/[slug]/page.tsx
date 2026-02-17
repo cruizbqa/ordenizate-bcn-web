@@ -1,16 +1,17 @@
 import { Metadata } from 'next';
+import NextImage from 'next/image';
 import { Container } from '@/components/ui/Container';
-import { Section } from '@/components/ui/Section';
 import { Button } from '@/components/ui/Button';
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
 
 // Reusing same mock data for simplicity in this demo
-const POSTS: Record<string, { title: string, category: string, date: string, content: string }> = {
+const POSTS: Record<string, { title: string, category: string, date: string, content: string, image: string }> = {
     'mantener-orden-pisos-pequenos': {
         title: 'Cómo mantener el orden en pisos pequeños en Barcelona',
         category: 'Hogar',
         date: '10 Ene, 2026',
+        image: '/images/blog-hogar.jpg',
         content: `
       <p>Vivir en un piso pequeño en Barcelona tiene su encanto, pero puede convertirse en un reto organizativo. La clave no está en tener más armarios, sino en tener menos cosas y mejores sistemas.</p>
       <h3>1. Aprovecha la altura</h3>
@@ -26,30 +27,35 @@ const POSTS: Record<string, { title: string, category: string, date: string, con
         title: 'Consejos para una mudanza sin caos',
         category: 'Mudanzas',
         date: '02 Ene, 2026',
+        image: '/images/blog-mudanzas.jpg',
         content: '<p>Contenido simulado para el post...</p>'
     },
     'organizacion-cocina-sistema': {
         title: 'Organización de cocina: el sistema que se mantiene',
         category: 'Cocina',
         date: '20 Dic, 2025',
+        image: '/images/blog-cocina.jpg',
         content: '<p>Contenido simulado...</p>'
     },
     'cambio-armario-stress': {
         title: 'Cambio de armario sin estrés',
         category: 'Armarios',
         date: '15 Dic, 2025',
+        image: '/images/blog-armarios.jpg',
         content: '<p>Contenido simulado...</p>'
     },
     'beneficios-orden-mental': {
         title: 'Los beneficios del orden mental',
         category: 'Bienestar',
         date: '05 Dic, 2025',
+        image: '/images/blog-bienestar.jpg',
         content: '<p>Contenido simulado...</p>'
     },
     'materiales-organizacion-imprescindibles': {
         title: 'Mis materiales de organización imprescindibles',
         category: 'Productos',
         date: '28 Nov, 2025',
+        image: '/images/blog-productos.jpg',
         content: '<p>Contenido simulado...</p>'
     }
 };
@@ -100,8 +106,13 @@ export default async function BlogPostPage({ params }: Props) {
                     </h1>
                 </div>
 
-                <div className="aspect-video w-full bg-sand-200 rounded-2xl mb-12 flex items-center justify-center text-gray-400">
-                    [Imagen Principal del Post]
+                <div className="aspect-video w-full relative bg-sand-200 rounded-2xl mb-12 overflow-hidden">
+                    <NextImage
+                        src={post.image}
+                        alt={post.title}
+                        fill
+                        className="object-cover"
+                    />
                 </div>
 
                 <div

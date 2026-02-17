@@ -41,6 +41,7 @@ export default function RootLayout({
   return (
     <html lang="es" className="scroll-smooth">
       <body
+        suppressHydrationWarning
         className={cn(
           inter.variable,
           playfair.variable,
