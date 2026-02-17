@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { SITE_CONFIG } from "@/lib/constants";
 import { Container } from "../ui/Container";
 
 export function Footer() {
@@ -44,7 +45,7 @@ export function Footer() {
                         <ul className="space-y-3 text-sm text-gray-600">
                             <li>Barcelona, España</li>
                             <li><a href="mailto:info@ordenizate.es" className="hover:text-sage-600 transition-colors">info@ordenizate.es</a></li>
-                            <li><a href="https://instagram.com/ordenizatebcn" target="_blank" rel="noopener noreferrer" className="hover:text-sage-600 transition-colors">@ordenizatebcn</a></li>
+                            <li><a href={SITE_CONFIG.contact.instagram.getLink()} target="_blank" rel="noopener noreferrer" className="hover:text-sage-600 transition-colors">@ordenizatebcn</a></li>
                         </ul>
                     </div>
                 </div>

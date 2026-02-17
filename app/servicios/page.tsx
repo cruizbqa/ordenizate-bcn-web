@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import NextImage from 'next/image';
+import { SITE_CONFIG } from '@/lib/constants';
 import { Button } from '@/components/ui/Button';
 import { Container } from '@/components/ui/Container';
 import { Section } from '@/components/ui/Section';
@@ -64,7 +65,7 @@ export default function ServicesPage() {
 
                         <div className="relative w-full md:w-1/3 aspect-[3/4] bg-sand-200 rounded-2xl overflow-hidden">
                             <NextImage
-                                src="/images/service-moving.jpg"
+                                src={`${SITE_CONFIG.basePath}/images/service-moving.jpg`}
                                 alt="Mudanza Organizada"
                                 fill
                                 className="object-cover"
@@ -112,7 +113,7 @@ export default function ServicesPage() {
 
                         <div className="relative w-full md:w-1/3 aspect-[3/4] bg-sand-200 rounded-2xl overflow-hidden">
                             <NextImage
-                                src="/images/service-home.jpg"
+                                src={`${SITE_CONFIG.basePath}/images/service-home.jpg`}
                                 alt="Armario Organizado"
                                 fill
                                 className="object-cover"

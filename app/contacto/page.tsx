@@ -56,7 +56,7 @@ export default function ContactPage() {
                         <div className="order-1 lg:order-2">
                             <div className="relative w-full h-64 md:h-80 lg:h-full rounded-2xl overflow-hidden bg-sand-200">
                                 <NextImage
-                                    src="/images/contact-office.jpg"
+                                    src={`${SITE_CONFIG.basePath}/images/contact-office.jpg`}
                                     alt="Oficina Ordenada"
                                     fill
                                     className="object-cover"

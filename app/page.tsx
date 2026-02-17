@@ -41,7 +41,7 @@ export default function HomePage() {
           <div className="mt-16 sm:mt-24 lg:mt-0 lg:absolute lg:right-0 lg:top-0 lg:w-1/2 lg:h-full lg:opacity-90">
             <div className="relative w-full h-[500px] lg:h-full bg-sand-200 overflow-hidden">
               <NextImage
-                src="/images/hero-home-2.jpg"
+                src={`${SITE_CONFIG.basePath}/images/hero-home-2.jpg`}
                 alt="Espacio Luminoso y Ordenado"
                 fill
                 className="object-cover"

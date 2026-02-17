@@ -45,7 +45,7 @@ export function Navbar() {
                     <div className="flex-shrink-0">
                         <Link href="/" className="flex items-center gap-3 font-serif text-2xl font-bold tracking-tight text-charcoal-900">
                             <NextImage
-                                src="/images/logo.png"
+                                src={`${SITE_CONFIG.basePath}/images/logo.png`}
                                 alt="Ordenízate Logo"
                                 width={40}
                                 height={40}
@@ -68,7 +68,7 @@ export function Navbar() {
                         ))}
                         <div className="flex items-center gap-2 ml-4">
                             <a
-                                href="https://instagram.com/ordenizatebcn"
+                                href={SITE_CONFIG.contact.instagram.getLink()}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="p-2 rounded-full bg-sand-100 text-charcoal-700 hover:bg-sage-100 hover:text-sage-700 transition-colors"
@@ -123,7 +123,7 @@ export function Navbar() {
                             ))}
                             <div className="pt-2 flex items-center gap-3 justify-center">
                                 <a
-                                    href="https://instagram.com/ordenizatebcn"
+                                    href={SITE_CONFIG.contact.instagram.getLink()}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="p-3 rounded-full bg-sand-100 text-charcoal-700 hover:bg-sage-100 hover:text-sage-700 transition-colors"
