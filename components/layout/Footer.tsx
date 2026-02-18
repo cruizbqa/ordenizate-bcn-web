@@ -4,6 +4,8 @@ import Link from "next/link";
 import { SITE_CONFIG } from "@/lib/constants";
 import { handleInstagramDeepLink } from "@/lib/utils";
 import { Container } from "../ui/Container";
+import { InstagramIcon } from "../ui/Icons";
+
 
 export function Footer() {
     return (
@@ -48,7 +50,9 @@ export function Footer() {
                         <ul className="space-y-3 text-sm text-gray-600">
                             <li>Barcelona, España</li>
                             <li><a href="mailto:info@ordenizate.es" className="hover:text-sage-600 transition-colors">info@ordenizate.es</a></li>
-                            <li><a href={SITE_CONFIG.contact.instagram.webUrl} onClick={handleInstagramDeepLink} className="hover:text-sage-600 transition-colors">@ordenizatebcn</a></li>
+                            <li className="flex items-center gap-3">
+                                <a href={SITE_CONFIG.contact.instagram.webUrl} onClick={handleInstagramDeepLink} className="hover:text-sage-600 transition-colors">@ordenizatebcn</a>
+                            </li>
                         </ul>
                     </div>
                 </div>

@@ -18,10 +18,10 @@ export function handleInstagramDeepLink(e: React.MouseEvent<HTMLAnchorElement>) 
     const isAndroid = /Android/i.test(ua);
     const isiOS = /iPhone|iPad|iPod/i.test(ua);
 
-    // Desktop: Compensate for removed target="_blank" in JSX to avoid deep link issues
+    // Desktop: Set target="_blank" dynamically and let the browser navigate
     if (!isAndroid && !isiOS) {
-        e.preventDefault();
-        window.open(webUrl, '_blank', 'noopener,noreferrer');
+        e.currentTarget.target = "_blank";
+        e.currentTarget.rel = "noopener noreferrer";
         return;
     }
 
