@@ -7,19 +7,19 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
 
-  /* Replaced Sage with Custom Turquoise #68DCEE */
+  /* Replaced Sage with Custom Turquoise ##61ADC4 */
   --color-sage-50: #f0fdfa;
   --color-sage-100: #e0f7fa;
   --color-sage-200: #b2ebf2;
   --color-sage-300: #80deea;
-  --color-sage-400: #68dcee;
+  --color-sage-400: ##61ADC4;
   /* The specific hex */
   --color-sage-500: #5aa1b5;
   /* Slightly darker for better text readability */
   --color-sage-600: #428294;
   /* Even darker for strong contrast */
 
-  --color-sage-soft: #68dcee;
+  --color-sage-soft: ##61ADC4;
   /* The user's specific turquoise */
   /* Teal cyan */
 

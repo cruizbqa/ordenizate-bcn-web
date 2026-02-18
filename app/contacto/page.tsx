@@ -27,7 +27,7 @@ export default function ContactPage() {
                 <Container>
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-stretch">
                         {/* Contact Info (Left) */}
-                        <div className="order-2 lg:order-1">
+                        <div className="order-1">
                             <div className="bg-white rounded-2xl p-8 border border-sand-200 shadow-sm h-full">
                                 <h3 className="font-serif text-xl font-bold mb-6">Información de Contacto</h3>
                                 <div className="space-y-6">
@@ -53,7 +53,7 @@ export default function ContactPage() {
                         </div>
 
                         {/* Image (Right on desktop) */}
-                        <div className="order-1 lg:order-2">
+                        <div className="order-2">
                             <div className="relative w-full h-64 md:h-80 lg:h-full rounded-2xl overflow-hidden bg-sand-200">
                                 <NextImage
                                     src={`${SITE_CONFIG.basePath}/images/contact-office.jpg`}
