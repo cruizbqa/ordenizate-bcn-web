@@ -71,8 +71,6 @@ export function Navbar() {
                             <a
                                 href={SITE_CONFIG.contact.instagram.webUrl}
                                 onClick={handleInstagramDeepLink}
-                                target="_blank"
-                                rel="noopener noreferrer"
                                 className="p-2 rounded-full bg-sand-100 text-charcoal-700 hover:bg-sage-100 hover:text-sage-700 transition-colors"
                                 title="Instagram"
                             >
@@ -127,8 +125,6 @@ export function Navbar() {
                                 <a
                                     href={SITE_CONFIG.contact.instagram.webUrl}
                                     onClick={handleInstagramDeepLink}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
                                     className="p-3 rounded-full bg-sand-100 text-charcoal-700 hover:bg-sage-100 hover:text-sage-700 transition-colors"
                                     title="Instagram"
                                 >
