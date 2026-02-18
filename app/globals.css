@@ -7,19 +7,19 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
 
-  /* Replaced Sage with Custom Turquoise #6FB6C9 */
+  /* Replaced Sage with Custom Turquoise #68DCEE */
   --color-sage-50: #f0fdfa;
   --color-sage-100: #e0f7fa;
   --color-sage-200: #b2ebf2;
   --color-sage-300: #80deea;
-  --color-sage-400: #6fb6c9;
+  --color-sage-400: #68dcee;
   /* The specific hex */
   --color-sage-500: #5aa1b5;
   /* Slightly darker for better text readability */
   --color-sage-600: #428294;
   /* Even darker for strong contrast */
 
-  --color-sage-soft: #6fb6c9;
+  --color-sage-soft: #68dcee;
   /* The user's specific turquoise */
   /* Teal cyan */
 
@@ -58,6 +58,11 @@
   .text-balance {
     text-wrap: balance;
   }
+}
+
+.bg-instagram {
+  background: radial-gradient(circle at 35% 90%, #fdf497 0%, #fd5949 25%, #d6249f 50%, #285AEB 100%);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 body {
