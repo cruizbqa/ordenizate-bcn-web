@@ -5,20 +5,25 @@ export function cn(...inputs: ClassValue[]) {
     return twMerge(clsx(inputs));
 }
 
+import { SITE_CONFIG } from './constants';
+
 export function handleInstagramDeepLink(e: React.MouseEvent<HTMLAnchorElement>) {
     // Only run on client side
     if (typeof window === 'undefined') return;
 
-    const username = "ordenizatebcn";
-    const webUrl = `https://www.instagram.com/${username}/`;
+    const { username, webUrl } = SITE_CONFIG.contact.instagram;
 
     // Detect OS
     const ua = navigator.userAgent;
     const isAndroid = /Android/i.test(ua);
     const isiOS = /iPhone|iPad|iPod/i.test(ua);
 
-    // Desktop: let the browser handle the default link (new tab)
-    if (!isAndroid && !isiOS) return;
+    // Desktop: Compensate for removed target="_blank" in JSX to avoid deep link issues
+    if (!isAndroid && !isiOS) {
+        e.preventDefault();
+        window.open(webUrl, '_blank', 'noopener,noreferrer');
+        return;
+    }
 
     // Mobile: prevent default browser navigation to attempt deep linking
     e.preventDefault();
@@ -48,7 +53,8 @@ export function handleInstagramDeepLink(e: React.MouseEvent<HTMLAnchorElement>) 
 
     // Fallback to web if app doesn't open within 1.5s
     timer = setTimeout(() => {
-        // If the gap is small, the user likely stayed on the browser
+        // If the gap is small (< 2s), the user likely stayed on the browser
+        // If the app opened, Date.now() - start would be much larger when they return
         if (Date.now() - start < 2000) {
             window.location.href = webUrl;
         }
