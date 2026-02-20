@@ -16,6 +16,19 @@ Stacks: **Next.js 15 (App Router)**, **TypeScript**, **Tailwind CSS v4**.
     ```
     Open [http://localhost:3000](http://localhost:3000) with your browser.
 
+## 🧪 Testing
+
+We use **Vitest** and **React Testing Library** for unit and component testing.
+
+- **Run all tests (CI mode):**
+  ```bash
+  npm test
+  ```
+- **Run tests in watch mode:**
+  ```bash
+  npm run test:watch
+  ```
+
 ## 📂 Project Structure
 
 -   `app/`: App Router pages and layouts.
@@ -27,15 +40,16 @@ Stacks: **Next.js 15 (App Router)**, **TypeScript**, **Tailwind CSS v4**.
     -   `ui/`: Reusable UI components (Button, Container, Section).
     -   `layout/`: Navbar, Footer.
 -   `globals.css`: Tailwind v4 theme configuration and CSS variables.
+-   `AGENT.md`: Context and guidance for AI agents working on this repo.
 
 ## 🎨 Design System
 
--   **Fonts**: Inter (Sans), Playfair Display (Serif).
+-   **Fonts**: Mosk (Sans & Serif).
 -   **Colors**: 
-    -   Sage (Primary accents)
-    -   Sand (Backgrounds/Warmth)
-    -   Charcoal (Text)
-    -   Off-white (Base)
+    -   Brand Cyan (`#00a6d9`) - Primary accent.
+    -   Sand Gray (`#999da3`) - Neutrals.
+    -   Charcoal - Text.
+    -   Brand accents: Yellow, Purple, Pink.
 
 ## 🛠 Deployment & Setup
 

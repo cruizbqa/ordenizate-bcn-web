@@ -1,10 +1,27 @@
+import { Metadata } from "next";
 import { SITE_CONFIG } from "@/lib/constants";
 import Link from "next/link";
 import NextImage from "next/image";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
-import { Check, Star, Home, Sparkles, Clock, Truck } from "lucide-react";
+import { Check, Home, Sparkles, Clock, Truck } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: 'Organizadora Profesional en Barcelona | Ordenízate Bcn',
+  description: 'Servicio de organización profesional en Barcelona. Mudanzas, armarios, cocinas y hogar. Sistemas de orden que te devuelven tiempo y paz mental.',
+  openGraph: {
+    title: 'Ordenízate Bcn | Organización Profesional en Barcelona',
+    description: 'Transforma tu espacio, transforma tu vida.',
+    url: 'https://ordenizatebcn.com',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Ordenízate Bcn | Organización Profesional en Barcelona',
+    description: 'Transforma tu espacio, transforma tu vida.',
+  },
+};
 
 export default function HomePage() {
   return (
@@ -172,33 +189,15 @@ export default function HomePage() {
         </Container>
       </Section>
 
-      {/* Testimonials */}
+      {/* Testimonials — pending real client quotes */}
+      {/*
       <Section className="bg-sage-50/50">
         <Container>
           <h2 className="text-3xl font-bold text-center mb-12 font-serif text-charcoal-900">Lo que dicen mis clientes</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[1, 2, 3].map((i) => (
-              <div key={i} className="bg-white p-8 rounded-2xl shadow-sm border border-sand-100">
-                <div className="flex gap-1 text-amber-400 mb-4">
-                  <Star fill="currentColor" size={16} />
-                  <Star fill="currentColor" size={16} />
-                  <Star fill="currentColor" size={16} />
-                  <Star fill="currentColor" size={16} />
-                  <Star fill="currentColor" size={16} />
-                </div>
-                <p className="text-gray-600 mb-6 italic">&quot;Contratar a Ordenízate Bcn fue la mejor inversión. Mi mudanza fue increíblemente tranquila y ahora mi casa respira paz.&quot;</p>
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-gray-200 rounded-full" />
-                  <div>
-                    <p className="font-semibold text-sm">María G.</p>
-                    <p className="text-xs text-gray-500">Sant Cugat del Vallès</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
+          Add real testimonials here when available.
         </Container>
       </Section>
+      */}
 
       {/* FAQ *
       <Section>

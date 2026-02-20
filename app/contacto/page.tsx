@@ -1,13 +1,19 @@
-'use client';
-
-import { useState } from 'react';
+import { Metadata } from 'next';
 import NextImage from 'next/image';
 import { SITE_CONFIG } from '@/lib/constants';
 import { Container } from '@/components/ui/Container';
 import { Section } from '@/components/ui/Section';
-// TODO: Habilitar formulario de contacto en el futuro
-// import { ContactForm } from '@/components/ContactForm';
-import { MapPin, Mail, MessageCircle, Copy, Check } from 'lucide-react';
+import { ContactItem } from '@/components/ui/ContactItem';
+import { MapPin, Mail, MessageCircle } from 'lucide-react';
+
+export const metadata: Metadata = {
+    title: 'Contacto',
+    description: 'Contacta con Ordenízate Bcn. Organizadora profesional en Barcelona. Escríbenos por email o WhatsApp para empezar.',
+    openGraph: {
+        title: 'Contacto | Ordenízate Bcn',
+        description: 'Cuéntanos qué necesitas. Te ayudamos a transformar tu espacio.',
+    },
+};
 
 export default function ContactPage() {
     return (
@@ -29,7 +35,7 @@ export default function ContactPage() {
                         {/* Contact Info (Left) */}
                         <div className="order-1">
                             <div className="bg-white rounded-2xl p-8 border border-sand-200 shadow-sm h-full">
-                                <h3 className="font-serif text-xl font-bold mb-6">Información de Contacto</h3>
+                                <h2 className="font-serif text-xl font-bold mb-6">Información de Contacto</h2>
                                 <div className="space-y-6">
                                     <ContactItem
                                         icon={<Mail className="text-sage-600" />}
@@ -57,61 +63,15 @@ export default function ContactPage() {
                             <div className="relative w-full h-64 md:h-80 lg:h-full rounded-2xl overflow-hidden bg-sand-200">
                                 <NextImage
                                     src={`${SITE_CONFIG.basePath}/images/contact-office.jpg`}
-                                    alt="Oficina Ordenada"
+                                    alt="Espacio de trabajo ordenado"
                                     fill
                                     className="object-cover"
                                 />
                             </div>
-
-                            {/* TODO: Habilitar formulario de contacto "Envíame un mensaje" en el futuro */}
-                            {/* <ContactForm /> */}
                         </div>
                     </div>
                 </Container>
             </Section>
         </div>
     );
-}
-
-function ContactItem({ icon, title, content, copyable }: { icon: React.ReactNode, title: string, content: string, copyable?: boolean }) {
-    const [copied, setCopied] = useState(false);
-
-    const handleCopy = async () => {
-        try {
-            await navigator.clipboard.writeText(content);
-            setCopied(true);
-            setTimeout(() => setCopied(false), 2000);
-        } catch (err) {
-            console.error('Failed to copy:', err);
-        }
-    };
-
-    return (
-        <div className="flex gap-4">
-            <div className="bg-sand-50 p-3 rounded-lg h-fit">
-                {icon}
-            </div>
-            <div className="flex flex-col flex-1">
-                <span className="text-xs font-semibold text-gray-500 uppercase tracking-wide">{title}</span>
-                {copyable ? (
-                    <div className="flex items-center gap-2">
-                        <span className="text-charcoal-900 font-medium">{content}</span>
-                        <button
-                            onClick={handleCopy}
-                            className="p-1.5 rounded-md hover:bg-sand-100 transition-colors text-gray-500 hover:text-sage-600"
-                            title="Copiar al portapapeles"
-                        >
-                            {copied ? (
-                                <Check className="w-4 h-4 text-green-600" />
-                            ) : (
-                                <Copy className="w-4 h-4" />
-                            )}
-                        </button>
-                    </div>
-                ) : (
-                    <span className="text-charcoal-900 font-medium">{content}</span>
-                )}
-            </div>
-        </div>
-    )
 }
