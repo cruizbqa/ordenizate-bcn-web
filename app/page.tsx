@@ -93,7 +93,7 @@ export default function HomePage() {
           </div>
           <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-12 lg:mx-0 lg:max-w-none lg:grid-cols-2">
             {/* Service 1 */}
-            <div className="flex flex-col rounded-3xl bg-sand-50 p-8 ring-1 ring-gray-200 xl:p-10 transition-shadow hover:shadow-lg">
+            <div className="flex flex-col rounded-3xl bg-sand-50 p-8 ring-1 ring-gray-200 xl:p-10 transition-shadow hover:shadow-lg border-t-4 border-brand-yellow">
               <div className="flex items-center justify-between gap-x-4">
                 <h3 className="text-lg font-semibold leading-8 text-charcoal-900 font-serif">MUDANZAS (PRE + POST)</h3>
                 <Truck className="h-6 w-6 text-brand-yellow" />
@@ -113,7 +113,7 @@ export default function HomePage() {
             </div>
 
             {/* Service 2 */}
-            <div className="flex flex-col rounded-3xl bg-white p-8 ring-1 ring-gray-200 xl:p-10 transition-shadow hover:shadow-lg">
+            <div className="flex flex-col rounded-3xl bg-white p-8 ring-1 ring-gray-200 xl:p-10 transition-shadow hover:shadow-lg border-t-4 border-brand-purple">
               <div className="flex items-center justify-between gap-x-4">
                 <h3 className="text-lg font-semibold leading-8 text-charcoal-900 font-serif">ORGANIZACIÓN DE HOGAR</h3>
                 <Home className="h-6 w-6 text-brand-purple" />
@@ -163,7 +163,7 @@ export default function HomePage() {
       */}
 
       {/* How it Works */}
-      <Section>
+      <Section className="bg-sand-50/50">
         <Container>
           <div className="mx-auto max-w-2xl text-center mb-16">
             <h2 className="text-3xl font-bold tracking-tight text-charcoal-900 sm:text-4xl font-serif">Cómo Trabajamos</h2>
@@ -177,8 +177,8 @@ export default function HomePage() {
               { title: "3. Sesión de Orden", desc: "Trabajamos mano a mano (o lo hago por ti).", icon: <Sparkles /> },
               { title: "4. Mantenimiento", desc: "Sistemas fáciles de mantener en el tiempo.", icon: <Check /> }
             ].map((step, idx) => (
-              <div key={idx} className="flex flex-col items-center text-center p-6 bg-sand-50 rounded-2xl">
-                <div className={`mb-4 p-3 bg-white rounded-full shadow-sm ${idx === 0 ? 'text-sage-600' : idx === 1 ? 'text-brand-yellow' : idx === 2 ? 'text-brand-purple' : 'text-brand-pink'}`}>
+              <div key={idx} className="flex flex-col items-center text-center p-6 bg-white rounded-2xl shadow-sm ring-1 ring-gray-200/50">
+                <div className={`mb-4 p-3 bg-sand-50 rounded-full ${idx === 0 ? 'text-sage-600' : idx === 1 ? 'text-brand-yellow' : idx === 2 ? 'text-brand-purple' : 'text-brand-pink'}`}>
                   {step.icon}
                 </div>
                 <h3 className="font-serif font-bold text-lg mb-2">{step.title}</h3>
@@ -221,15 +221,15 @@ export default function HomePage() {
       */}
 
       {/* Final CTA */}
-      <Section className="bg-sage-600 text-white text-center">
+      <Section className="bg-charcoal-900 text-white text-center" spacing="lg">
         <Container className="max-w-2xl">
-          <h2 className="text-3xl md:text-4xl font-bold font-serif mb-6">¿Listo para recuperar tu espacio?</h2>
-          <p className="text-sage-100 text-lg mb-10">
+          <h2 className="text-3xl md:text-4xl font-bold font-serif mb-6 text-white">¿Listo para recuperar tu espacio?</h2>
+          <p className="text-sand-300 text-lg mb-10">
             No dejes que el desorden controle tu vida. Da el primer paso hoy.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button href="/contacto" variant="secondary" size="lg">Reservar Sesión</Button>
-            <Button href={SITE_CONFIG.contact.whatsapp.getLink()} variant="outline" className="border-white text-white hover:bg-white/10 hover:text-white" size="lg">Contactar por WhatsApp</Button>
+            <Button href={SITE_CONFIG.contact.whatsapp.getLink()} variant="outline" className="border-white/20 text-white hover:bg-white/10 hover:text-white" size="lg">Contactar por WhatsApp</Button>
           </div>
         </Container>
       </Section>
