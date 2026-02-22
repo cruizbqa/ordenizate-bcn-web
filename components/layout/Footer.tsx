@@ -15,7 +15,7 @@ export function Footer() {
                     {/* Brand */}
                     <div className="md:col-span-1">
                         <Link href="/" className="font-serif text-2xl font-bold text-charcoal-900">
-                            Ordenízate Bcn
+                            Ordenízate
                         </Link>
                         <p className="mt-4 text-sm text-gray-600 max-w-xs">
                             Transformando espacios y vidas a través del orden profesional en Barcelona y alrededores.
@@ -37,10 +37,11 @@ export function Footer() {
                     <div>
                         <h3 className="font-serif text-lg font-semibold text-charcoal-900 mb-4">Servicios</h3>
                         <ul className="space-y-3 text-sm text-gray-600">
-                            <li><Link href="/servicios#mudanzas" className="hover:text-sage-600 transition-colors">Mudanzas</Link></li>
+                            <li><Link href="/servicios#mudanzas" className="hover:text-sage-600 transition-colors">Gestión de Mudanzas</Link></li>
                             <li><Link href="/servicios#hogar" className="hover:text-sage-600 transition-colors">Organización Hogar</Link></li>
                             <li><Link href="/servicios#armarios" className="hover:text-sage-600 transition-colors">Cambio de Armario</Link></li>
-                            <li><Link href="/servicios#cocinas" className="hover:text-sage-600 transition-colors">Cocinas</Link></li>
+                            <li><Link href="/servicios#cocinas" className="hover:text-sage-600 transition-colors">Cocinas y Despensas</Link></li>
+                            <li><Link href="/servicios#online" className="hover:text-sage-600 transition-colors">Asesoría Online</Link></li>
                         </ul>
                     </div>
 
