@@ -139,6 +139,7 @@ The contact form submits to `/api/contact` (POST).
 - **Primary CTA:** WhatsApp (lowest friction for the target audience)
 - **Secondary CTA:** Contact form / "Reserva una llamada"
 - Copy is friendly but premium — no exaggerated or pushy language
+- **Premium Alignment:** All form inputs (Input, Select, Textarea) must share a consistent height (`h-11`) and label spacing (`mb-1.5`) to maintain visual harmony in desktop views.
 - **Mobile-first** design; all layouts must work flawlessly on small screens
 - Fast loading is non-negotiable — minimize JS, optimize images
 - Clear trust signals: real testimonials, real service descriptions
@@ -235,7 +236,9 @@ npm run test:watch  # Interactive watch mode for development
 **Pages (`app/*`)**
 - `metadata` exports include `title`, `description`, `openGraph`, `twitter`
 - Primary CTA (WhatsApp) present on key pages
-- Contact page form behavior (client validation, required fields)
+- Contact page form behavior (client validation, required fields, custom Select behavior)
+- Form validation error messages (must use "Campo obligatorio" and "Email no válido")
+- Form submission flow (pending state, success/error feedback)
 
 ### What NOT to Test
 
