@@ -4,6 +4,7 @@ import { SITE_CONFIG } from '@/lib/constants';
 import { Container } from '@/components/ui/Container';
 import { Section } from '@/components/ui/Section';
 import { ContactItem } from '@/components/ui/ContactItem';
+import { ContactForm } from '@/components/contact/ContactForm';
 import { MapPin, Mail, MessageCircle } from 'lucide-react';
 
 export const metadata: Metadata = {
@@ -71,57 +72,7 @@ export default function ContactPage() {
 
                         {/* Form (Right on desktop) */}
                         <div className="order-2">
-                            <div className="bg-white rounded-2xl p-8 border border-sand-200 shadow-sm h-full flex flex-col justify-center">
-                                <form className="space-y-4">
-                                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                        <div className="space-y-1">
-                                            <label htmlFor="name" className="text-sm font-medium text-charcoal-900">Nombre</label>
-                                            <input type="text" id="name" name="name" className="w-full px-4 py-2 rounded-lg border border-sand-200 focus:outline-none focus:ring-2 focus:ring-sage-500 focus:border-transparent transition-colors text-sm" required />
-                                        </div>
-                                        <div className="space-y-1">
-                                            <label htmlFor="email" className="text-sm font-medium text-charcoal-900">Email</label>
-                                            <input type="email" id="email" name="email" className="w-full px-4 py-2 rounded-lg border border-sand-200 focus:outline-none focus:ring-2 focus:ring-sage-500 focus:border-transparent transition-colors text-sm" required />
-                                        </div>
-                                    </div>
-
-                                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                        <div className="space-y-1">
-                                            <label htmlFor="city" className="text-sm font-medium text-charcoal-900">Ciudad</label>
-                                            <input type="text" id="city" name="city" className="w-full px-4 py-2 rounded-lg border border-sand-200 focus:outline-none focus:ring-2 focus:ring-sage-500 focus:border-transparent transition-colors text-sm" required />
-                                        </div>
-                                        <div className="space-y-1">
-                                            <label htmlFor="service" className="text-sm font-medium text-charcoal-900">Tipo de servicio</label>
-                                            <select id="service" name="service" defaultValue="" className="w-full px-4 py-2 rounded-lg border border-sand-200 focus:outline-none focus:ring-2 focus:ring-sage-500 focus:border-transparent transition-colors text-sm bg-white" required>
-                                                <option value="" disabled>Selecciona una opción</option>
-                                                <option value="mudanza">Mudanzas (Pre/Post)</option>
-                                                <option value="hogar">Organización de Hogar</option>
-                                                <option value="armarios">Armarios y Vestidores</option>
-                                                <option value="cocinas">Cocinas y Despensas</option>
-                                                <option value="online">Asesoría Online</option>
-                                                <option value="otro">Otro</option>
-                                            </select>
-                                        </div>
-                                    </div>
-
-                                    <div className="space-y-1">
-                                        <label htmlFor="message" className="text-sm font-medium text-charcoal-900">Mensaje</label>
-                                        <textarea id="message" name="message" rows={4} className="w-full px-4 py-2 rounded-lg border border-sand-200 focus:outline-none focus:ring-2 focus:ring-sage-500 focus:border-transparent transition-colors text-sm resize-none" required></textarea>
-                                    </div>
-
-                                    <button type="submit" className="w-full bg-sage-600 hover:bg-sage-700 text-white font-medium py-3 rounded-xl transition-colors mt-2">
-                                        Enviar mensaje
-                                    </button>
-
-                                    <div className="text-center mt-4 pt-4 border-t border-sand-100 space-y-1">
-                                        <p className="text-xs text-gray-500">
-                                            Tus datos solo se usarán para responderte. No envío spam.
-                                        </p>
-                                        <p className="text-xs text-brand-purple font-medium">
-                                            Te responderé personalmente y valoraremos juntas la mejor solución.
-                                        </p>
-                                    </div>
-                                </form>
-                            </div>
+                            <ContactForm />
                         </div>
                     </div>
                 </Container>

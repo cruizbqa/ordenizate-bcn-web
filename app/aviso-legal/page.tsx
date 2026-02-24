@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import Link from 'next/link';
 import { SITE_CONFIG } from '@/lib/constants';
 import { Container } from '@/components/ui/Container';
 import { Section } from '@/components/ui/Section';
@@ -58,7 +59,7 @@ export default function AvisoLegalPage() {
                                 libre circulación de estos datos (RGPD), velando por garantizar un correcto uso y tratamiento de los datos personales del usuario.
                             </p>
                             <p className="mt-4">
-                                Para más información, consulte nuestra <a href="/politica-privacidad" className="text-sage-600 underline">Política de Privacidad</a>.
+                                Para más información, consulte nuestra <Link href="/politica-privacidad" className="text-sage-600 underline">Política de Privacidad</Link>.
                             </p>
                         </section>
 
