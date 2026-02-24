@@ -61,8 +61,8 @@ export function Footer() {
                 <div className="border-t border-sand-200 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500">
                     <p>&copy; {new Date().getFullYear()} Ordenízate Bcn. Todos los derechos reservados.</p>
                     <div className="flex gap-6">
-                        <Link href="#" className="hover:text-sage-600">Aviso Legal</Link>
-                        <Link href="#" className="hover:text-sage-600">Política de Privacidad</Link>
+                        <Link href="/aviso-legal" className="hover:text-sage-600">Aviso Legal</Link>
+                        <Link href="/politica-privacidad" className="hover:text-sage-600">Política de Privacidad</Link>
                     </div>
                 </div>
             </Container>
