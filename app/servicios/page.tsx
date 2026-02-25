@@ -36,9 +36,12 @@ export default function ServicesPage() {
                             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-yellow-50 text-brand-yellow text-sm font-medium mb-4">
                                 <Truck size={16} /> Especialidad
                             </div>
-                            <h2 className="text-3xl font-serif font-bold text-charcoal-900 mb-6">Gestión de Mudanzas</h2>
+                            <h2 className="text-3xl font-serif font-bold text-charcoal-900 mb-6">Mudanzas (Pre + Post)</h2>
                             <p className="text-gray-600 mb-6 text-lg">
-                                La mudanza es uno de los momentos más estresantes de la vida. Lo convertimos en una experiencia tranquila y organizada. Nos encargamos de todo.
+                                La mudanza suele venir acompañada de decisiones, tiempos ajustados y una carga añadida. Nos ocupamos de estructurar el proceso para que se viva de forma tranquila y organizada.
+                            </p>
+                            <p className="text-gray-600 mb-8 text-base">
+                                <strong>Nota:</strong> El servicio es completamente adaptable: puede delegarse de forma integral o contratar únicamente la fase de pre-mudanza, mudanza o post-mudanza, según las necesidades de cada hogar.
                             </p>
 
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
@@ -51,11 +54,11 @@ export default function ServicesPage() {
                                     </ul>
                                 </div>
                                 <div className="bg-white p-6 rounded-xl border border-sand-200 shadow-sm">
-                                    <h3 className="font-semibold text-lg mb-2">Post-Mudanza</h3>
+                                    <h3 className="font-semibold text-lg mb-2">Post-mudanza</h3>
                                     <ul className="space-y-2 text-sm text-gray-600">
-                                        <li className="flex gap-2"><Check size={16} className="text-sage-500" /> Desembalaje completo</li>
-                                        <li className="flex gap-2"><Check size={16} className="text-sage-500" /> Organización estratégica</li>
-                                        <li className="flex gap-2"><Check size={16} className="text-sage-500" /> Retirada de cajas</li>
+                                        <li className="flex gap-2"><Check size={16} className="text-sage-500" /> Desembalaje integral y colocación minuciosa</li>
+                                        <li className="flex gap-2"><Check size={16} className="text-sage-500" /> Organización funcional adaptada a tu estilo de vida</li>
+                                        <li className="flex gap-2"><Check size={16} className="text-sage-500" /> Entrega final del hogar listo para disfrutar</li>
                                     </ul>
                                 </div>
                             </div>
@@ -86,26 +89,34 @@ export default function ServicesPage() {
                                 <Shirt size={16} /> Vestidores
                             </div>
                             <h2 className="text-3xl font-serif font-bold text-charcoal-900 mb-6">Armarios y Vestidores</h2>
-                            <p className="text-gray-600 mb-6 text-lg">
-                                Maximizamos cada centímetro de tu armario. Creamos un sistema donde todo es visible y accesible, facilitando tu rutina diaria y el cambio de temporada.
-                            </p>
+                            <div className="text-gray-600 mb-6 text-lg space-y-4">
+                                <p>
+                                    Creamos un sistema de organización claro y coherente con la realidad de cada hogar, donde cada prenda encuentra su lugar y el espacio se vuelve más ligero, claro y fácil de mantener.
+                                </p>
+                                <p className="text-base text-gray-500">
+                                    Aplicamos técnicas profesionales adaptadas a la tipología de cada prenda y a la configuración del armario, asegurando un resultado práctico, estético y duradero en el tiempo.
+                                </p>
+                            </div>
 
-                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
-                                <div className="flex items-start gap-3">
-                                    <Check className="mt-1 text-brand-pink shrink-0" size={20} />
-                                    <p className="text-gray-600 text-sm">Doblado vertical para ganar espacio y visibilidad.</p>
-                                </div>
-                                <div className="flex items-start gap-3">
-                                    <Check className="mt-1 text-brand-pink shrink-0" size={20} />
-                                    <p className="text-gray-600 text-sm">Categorización por tipo de prenda y color.</p>
-                                </div>
-                                <div className="flex items-start gap-3">
-                                    <Check className="mt-1 text-brand-pink shrink-0" size={20} />
-                                    <p className="text-gray-600 text-sm">Asesoramiento en perchas y accesorios de orden.</p>
-                                </div>
-                                <div className="flex items-start gap-3">
-                                    <Check className="mt-1 text-brand-pink shrink-0" size={20} />
-                                    <p className="text-gray-600 text-sm">Gestión de ropa para donar o reciclar.</p>
+                            <div className="mb-8">
+                                <h3 className="font-semibold text-charcoal-900 mb-4">El servicio incluye:</h3>
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                    <div className="flex items-start gap-3">
+                                        <Check className="mt-1 text-brand-pink shrink-0" size={20} />
+                                        <p className="text-gray-600 text-sm">Técnicas profesionales de doblado y clasificación.</p>
+                                    </div>
+                                    <div className="flex items-start gap-3">
+                                        <Check className="mt-1 text-brand-pink shrink-0" size={20} />
+                                        <p className="text-gray-600 text-sm">Selección adecuada de perchas y accesorios.</p>
+                                    </div>
+                                    <div className="flex items-start gap-3">
+                                        <Check className="mt-1 text-brand-pink shrink-0" size={20} />
+                                        <p className="text-gray-600 text-sm">Optimización interior según tipología de prenda.</p>
+                                    </div>
+                                    <div className="flex items-start gap-3">
+                                        <Check className="mt-1 text-brand-pink shrink-0" size={20} />
+                                        <p className="text-gray-600 text-sm">Seguimiento posterior para garantizar el sistema.</p>
+                                    </div>
                                 </div>
                             </div>
 
@@ -124,34 +135,83 @@ export default function ServicesPage() {
                 </Container>
             </Section>
 
-            {/* category: Hogar */}
-            <Section id="hogar" className="bg-white">
+            {/* category: Cocinas */}
+            <Section id="cocinas" className="bg-white">
                 <Container>
                     <div className="flex flex-col md:flex-row gap-12 items-center">
                         <div className="flex-1">
+                            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sage-50 text-sage-600 text-sm font-medium mb-4">
+                                <Box size={16} /> Criterio
+                            </div>
+                            <h2 className="text-3xl font-serif font-bold text-charcoal-900 mb-6">Cocinas y Despensas</h2>
+                            <div className="text-gray-600 mb-6 text-lg space-y-4">
+                                <p>
+                                    La cocina es un espacio de movimiento continuo. Cuando no existe una estructura clara, se generan duplicidades, acumulaciones y una sensación constante de desorden.
+                                </p>
+                                <p className="text-base text-gray-500">
+                                    Diseñamos una organización coherente y fácil de mantener, donde cada categoría tiene su lugar y cada zona responde a un uso real. Aplicamos soluciones prácticas que permiten visualizar mejor lo que hay, evitar compras innecesarias y mantener el equilibrio sin esfuerzo añadido.
+                                </p>
+                            </div>
+
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
+                                <div className="bg-white p-5 rounded-2xl border border-sand-200 shadow-sm">
+                                    <h3 className="font-semibold text-charcoal-900 mb-1">Cocina</h3>
+                                    <p className="text-xs text-gray-500 leading-relaxed text-balance">Distribución funcional de utensilios y vajilla, priorizando el acceso cómodo.</p>
+                                </div>
+                                <div className="bg-white p-5 rounded-2xl border border-sand-200 shadow-sm">
+                                    <h3 className="font-semibold text-charcoal-900 mb-1">Despensa</h3>
+                                    <p className="text-xs text-gray-500 leading-relaxed text-balance">Organización por categorías lógicas que facilitan la rotación de productos.</p>
+                                </div>
+                            </div>
+
+                            <Button href="/contacto" variant="primary" size="lg" className="w-full sm:w-auto">Organizar mi Cocina</Button>
+                        </div>
+
+                        <div className="relative w-full md:w-1/3 aspect-[4/5] bg-sand-200 rounded-3xl overflow-hidden shadow-xl">
+                            <NextImage
+                                src={`${SITE_CONFIG.basePath}/images/service-kitchen.png`}
+                                alt="Cocina y despensa organizada con criterio"
+                                fill
+                                className="object-cover"
+                            />
+                        </div>
+                    </div>
+                </Container>
+            </Section>
+
+            {/* category: Estancias */}
+            <Section id="hogar" className="bg-sand-50/50">
+                <Container>
+                    <div className="flex flex-col md:flex-row-reverse gap-12 items-center">
+                        <div className="flex-1">
                             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-50 text-brand-purple text-sm font-medium mb-4">
-                                <Home size={16} /> Espacios
+                                <Home size={16} /> Armonía
                             </div>
                             <h2 className="text-3xl font-serif font-bold text-charcoal-900 mb-6">Organización de Estancias</h2>
-                            <p className="text-gray-600 mb-6 text-lg">
-                                Ponemos orden en cualquier rincón de tu casa que te genere ruido visual. Creamos sistemas adaptados a tu estilo de vida.
-                            </p>
+                            <div className="text-gray-600 mb-6 text-lg space-y-4">
+                                <p>
+                                    Cada rincón del hogar tiene una función. Cuando el orden se pierde, aumenta la sensación de saturación.
+                                </p>
+                                <p className="text-base text-gray-500">
+                                    Diseñamos sistemas adaptados al uso real del espacio, facilitando su mantenimiento y reduciendo el desorden acumulado, devolviendo equilibrio y funcionalidad al hogar.
+                                </p>
+                            </div>
 
-                            <div className="space-y-6 mb-8">
-                                <ServiceItem
-                                    title="Habitaciones Infantiles"
-                                    description="Espacios que fomentan la autonomía de los más pequeños y facilitan la recogida diaria."
-                                    icon={<Shirt className="text-brand-purple" />}
-                                />
+                            <div className="space-y-6 mb-8 text-balance">
                                 <ServiceItem
                                     title="Baños y Zonas de Lavado"
-                                    description="Optimización de productos y sistemas de clasificación de ropa sucia/limpia."
+                                    description="Clasificación lógica de productos para simplificar la rutina diaria."
                                     icon={<Sparkles className="text-brand-purple" />}
                                 />
                                 <ServiceItem
-                                    title="Despachos y Trasteros"
-                                    description="Clasificación de documentos y optimización de espacios de almacenaje profundo."
+                                    title="Despachos"
+                                    description="Estructuración de documentación y materiales para recuperar claridad y enfoque."
                                     icon={<Briefcase className="text-brand-purple" />}
+                                />
+                                <ServiceItem
+                                    title="Trasteros"
+                                    description="Reorganización estratégica de almacenaje profundo, priorizando accesibilidad."
+                                    icon={<Box className="text-brand-purple" />}
                                 />
                             </div>
 
@@ -170,39 +230,42 @@ export default function ServicesPage() {
                 </Container>
             </Section>
 
-            <div className="w-full h-px bg-sand-200" />
-
-            {/* category: Cocinas */}
-            <Section id="cocinas" className="bg-sand-50/50">
+            {/* category: Infantil */}
+            <Section id="infantil" className="bg-white">
                 <Container>
-                    <div className="flex flex-col md:flex-row-reverse gap-12 items-center">
+                    <div className="flex flex-col md:flex-row gap-12 items-center">
                         <div className="flex-1">
-                            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sage-50 text-sage-600 text-sm font-medium mb-4">
-                                <Box size={16} /> Despensas
+                            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-pink-50 text-brand-pink text-sm font-medium mb-4">
+                                <Sparkles size={16} /> Cuidado
                             </div>
-                            <h2 className="text-3xl font-serif font-bold text-charcoal-900 mb-6">Cocinas y Despensas</h2>
-                            <p className="text-gray-600 mb-6 text-lg">
-                                La cocina es el corazón del hogar. La organizamos para que cocinar sea un placer, eliminando el ruido visual y optimizando el flujo de trabajo.
-                            </p>
+                            <h2 className="text-3xl font-serif font-bold text-charcoal-900 mb-6">Organización Infantil</h2>
+                            <div className="text-gray-600 mb-6 text-lg space-y-4">
+                                <p>
+                                    La llegada de un bebé o los cambios de etapa traen ilusión, pero también decisiones y organización constante. Diseñamos espacios claros y funcionales que acompañan este proceso, aportando estructura sin añadir presión.
+                                </p>
+                                <p className="text-base text-gray-500">
+                                    Creamos sistemas prácticos y fáciles de mantener, pensados para aliviar la carga mental y facilitar el día a día familiar.
+                                </p>
+                            </div>
 
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
                                 <div className="bg-white p-5 rounded-2xl border border-sand-200 shadow-sm">
-                                    <h3 className="font-semibold text-charcoal-900 mb-2">Despensas</h3>
-                                    <p className="text-xs text-gray-500 leading-relaxed">Categorización de alimentos, control de caducidades y etiquetado premium.</p>
+                                    <h3 className="font-semibold text-charcoal-900 mb-1">Llegada del Bebé</h3>
+                                    <p className="text-xs text-gray-500 leading-relaxed">Organización integral, priorizando accesibilidad y el descanso.</p>
                                 </div>
                                 <div className="bg-white p-5 rounded-2xl border border-sand-200 shadow-sm">
-                                    <h3 className="font-semibold text-charcoal-900 mb-2">Menaje</h3>
-                                    <p className="text-xs text-gray-500 leading-relaxed">Optimización de cajones de cubiertos, ollas y pequeños electrodomésticos.</p>
+                                    <h3 className="font-semibold text-charcoal-900 mb-1 text-balance">Cambios de Etapa</h3>
+                                    <p className="text-xs text-gray-500 leading-relaxed">Adaptación del espacio a nuevas tallas y necesidades evolutivas.</p>
                                 </div>
                             </div>
 
-                            <Button href="/contacto" variant="primary" size="lg" className="w-full sm:w-auto">Organizar mi Cocina</Button>
+                            <Button href="/contacto" variant="primary" size="lg" className="w-full sm:w-auto">Organizar Espacio Infantil</Button>
                         </div>
 
                         <div className="relative w-full md:w-1/3 aspect-[4/5] bg-sand-200 rounded-3xl overflow-hidden shadow-xl">
                             <NextImage
-                                src={`${SITE_CONFIG.basePath}/images/service-kitchen.png`}
-                                alt="Cocina y despensa perfectamente organizada con botes etiquetados premium y menaje categorizado"
+                                src={`${SITE_CONFIG.basePath}/images/service-baby.png`}
+                                alt="Habitación infantil organizada y armonizada"
                                 fill
                                 className="object-cover"
                             />
@@ -212,39 +275,51 @@ export default function ServicesPage() {
             </Section>
 
             {/* category: Online */}
-            <Section id="online" className="bg-white">
+            <Section id="online" className="bg-sand-50/50">
                 <Container>
-                    <div className="flex flex-col md:flex-row gap-12 items-center">
+                    <div className="flex flex-col md:flex-row-reverse gap-12 items-center">
                         <div className="flex-1">
                             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-blue-600 text-sm font-medium mb-4">
-                                <Monitor size={16} /> Digital
+                                <Monitor size={16} /> A tu ritmo
                             </div>
                             <h2 className="text-3xl font-serif font-bold text-charcoal-900 mb-6">Asesoría Online</h2>
-                            <p className="text-gray-600 mb-6 text-lg">
-                                Estés donde estés, te ayudamos a organizar tu espacio a través de videollamadas. Una opción flexible para quienes prefieren el "hazlo tú mismo" con guía experta.
-                            </p>
+                            <div className="text-gray-600 mb-6 text-lg space-y-4">
+                                <p>
+                                    No siempre es necesario un servicio presencial. A través de videollamadas estructuradas, analizamos el espacio y diseñamos un plan claro, realista y fácil de aplicar.
+                                </p>
+                                <p className="text-base text-gray-500">
+                                    Es una modalidad práctica y resolutiva, pensada para quienes quieren organizar por sí mismas, pero con criterio profesional y evitando la sensación de improvisar o hacerlo solas.
+                                </p>
+                            </div>
 
-                            <div className="space-y-4 mb-8">
-                                <div className="flex items-start gap-3">
-                                    <Check className="mt-1 text-blue-600 shrink-0" size={20} />
-                                    <p className="text-gray-600 text-sm">Videollamada de diagnóstico y planificación personalizada.</p>
-                                </div>
-                                <div className="flex items-start gap-3">
-                                    <Check className="mt-1 text-blue-600 shrink-0" size={20} />
-                                    <p className="text-gray-600 text-sm">Lista de compras recomendada y guía paso a paso.</p>
-                                </div>
-                                <div className="flex items-start gap-3">
-                                    <Check className="mt-1 text-blue-600 shrink-0" size={20} />
-                                    <p className="text-gray-600 text-sm">Seguimiento y resolución de dudas durante el proceso.</p>
+                            <div className="mb-8">
+                                <h3 className="font-semibold text-charcoal-900 mb-4">El servicio incluye:</h3>
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                    <div className="flex items-start gap-3">
+                                        <Check className="mt-1 text-blue-600 shrink-0" size={20} />
+                                        <p className="text-gray-600 text-sm">Videollamada de diagnóstico y planificación.</p>
+                                    </div>
+                                    <div className="flex items-start gap-3">
+                                        <Check className="mt-1 text-blue-600 shrink-0" size={20} />
+                                        <p className="text-gray-600 text-sm">Propuesta estructurada con recomendaciones.</p>
+                                    </div>
+                                    <div className="flex items-start gap-3">
+                                        <Check className="mt-1 text-blue-600 shrink-0" size={20} />
+                                        <p className="text-gray-600 text-sm">Guía paso a paso adaptada al espacio.</p>
+                                    </div>
+                                    <div className="flex items-start gap-3">
+                                        <Check className="mt-1 text-blue-600 shrink-0" size={20} />
+                                        <p className="text-gray-600 text-sm">Seguimiento durante la implementación.</p>
+                                    </div>
                                 </div>
                             </div>
 
-                            <Button href="/contacto" variant="outline" size="lg" className="w-full sm:w-auto">Reservar Asesoría Online</Button>
+                            <Button href="/contacto" variant="primary" size="lg" className="w-full sm:w-auto">Reservar Asesoría Online</Button>
                         </div>
                         <div className="relative w-full md:w-1/3 aspect-[4/5] bg-sand-200 rounded-3xl overflow-hidden shadow-xl">
                             <NextImage
                                 src={`${SITE_CONFIG.basePath}/images/service-online.png`}
-                                alt="Sesión de organización online por videollamada"
+                                alt="Sesión de organización online por videollamada profesional"
                                 fill
                                 className="object-cover"
                             />

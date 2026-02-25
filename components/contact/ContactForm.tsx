@@ -165,9 +165,10 @@ export function ContactForm() {
                         <Select
                             options={[
                                 { value: "mudanza", label: "Mudanzas (Pre/Post)" },
-                                { value: "hogar", label: "Organización de Hogar" },
                                 { value: "armarios", label: "Armarios y Vestidores" },
                                 { value: "cocinas", label: "Cocinas y Despensas" },
+                                { value: "estancias", label: "Estancias" },
+                                { value: "infantil", label: "Organización Infantil" },
                                 { value: "online", label: "Asesoría Online" },
                                 { value: "otro", label: "Otro" },
                             ]}
@@ -259,7 +260,7 @@ export function ContactForm() {
 
                 <div className="text-center mt-6 pt-6 border-t border-sand-100 space-y-1">
                     <p className="text-sm text-sage-800 font-bold tracking-tight">
-                        Te responderé personalmente y valoraremos juntas la mejor solución.
+                        Completa los datos y te contactaré lo antes posible para valorar tu caso.
                     </p>
                 </div>
             </form>

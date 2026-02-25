@@ -9,9 +9,9 @@ import { MapPin, Mail, MessageCircle } from 'lucide-react';
 
 export const metadata: Metadata = {
     title: 'Contacto',
-    description: 'Contacta con Ordenízate Bcn. Organizadora profesional en Barcelona. Escríbenos por email o WhatsApp para empezar.',
+    description: 'Contacta con Ordenízate. Organizadora profesional. Escríbenos por email o WhatsApp para empezar.',
     openGraph: {
-        title: 'Contacto | Ordenízate Bcn',
+        title: 'Contacto | Ordenízate',
         description: 'Cuéntanos qué necesitas. Te ayudamos a transformar tu espacio.',
     },
 };
@@ -25,7 +25,7 @@ export default function ContactPage() {
                         <h1 className="text-4xl font-serif font-bold mb-4 text-charcoal-900">Hablemos de tu espacio</h1>
                         <p className="text-lg text-gray-600">
                             El primer paso es entender cómo funciona tu espacio y qué necesitas realmente.<br className="hidden sm:block" />
-                            Cuéntame tu situación y diseñaremos la mejor solución para ti.
+                            Cuéntanos qué sucede y diseñaremos la mejor solución para ti.
                         </p>
                     </div>
                 </Container>
@@ -54,7 +54,7 @@ export default function ContactPage() {
                                     <ContactItem
                                         icon={<MapPin className="text-sage-600" />}
                                         title="Área de Servicio"
-                                        content="Con base en Barcelona y disponible para proyectos en toda Cataluña y España según disponibilidad."
+                                        content="Disponible para proyectos presenciales y asesorías online."
                                     />
                                 </div>
                             </div>
@@ -62,10 +62,10 @@ export default function ContactPage() {
                             {/* Image (Desktop only) */}
                             <div className="relative w-full flex-grow rounded-2xl overflow-hidden bg-sand-200 hidden lg:block min-h-[200px]">
                                 <NextImage
-                                    src={`${SITE_CONFIG.basePath}/images/contact-office.jpg`}
+                                    src={`${SITE_CONFIG.basePath}/images/contact-ordenizate.jpg`}
                                     alt="Espacio de trabajo ordenado"
                                     fill
-                                    className="object-cover object-[center_35%]"
+                                    className="object-cover object-[center_31%]"
                                 />
                             </div>
                         </div>
