@@ -34,7 +34,7 @@ export default function HomePage() {
           <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-xl">
             <div className="hidden sm:mb-10 sm:flex">
               <div className="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-500 ring-1 ring-gray-900/10 hover:ring-sage-500/20">
-                Organización profesional · Servicio presencial y online{" "}
+                Organización profesional · Servicio presencial y online {" "}
                 <Link href="/sobre-mi" className="whitespace-nowrap font-semibold text-sage-600">
                   <span className="absolute inset-0" aria-hidden="true" />
                   Conóceme <span aria-hidden="true">&rarr;</span>
@@ -45,7 +45,7 @@ export default function HomePage() {
               Orden real para casas reales.
             </h1>
             <p className="mt-6 text-xl font-medium text-charcoal-800 font-serif">
-              Un buen sistema no se nota. Funciona.
+              Un buen sistema no se nota, funciona.
             </p>
             <p className="mt-4 text-lg leading-8 text-gray-600">
               Creo sistemas de organización prácticos, adaptados a la realidad de cada espacio y diseñados para mantenerse en el tiempo.<br className="hidden sm:block" />
@@ -53,11 +53,11 @@ export default function HomePage() {
               Con base en Barcelona y disponible para proyectos en toda España.
             </p>
             <div className="mt-10 flex flex-col sm:flex-row items-center gap-4">
-              <Button href={SITE_CONFIG.contact.whatsapp.getLink()} size="lg" variant="primary">
-                Hablar por WhatsApp
-              </Button>
-              <Button href="/contacto" variant="outline" size="lg">
+              <Button href="/contacto" size="lg" variant="primary">
                 Contacto
+              </Button>
+              <Button href={SITE_CONFIG.contact.whatsapp.getLink()} variant="outline" size="lg">
+                WhatsApp
               </Button>
             </div>
           </div>

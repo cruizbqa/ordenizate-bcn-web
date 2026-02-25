@@ -99,17 +99,19 @@ The contact form submits to `/api/contact` (POST).
 1. Client-side validation with Zod schema (`lib/contactSchema.ts`)
 2. Server-side re-validation with the same schema
 3. Honeypot field to reject bot submissions silently
-4. **Rate limiting** (Redis-backed via Upstash):
-   - Per IP address
-   - Per IP + email fingerprint
-   - Optional daily submission cap
-5. Email delivery via Resend to the business owner
-6. JSON response with success/error message
+4. **Anti-Spam & Rate limiting** (Redis-backed via Upstash):
+   - **Per IP:** Max 10 requests / 30 mins
+   - **Per IP (Daily):** Max 25 requests / 24 hours
+   - **Per Fingerprint (IP + Email):** Max 3 requests / 30 mins
+   - **Per Email Global:** Max 5 requests / 24 hours
+5. **Cybersecurity (XSS/Phishing Prevention):** We accept raw input from users (including HTML tags or URLs) to avoid friction. However, the backend injects this data directly into the `text` property of the Resend payload (plain text mode, NOT HTML). This guarantees that clients like Gmail or Outlook will render the tags literally (e.g., `<h1>test</h1>`) and will not execute malicious scripts.
+6. Email delivery via **Resend** to the business owner
+7. JSON response with success/error message
 
-**Security:**
+**Security & Error Handling:**
 
 - No sensitive data is logged
-- Rate limit errors return user-friendly messages in Spanish
+- Rate limit errors return user-friendly messages in Spanish explaining the temporary block.
 - All contact details are centralized in `lib/constants.ts` — never hardcoded in components
 
 ---
