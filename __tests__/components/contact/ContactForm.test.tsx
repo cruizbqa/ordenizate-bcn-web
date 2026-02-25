@@ -93,7 +93,7 @@ describe('ContactForm Component', () => {
         fireEvent.change(screen.getByLabelText(/Mensaje/i), { target: { value: 'This is a test message.', name: 'message' } });
 
         // Use the mock select
-        fireEvent.change(screen.getByTestId('mock-select'), { target: { value: 'hogar' } });
+        fireEvent.change(screen.getByTestId('mock-select'), { target: { value: 'estancias' } });
 
         // Consent
         fireEvent.click(screen.getByLabelText(/He leído y acepto/i));
@@ -120,7 +120,7 @@ describe('ContactForm Component', () => {
         fireEvent.change(screen.getByLabelText(/Email/i), { target: { value: 'test@example.com', name: 'email' } });
         fireEvent.change(screen.getByLabelText(/Ciudad/i), { target: { value: 'Test City', name: 'city' } });
         fireEvent.change(screen.getByLabelText(/Mensaje/i), { target: { value: 'Valid message', name: 'message' } });
-        fireEvent.change(screen.getByTestId('mock-select'), { target: { value: 'hogar' } });
+        fireEvent.change(screen.getByTestId('mock-select'), { target: { value: 'estancias' } });
         fireEvent.click(screen.getByLabelText(/He leído y acepto/i));
 
         const submitBtn = screen.getByRole('button', { name: /Enviar mensaje/i });
