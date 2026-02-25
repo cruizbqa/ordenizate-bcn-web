@@ -116,6 +116,16 @@ export async function POST(req: NextRequest) {
             );
         }
 
+        const serviceLabels: Record<string, string> = {
+            "mudanza": "Mudanzas (Pre/Post)",
+            "hogar": "Organización de Hogar",
+            "armarios": "Armarios y Vestidores",
+            "cocinas": "Cocinas y Despensas",
+            "online": "Asesoría Online",
+            "otro": "Otro",
+        };
+        const serviceLabel = serviceLabels[service] || service;
+
         const { error } = await resend.emails.send({
             from: process.env.CONTACT_FROM_EMAIL as string,
             to: process.env.CONTACT_TO_EMAIL as string,
@@ -125,7 +135,7 @@ export async function POST(req: NextRequest) {
 Nombre: ${name}
 Email: ${email}
 Ciudad: ${city}
-Servicio: ${service}
+Servicio: ${serviceLabel}
 
 Mensaje:
 ${message}

@@ -18,7 +18,7 @@ export function Footer() {
                             Ordenízate
                         </Link>
                         <p className="mt-4 text-sm text-gray-600 max-w-xs">
-                            Transformando espacios y vidas a través del orden profesional en Barcelona y alrededores.
+                            Transformando espacios y vidas a través del orden profesional.
                         </p>
                     </div>
 
@@ -37,10 +37,11 @@ export function Footer() {
                     <div>
                         <h3 className="font-serif text-lg font-semibold text-charcoal-900 mb-4">Servicios</h3>
                         <ul className="space-y-3 text-sm text-gray-600">
-                            <li><Link href="/servicios#mudanzas" className="hover:text-sage-600 transition-colors">Gestión de Mudanzas</Link></li>
-                            <li><Link href="/servicios#hogar" className="hover:text-sage-600 transition-colors">Organización Hogar</Link></li>
-                            <li><Link href="/servicios#armarios" className="hover:text-sage-600 transition-colors">Cambio de Armario</Link></li>
+                            <li><Link href="/servicios#mudanzas" className="hover:text-sage-600 transition-colors">Mudanzas (Pre + Post)</Link></li>
+                            <li><Link href="/servicios#armarios" className="hover:text-sage-600 transition-colors">Armarios y Vestidores</Link></li>
                             <li><Link href="/servicios#cocinas" className="hover:text-sage-600 transition-colors">Cocinas y Despensas</Link></li>
+                            <li><Link href="/servicios#hogar" className="hover:text-sage-600 transition-colors">Estancias</Link></li>
+                            <li><Link href="/servicios#infantil" className="hover:text-sage-600 transition-colors">Organización Infantil</Link></li>
                             <li><Link href="/servicios#online" className="hover:text-sage-600 transition-colors">Asesoría Online</Link></li>
                         </ul>
                     </div>
@@ -50,19 +51,20 @@ export function Footer() {
                         <h3 className="font-serif text-lg font-semibold text-charcoal-900 mb-4">Contacto</h3>
                         <ul className="space-y-3 text-sm text-gray-600">
                             <li>Barcelona, España</li>
-                            <li><a href="mailto:info@ordenizate.es" className="hover:text-sage-600 transition-colors">info@ordenizate.es</a></li>
+                            <li><a href={`mailto:${SITE_CONFIG.contact.email}`} className="hover:text-sage-600 transition-colors">{SITE_CONFIG.contact.email}</a></li>
                             <li className="flex items-center gap-3">
-                                <a href={SITE_CONFIG.contact.instagram.webUrl} onClick={handleInstagramDeepLink} className="hover:text-sage-600 transition-colors">@ordenizatebcn</a>
+                                <a href={SITE_CONFIG.contact.instagram.webUrl} onClick={handleInstagramDeepLink} className="hover:text-sage-600 transition-colors">@{SITE_CONFIG.contact.instagram.username}</a>
                             </li>
+                            <li><a href={`tel:${SITE_CONFIG.contact.phone}`} className="hover:text-sage-600 transition-colors">{SITE_CONFIG.contact.phone}</a></li>
                         </ul>
                     </div>
                 </div>
 
                 <div className="border-t border-sand-200 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500">
-                    <p>&copy; {new Date().getFullYear()} Ordenízate Bcn. Todos los derechos reservados.</p>
+                    <p>&copy; {new Date().getFullYear()} Ordenízate. Todos los derechos reservados.</p>
                     <div className="flex gap-6">
-                        <Link href="#" className="hover:text-sage-600">Aviso Legal</Link>
-                        <Link href="#" className="hover:text-sage-600">Política de Privacidad</Link>
+                        <Link href="/aviso-legal" className="hover:text-sage-600">Aviso Legal</Link>
+                        <Link href="/politica-privacidad" className="hover:text-sage-600">Política de Privacidad</Link>
                     </div>
                 </div>
             </Container>

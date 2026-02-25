@@ -1,11 +1,29 @@
 import { z } from "zod";
 
 export const contactSchema = z.object({
-    name: z.string().trim().min(2, "El nombre debe tener al menos 2 caracteres").max(80, "El nombre es demasiado largo"),
-    email: z.string().trim().email("Introduce un email válido"),
-    city: z.string().trim().min(2, "La ciudad debe tener al menos 2 caracteres").max(80, "El nombre de la ciudad es demasiado largo"),
-    service: z.string().trim().min(2, "Selecciona un servicio válido").max(60),
-    message: z.string().trim().min(10, "El mensaje debe tener al menos 10 caracteres").max(2000, "El mensaje es demasiado largo"),
+    name: z.string()
+        .trim()
+        .min(1, "Campo obligatorio")
+        .max(80, "El nombre es demasiado largo"),
+
+    email: z.string()
+        .trim()
+        .min(1, "Campo obligatorio")
+        .email("Email no válido"),
+
+    city: z.string()
+        .trim()
+        .min(1, "Campo obligatorio")
+        .max(80, "El nombre de la ciudad es demasiado largo"),
+
+    service: z.string().trim().min(1, "Campo obligatorio"),
+
+    message: z.string()
+        .trim()
+        .min(1, "Campo obligatorio")
+        .max(2000, "El mensaje es demasiado largo"),
+
+    privacy: z.boolean().refine(val => val === true, "Campo obligatorio"),
     website: z.string().optional(), // Honeypot
 });
 

@@ -5,15 +5,16 @@ import NextImage from "next/image";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
-import { Check, Home, Sparkles, Clock, Truck } from "lucide-react";
+import { ServicesSlider } from "@/components/ui/ServicesSlider";
+import { Check, Home, Sparkles, Clock, Truck, Shirt, Box, Monitor } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: 'Organizadora Profesional en Barcelona | Ordenízate Bcn',
-  description: 'Servicio de organización profesional en Barcelona. Mudanzas, armarios, cocinas y hogar. Sistemas de orden que te devuelven tiempo y paz mental.',
+  title: 'Organizadora Profesional | Ordenízate',
+  description: 'Servicio de organización profesional. Mudanzas, armarios, cocinas, hogar y consultoría online. Sistemas de orden que te devuelven tiempo y paz mental.',
   openGraph: {
-    title: 'Ordenízate Bcn | Organización Profesional en Barcelona',
+    title: 'Ordenízate | Organización Profesional',
     description: 'Transforma tu espacio, transforma tu vida.',
-    url: 'https://ordenizatebcn.com',
+    url: 'https://ordenizate.es',
     type: 'website',
   },
   twitter: {
@@ -33,24 +34,30 @@ export default function HomePage() {
           <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-xl">
             <div className="hidden sm:mb-10 sm:flex">
               <div className="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-500 ring-1 ring-gray-900/10 hover:ring-sage-500/20">
-                Llevamos calma a tu hogar.{" "}
+                Organización profesional · Servicio presencial y online {" "}
                 <Link href="/sobre-mi" className="whitespace-nowrap font-semibold text-sage-600">
                   <span className="absolute inset-0" aria-hidden="true" />
-                  Conócenos <span aria-hidden="true">&rarr;</span>
+                  Conóceme <span aria-hidden="true">&rarr;</span>
                 </Link>
               </div>
             </div>
             <h1 className="mt-10 text-4xl font-bold tracking-tight text-charcoal-900 sm:text-6xl font-serif">
-              Transforma tu espacio, <span className="text-sage-600">transforma tu vida.</span>
+              Orden real para casas reales.
             </h1>
-            <p className="mt-6 text-lg leading-8 text-gray-600">
-              Servicio de organización profesional en Barcelona. Creamos sistemas de orden sostenibles que te devuelven tiempo y paz mental.
-              Especialistas en mudanzas y organización del hogar.
+            <p className="mt-6 text-xl font-medium text-charcoal-800 font-serif">
+              Un buen sistema no se nota, funciona.
             </p>
-            <div className="mt-10 flex items-center gap-x-6">
-              <Button href="/contacto" size="lg">Contacto</Button>
-              <Button href={SITE_CONFIG.contact.whatsapp.getLink()} variant="ghost" size="lg" className="group">
-                WhatsApp <span aria-hidden="true" className="ml-2 group-hover:translate-x-1 transition-transform">→</span>
+            <p className="mt-4 text-lg leading-8 text-gray-600">
+              Creamos sistemas de organización prácticos, adaptados a la realidad de cada espacio y diseñados para mantenerse en el tiempo.<br className="hidden sm:block" />
+              Trabajamos de forma presencial y también online.<br /><br />
+              Con base en Barcelona y disponible para proyectos en toda España.
+            </p>
+            <div className="mt-10 flex flex-col sm:flex-row items-center gap-4">
+              <Button href="/contacto" size="lg" variant="primary">
+                Contacto
+              </Button>
+              <Button href={SITE_CONFIG.contact.whatsapp.getLink()} variant="outline" size="lg">
+                WhatsApp
               </Button>
             </div>
           </div>
@@ -72,12 +79,10 @@ export default function HomePage() {
       {/* Trust Indicators */}
       <Section className="bg-white border-y border-sand-100" spacing="sm">
         <Container>
-          <div className="grid grid-cols-1 gap-8 sm:grid-cols-1 text-center">
-            <div className="flex flex-col items-center gap-2">
-              <span className="text-sm font-medium text-gray-600 uppercase tracking-wide">Espacios organizados en</span>
-              <span className="text-4xl font-serif font-bold text-sage-500">Barcelona</span>
-              <span className="text-sm font-medium text-gray-600 uppercase tracking-wide">y Alrededores</span>
-            </div>
+          <div className="text-center">
+            <p className="text-sm font-medium text-gray-500 uppercase tracking-widest">
+              Espacios organizados en <span className="text-sage-600 font-bold">Barcelona</span> y alrededores
+            </p>
           </div>
         </Container>
       </Section>
@@ -88,50 +93,130 @@ export default function HomePage() {
           <div className="mx-auto max-w-2xl text-center mb-16">
             <h2 className="text-3xl font-bold tracking-tight text-charcoal-900 sm:text-4xl font-serif">Nuestros Servicios</h2>
             <p className="mt-6 text-lg leading-8 text-gray-600">
-              Ofrecemos soluciones personalizadas para cada etapa de tu vida. Desde una mudanza sin estrés hasta la optimización de tu armario.
+              Descubre el servicio que mejor se adapta a tu necesidad actual.
             </p>
           </div>
-          <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-12 lg:mx-0 lg:max-w-none lg:grid-cols-2">
-            {/* Service 1 */}
-            <div className="flex flex-col rounded-3xl bg-sand-50 p-8 ring-1 ring-gray-200 xl:p-10 transition-shadow hover:shadow-lg border-t-4 border-brand-yellow">
+          <ServicesSlider>
+            {/* Service 1: MUDANZAS */}
+            <div className="flex-none w-[85vw] sm:w-[400px] snap-center flex flex-col rounded-3xl bg-sand-50 p-8 ring-1 ring-gray-200 xl:p-10 transition-shadow hover:shadow-lg border-t-4 border-brand-yellow">
               <div className="flex items-center justify-between gap-x-4">
-                <h3 className="text-lg font-semibold leading-8 text-charcoal-900 font-serif">MUDANZAS (PRE + POST)</h3>
+                <h3 className="text-lg font-semibold leading-8 text-charcoal-900 font-serif uppercase">MUDANZAS (PRE + POST)</h3>
                 <Truck className="h-6 w-6 text-brand-yellow" />
               </div>
               <p className="mt-4 flex items-baseline gap-x-1">
-                <span className="text-4xl font-bold tracking-tight text-gray-900">Sin Caos</span>
+                <span className="text-4xl font-bold tracking-tight text-gray-900">CONTROL</span>
               </p>
               <p className="mt-6 text-base leading-7 text-gray-600">
-                Gestionamos tu mudanza de principio a fin. Clasificamos, embalamos y organizamos tu nuevo hogar para que te sientas en casa desde el primer día.
+                La mudanza implica decisiones, tiempos y desgaste. Estructuramos cada etapa para que el proceso sea claro, acompañado y sostenible.
               </p>
               <ul role="list" className="mt-8 space-y-3 text-sm leading-6 text-gray-600 xl:mt-10 mb-auto">
-                <li className="flex gap-x-3"><Check className="h-6 w-5 flex-none text-sage-600" /> Planificación logística</li>
-                <li className="flex gap-x-3"><Check className="h-6 w-5 flex-none text-sage-600" /> Descarte consciente</li>
-                <li className="flex gap-x-3"><Check className="h-6 w-5 flex-none text-sage-600" /> Colocación estratégica en destino</li>
+                <li className="flex gap-x-3"><Check className="h-6 w-5 flex-none text-sage-600" /> Planificación y coordinación del traslado</li>
+                <li className="flex gap-x-3"><Check className="h-6 w-5 flex-none text-sage-600" /> Embalaje cuidado y preparación</li>
+                <li className="flex gap-x-3"><Check className="h-6 w-5 flex-none text-sage-600" /> Organización y puesta a punto del hogar</li>
               </ul>
               <Button href="/servicios#mudanzas" variant="outline" className="mt-8 w-full">Más información</Button>
             </div>
 
-            {/* Service 2 */}
-            <div className="flex flex-col rounded-3xl bg-white p-8 ring-1 ring-gray-200 xl:p-10 transition-shadow hover:shadow-lg border-t-4 border-brand-purple">
+            {/* Service 2: ARMARIOS */}
+            <div className="flex-none w-[85vw] sm:w-[400px] snap-center flex flex-col rounded-3xl bg-white p-8 ring-1 ring-gray-200 xl:p-10 transition-shadow hover:shadow-lg border-t-4 border-brand-pink">
               <div className="flex items-center justify-between gap-x-4">
-                <h3 className="text-lg font-semibold leading-8 text-charcoal-900 font-serif">ORGANIZACIÓN DE HOGAR</h3>
+                <h3 className="text-lg font-semibold leading-8 text-charcoal-900 font-serif uppercase">ARMARIOS Y VESTIDORES</h3>
+                <Shirt className="h-6 w-6 text-brand-pink" />
+              </div>
+              <p className="mt-4 flex items-baseline gap-x-1">
+                <span className="text-4xl font-bold tracking-tight text-gray-900">FUNCIONALIDAD</span>
+              </p>
+              <p className="mt-6 text-base leading-7 text-gray-600">
+                Diseñamos sistemas de organización personalizados que optimizan el espacio, aportan claridad visual y hacen que cada prenda esté accesible.
+              </p>
+              <ul role="list" className="mt-8 space-y-3 text-sm leading-6 text-gray-600 xl:mt-10 mb-auto">
+                <li className="flex gap-x-3"><Check className="h-6 w-5 flex-none text-sage-600" /> Descarte consciente acompañado</li>
+                <li className="flex gap-x-3"><Check className="h-6 w-5 flex-none text-sage-600" /> Optimización del espacio</li>
+                <li className="flex gap-x-3"><Check className="h-6 w-5 flex-none text-sage-600" /> Sistemas funcionales adaptados</li>
+              </ul>
+              <Button href="/servicios#armarios" variant="primary" className="mt-8 w-full">Más información</Button>
+            </div>
+
+            {/* Service 3: COCINAS */}
+            <div className="flex-none w-[85vw] sm:w-[400px] snap-center flex flex-col rounded-3xl bg-sand-50 p-8 ring-1 ring-gray-200 xl:p-10 transition-shadow hover:shadow-lg border-t-4 border-sage-500">
+              <div className="flex items-center justify-between gap-x-4">
+                <h3 className="text-lg font-semibold leading-8 text-charcoal-900 font-serif uppercase">COCINAS Y DESPENSAS</h3>
+                <Box className="h-6 w-6 text-sage-600" />
+              </div>
+              <p className="mt-4 flex items-baseline gap-x-1">
+                <span className="text-4xl font-bold tracking-tight text-gray-900">CRITERIO</span>
+              </p>
+              <p className="mt-6 text-base leading-7 text-gray-600">
+                Organizamos cocina y despensa con criterio y coherencia, creando una estructura clara que facilita el día a día y aporta sensación de orden.
+              </p>
+              <ul role="list" className="mt-8 space-y-3 text-sm leading-6 text-gray-600 xl:mt-10 mb-auto">
+                <li className="flex gap-x-3"><Check className="h-6 w-5 flex-none text-sage-600" /> Categorización clara de alimentos</li>
+                <li className="flex gap-x-3"><Check className="h-6 w-5 flex-none text-sage-600" /> Unificación de formatos adecuados</li>
+                <li className="flex gap-x-3"><Check className="h-6 w-5 flex-none text-sage-600" /> Distribución funcional según uso</li>
+              </ul>
+              <Button href="/servicios#cocinas" variant="outline" className="mt-8 w-full">Ver detalles</Button>
+            </div>
+
+            {/* Service 4: ESTANCIAS */}
+            <div className="flex-none w-[85vw] sm:w-[400px] snap-center flex flex-col rounded-3xl bg-white p-8 ring-1 ring-gray-200 xl:p-10 transition-shadow hover:shadow-lg border-t-4 border-brand-purple">
+              <div className="flex items-center justify-between gap-x-4">
+                <h3 className="text-lg font-semibold leading-8 text-charcoal-900 font-serif uppercase">ESTANCIAS</h3>
                 <Home className="h-6 w-6 text-brand-purple" />
               </div>
               <p className="mt-4 flex items-baseline gap-x-1">
-                <span className="text-4xl font-bold tracking-tight text-gray-900">Armonía</span>
+                <span className="text-4xl font-bold tracking-tight text-gray-900">ARMONÍA</span>
               </p>
               <p className="mt-6 text-base leading-7 text-gray-600">
-                Optimizamos cualquier estancia: cocinas, armarios, trasteros o baños. Creamos sistemas que se adaptan a tu rutina.
+                Organización de espacios que generan ruido visual, creando estructuras claras que devuelven equilibrio y funcionalidad al hogar.
               </p>
               <ul role="list" className="mt-8 space-y-3 text-sm leading-6 text-gray-600 xl:mt-10 mb-auto">
-                <li className="flex gap-x-3"><Check className="h-6 w-5 flex-none text-sage-600" /> Cambio de armario de temporada</li>
-                <li className="flex gap-x-3"><Check className="h-6 w-5 flex-none text-sage-600" /> Orden en cocinas y despensas</li>
-                <li className="flex gap-x-3"><Check className="h-6 w-5 flex-none text-sage-600" /> Habitaciones infantiles</li>
+                <li className="flex gap-x-3"><Check className="h-6 w-5 flex-none text-sage-600" /> Baños y zonas de lavado</li>
+                <li className="flex gap-x-3"><Check className="h-6 w-5 flex-none text-sage-600" /> Despachos y materiales</li>
+                <li className="flex gap-x-3"><Check className="h-6 w-5 flex-none text-sage-600" /> Almacenaje profundo</li>
               </ul>
-              <Button href="/servicios#hogar" variant="primary" className="mt-8 w-full">Ver detalles</Button>
+              <Button href="/servicios#hogar" variant="outline" className="mt-8 w-full">Ver detalles</Button>
             </div>
-          </div>
+
+            {/* Service 5: INFANTIL */}
+            <div className="flex-none w-[85vw] sm:w-[400px] snap-center flex flex-col rounded-3xl bg-sand-50 p-8 ring-1 ring-gray-200 xl:p-10 transition-shadow hover:shadow-lg border-t-4 border-brand-pink">
+              <div className="flex items-center justify-between gap-x-4">
+                <h3 className="text-lg font-semibold leading-8 text-charcoal-900 font-serif uppercase">INFANTIL</h3>
+                <Sparkles className="h-6 w-6 text-brand-pink" />
+              </div>
+              <p className="mt-4 flex items-baseline gap-x-1">
+                <span className="text-4xl font-bold tracking-tight text-gray-900">CUIDADO</span>
+              </p>
+              <p className="mt-6 text-base leading-7 text-gray-600">
+                Preparación y adaptación de espacios infantiles para acompañar cada etapa, reduciendo la carga mental familiar.
+              </p>
+              <ul role="list" className="mt-8 space-y-3 text-sm leading-6 text-gray-600 xl:mt-10 mb-auto">
+                <li className="flex gap-x-3"><Check className="h-6 w-5 flex-none text-sage-600" /> Llegada del bebé</li>
+                <li className="flex gap-x-3"><Check className="h-6 w-5 flex-none text-sage-600" /> Organización evolutiva</li>
+                <li className="flex gap-x-3"><Check className="h-6 w-5 flex-none text-sage-600" /> Autonomía y orden</li>
+              </ul>
+              <Button href="/servicios#infantil" variant="primary" className="mt-8 w-full">Más información</Button>
+            </div>
+
+            {/* Service 6: ASESORÍA ONLINE */}
+            <div className="flex-none w-[85vw] sm:w-[400px] snap-center flex flex-col rounded-3xl bg-white p-8 ring-1 ring-gray-200 xl:p-10 transition-shadow hover:shadow-lg border-t-4 border-blue-500">
+              <div className="flex items-center justify-between gap-x-4">
+                <h3 className="text-lg font-semibold leading-8 text-charcoal-900 font-serif uppercase">ASESORÍA ONLINE</h3>
+                <Monitor className="h-6 w-6 text-blue-600" />
+              </div>
+              <p className="mt-4 flex items-baseline gap-x-1">
+                <span className="text-4xl font-bold tracking-tight text-gray-900">A TU RITMO</span>
+              </p>
+              <p className="mt-6 text-base leading-7 text-gray-600">
+                Organización profesional a distancia, clara y estructurada, para quienes desean avanzar con autonomía pero con dirección experta.
+              </p>
+              <ul role="list" className="mt-8 space-y-3 text-sm leading-6 text-gray-600 xl:mt-10 mb-auto">
+                <li className="flex gap-x-3"><Check className="h-6 w-5 flex-none text-sage-600" /> Videollamada de diagnóstico</li>
+                <li className="flex gap-x-3"><Check className="h-6 w-5 flex-none text-sage-600" /> Plan personalizado</li>
+                <li className="flex gap-x-3"><Check className="h-6 w-5 flex-none text-sage-600" /> Seguimiento del proceso</li>
+              </ul>
+              <Button href="/servicios#online" variant="primary" className="mt-8 w-full">Reservar Asesoría</Button>
+            </div>
+          </ServicesSlider>
         </Container>
       </Section >
 
@@ -166,16 +251,16 @@ export default function HomePage() {
       <Section className="bg-sand-50/50">
         <Container>
           <div className="mx-auto max-w-2xl text-center mb-16">
-            <h2 className="text-3xl font-bold tracking-tight text-charcoal-900 sm:text-4xl font-serif">Cómo Trabajamos</h2>
-            <p className="mt-6 text-lg leading-8 text-gray-600">Un proceso sencillo y transparente en 4 pasos.</p>
+            <h2 className="text-3xl font-bold tracking-tight text-charcoal-900 sm:text-4xl font-serif">Cómo trabajamos</h2>
+            <p className="mt-6 text-lg leading-8 text-gray-600">Cada hogar tiene una realidad distinta, por ello diseñamos procesos prácticos, estructurados y adaptados a tus necesidades. Sin juicio, con criterio.</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             {[
-              { title: "1. Llamada Gratuita", desc: "Hablamos 15 minutos para entender tus necesidades.", icon: <Clock /> },
-              { title: "2. Plan Personalizado", desc: "Recibes una propuesta a medida sin compromiso.", icon: <ShowcaseIcon /> },
-              { title: "3. Sesión de Orden", desc: "Trabajamos mano a mano (o lo hago por ti).", icon: <Sparkles /> },
-              { title: "4. Mantenimiento", desc: "Sistemas fáciles de mantener en el tiempo.", icon: <Check /> }
+              { title: "1. Contacto y valoración inicial", desc: "Hablamos para entender qué necesitas y cómo podemos ayudarte. Sin compromiso.", icon: <Clock /> },
+              { title: "2. Propuesta y planificación", desc: "Definimos la hoja de ruta y los tiempos para que tengas claro cómo se llevará a cabo el proceso.", icon: <ShowcaseIcon /> },
+              { title: "3. Sesión de organización", desc: "Implementamos sistemas de orden coherentes, prácticos y fáciles de mantener en el tiempo.", icon: <Sparkles /> },
+              { title: "4. Seguimiento y cierre", desc: "Aseguramos que el sistema funciona para ti para garantizar que el orden sea duradero.", icon: <Check /> }
             ].map((step, idx) => (
               <div key={idx} className="flex flex-col items-center text-center p-6 bg-white rounded-2xl shadow-sm ring-1 ring-gray-200/50">
                 <div className={`mb-4 p-3 bg-sand-50 rounded-full ${idx === 0 ? 'text-sage-600' : idx === 1 ? 'text-brand-yellow' : idx === 2 ? 'text-brand-purple' : 'text-brand-pink'}`}>
@@ -223,9 +308,9 @@ export default function HomePage() {
       {/* Final CTA */}
       <Section className="bg-charcoal-900 text-white text-center" spacing="lg">
         <Container className="max-w-2xl">
-          <h2 className="text-3xl md:text-4xl font-bold font-serif mb-6 text-white">¿Listo para recuperar tu espacio?</h2>
+          <h2 className="text-3xl md:text-4xl font-bold font-serif mb-6 text-white">¿Hablamos?</h2>
           <p className="text-sand-300 text-lg mb-10">
-            No dejes que el desorden controle tu vida. Da el primer paso hoy.
+            Ordenízate: orden profesional adaptado a la realidad de cada hogar.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button href="/contacto" variant="secondary" size="lg">Reservar Sesión</Button>

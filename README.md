@@ -71,10 +71,18 @@ UPSTASH_REDIS_REST_TOKEN=...
 NEXT_PUBLIC_WHATSAPP_URL=https://wa.me/34...
 ```
 
-### Services Setup
+### Services Setup (Contact Form Flow)
 
-1.  **Resend**: Create an account and verify your domain. Add the API Key.
-2.  **Upstash**: Create a Redis database. Copy REST URL and Token.
+Our contact form relies on two external services to guarantee delivery and prevent spam:
+
+1.  **[Resend](https://resend.com)** (Email Delivery): 
+    - Create an account and verify your sending domain (e.g., `ordenizatebcn.com`).
+    - Generate an API Key and add it to `.env.local`.
+    - Emails are sent as plain text to prevent XSS/Script injection.
+2.  **[Upstash](https://upstash.com)** (Redis / Rate Limiting): 
+    - Create a Serverless Redis database.
+    - Copy the REST URL and Token to `.env.local`.
+    - This powers our Anti-Spam protection, blocking IPs or emails that send too many requests in a short time.
 
 ## 🛠 Deployment to Vercel
 
