@@ -9,6 +9,6 @@ export default function robots(): MetadataRoute.Robots {
             allow: '/',
             disallow: '/private/',
         },
-        sitemap: 'https://cruizbqa.github.io/ordenizate-bcn-web/sitemap.xml',
+        sitemap: 'https://ordenizate.es/sitemap.xml',
     };
 }
