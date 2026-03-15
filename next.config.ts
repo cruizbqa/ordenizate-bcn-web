@@ -9,6 +9,20 @@ const nextConfig: NextConfig = {
   experimental: {
     // turbopack options if needed
   },
+  async redirects() {
+    return [
+      {
+        source: '/index.html',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/:path((?!index$).*).html',
+        destination: '/:path*',
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;
