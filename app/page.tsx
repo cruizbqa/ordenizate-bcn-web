@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
 import { ServicesSlider } from "@/components/ui/ServicesSlider";
-import { Check, Home, Sparkles, Clock, Truck, Shirt, Box, Monitor } from "lucide-react";
+import { Check, Home, Sparkles, Clock, Truck, Shirt, ChefHat, ToyBrick, Monitor } from "lucide-react";
 
 export const metadata: Metadata = {
   title: 'Organizadora Profesional | Ordenízate',
@@ -118,10 +118,10 @@ export default function HomePage() {
             </div>
 
             {/* Service 2: ARMARIOS */}
-            <div className="flex-none w-[85vw] sm:w-[400px] snap-center flex flex-col rounded-3xl bg-white p-8 ring-1 ring-gray-200 xl:p-10 transition-shadow hover:shadow-lg border-t-4 border-brand-pink">
+            <div className="flex-none w-[85vw] sm:w-[400px] snap-center flex flex-col rounded-3xl bg-white p-8 ring-1 ring-gray-200 xl:p-10 transition-shadow hover:shadow-lg border-t-4 border-brand-purple">
               <div className="flex items-center justify-between gap-x-4">
                 <h3 className="text-lg font-semibold leading-8 text-charcoal-900 font-serif uppercase">ARMARIOS Y VESTIDORES</h3>
-                <Shirt className="h-6 w-6 text-brand-pink" />
+                <Shirt className="h-6 w-6 text-brand-purple" />
               </div>
               <p className="mt-4 flex items-baseline gap-x-1">
                 <span className="text-4xl font-bold tracking-tight text-gray-900">FUNCIONALIDAD</span>
@@ -141,7 +141,7 @@ export default function HomePage() {
             <div className="flex-none w-[85vw] sm:w-[400px] snap-center flex flex-col rounded-3xl bg-sand-50 p-8 ring-1 ring-gray-200 xl:p-10 transition-shadow hover:shadow-lg border-t-4 border-sage-500">
               <div className="flex items-center justify-between gap-x-4">
                 <h3 className="text-lg font-semibold leading-8 text-charcoal-900 font-serif uppercase">COCINAS Y DESPENSAS</h3>
-                <Box className="h-6 w-6 text-sage-600" />
+                <ChefHat className="h-6 w-6 text-sage-600" />
               </div>
               <p className="mt-4 flex items-baseline gap-x-1">
                 <span className="text-4xl font-bold tracking-tight text-gray-900">CRITERIO</span>
@@ -154,14 +154,14 @@ export default function HomePage() {
                 <li className="flex gap-x-3"><Check className="h-6 w-5 flex-none text-sage-600" /> Unificación de formatos adecuados</li>
                 <li className="flex gap-x-3"><Check className="h-6 w-5 flex-none text-sage-600" /> Distribución funcional según uso</li>
               </ul>
-              <Button href="/servicios#cocinas" variant="outline" className="mt-8 w-full">Ver detalles</Button>
+              <Button href="/servicios#cocinas" variant="outline" className="mt-8 w-full">Más información</Button>
             </div>
 
             {/* Service 4: ESTANCIAS */}
-            <div className="flex-none w-[85vw] sm:w-[400px] snap-center flex flex-col rounded-3xl bg-white p-8 ring-1 ring-gray-200 xl:p-10 transition-shadow hover:shadow-lg border-t-4 border-brand-purple">
+            <div className="flex-none w-[85vw] sm:w-[400px] snap-center flex flex-col rounded-3xl bg-white p-8 ring-1 ring-gray-200 xl:p-10 transition-shadow hover:shadow-lg border-t-4 border-brand-yellow">
               <div className="flex items-center justify-between gap-x-4">
                 <h3 className="text-lg font-semibold leading-8 text-charcoal-900 font-serif uppercase">ESTANCIAS</h3>
-                <Home className="h-6 w-6 text-brand-purple" />
+                <Home className="h-6 w-6 text-brand-yellow" />
               </div>
               <p className="mt-4 flex items-baseline gap-x-1">
                 <span className="text-4xl font-bold tracking-tight text-gray-900">ARMONÍA</span>
@@ -174,14 +174,14 @@ export default function HomePage() {
                 <li className="flex gap-x-3"><Check className="h-6 w-5 flex-none text-sage-600" /> Despachos y materiales</li>
                 <li className="flex gap-x-3"><Check className="h-6 w-5 flex-none text-sage-600" /> Almacenaje profundo</li>
               </ul>
-              <Button href="/servicios#hogar" variant="outline" className="mt-8 w-full">Ver detalles</Button>
+              <Button href="/servicios#hogar" variant="primary" className="mt-8 w-full">Más información</Button>
             </div>
 
             {/* Service 5: INFANTIL */}
             <div className="flex-none w-[85vw] sm:w-[400px] snap-center flex flex-col rounded-3xl bg-sand-50 p-8 ring-1 ring-gray-200 xl:p-10 transition-shadow hover:shadow-lg border-t-4 border-brand-pink">
               <div className="flex items-center justify-between gap-x-4">
                 <h3 className="text-lg font-semibold leading-8 text-charcoal-900 font-serif uppercase">INFANTIL</h3>
-                <Sparkles className="h-6 w-6 text-brand-pink" />
+                <ToyBrick className="h-6 w-6 text-brand-pink" />
               </div>
               <p className="mt-4 flex items-baseline gap-x-1">
                 <span className="text-4xl font-bold tracking-tight text-gray-900">CUIDADO</span>
@@ -194,14 +194,14 @@ export default function HomePage() {
                 <li className="flex gap-x-3"><Check className="h-6 w-5 flex-none text-sage-600" /> Organización evolutiva</li>
                 <li className="flex gap-x-3"><Check className="h-6 w-5 flex-none text-sage-600" /> Autonomía y orden</li>
               </ul>
-              <Button href="/servicios#infantil" variant="primary" className="mt-8 w-full">Más información</Button>
+              <Button href="/servicios#infantil" variant="outline" className="mt-8 w-full">Más información</Button>
             </div>
 
             {/* Service 6: ASESORÍA ONLINE */}
-            <div className="flex-none w-[85vw] sm:w-[400px] snap-center flex flex-col rounded-3xl bg-white p-8 ring-1 ring-gray-200 xl:p-10 transition-shadow hover:shadow-lg border-t-4 border-blue-500">
+            <div className="flex-none w-[85vw] sm:w-[400px] snap-center flex flex-col rounded-3xl bg-white p-8 ring-1 ring-gray-200 xl:p-10 transition-shadow hover:shadow-lg border-t-4 border-sage-400">
               <div className="flex items-center justify-between gap-x-4">
                 <h3 className="text-lg font-semibold leading-8 text-charcoal-900 font-serif uppercase">ASESORÍA ONLINE</h3>
-                <Monitor className="h-6 w-6 text-blue-600" />
+                <Monitor className="h-6 w-6 text-sage-600" />
               </div>
               <p className="mt-4 flex items-baseline gap-x-1">
                 <span className="text-4xl font-bold tracking-tight text-gray-900">A TU RITMO</span>

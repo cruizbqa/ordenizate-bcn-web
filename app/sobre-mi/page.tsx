@@ -3,8 +3,6 @@ import NextImage from 'next/image';
 import { SITE_CONFIG } from '@/lib/constants';
 import { Button } from '@/components/ui/Button';
 import { Container } from '@/components/ui/Container';
-import { Section } from '@/components/ui/Section';
-import { Heart, Shield, Leaf } from 'lucide-react';
 
 export const metadata: Metadata = {
     title: 'Sobre Mí',
@@ -63,6 +61,7 @@ export default function AboutPage() {
             </Container>
 
             {/* Values */}
+            {/*
             <Section className="bg-sand-50">
                 <Container>
                     <h2 className="text-3xl font-serif font-bold text-center mb-16">Por qué elegirnos</h2>
@@ -85,18 +84,8 @@ export default function AboutPage() {
                     </div>
                 </Container>
             </Section>
+            */}
         </div>
     );
 }
 
-function ValueCard({ icon, title, desc }: { icon: React.ReactNode, title: string, desc: string }) {
-    return (
-        <div className="bg-white p-8 rounded-xl border border-sand-100 text-center flex flex-col items-center hover:shadow-md transition-shadow">
-            <div className="bg-sage-50 p-3 rounded-full mb-4">
-                {icon}
-            </div>
-            <h3 className="font-bold text-lg mb-2">{title}</h3>
-            <p className="text-gray-600">{desc}</p>
-        </div>
-    )
-}
