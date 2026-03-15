@@ -37,14 +37,8 @@ export async function POST(req: NextRequest) {
         console.log('[contact] RESEND_API_KEY present:', !!process.env.RESEND_API_KEY);
 
         if (redisUrl && redisToken) {
-            let redis: Redis | null = null;
             try {
-                redis = new Redis({ url: redisUrl, token: redisToken });
-            } catch (redisInitError) {
-                console.error('[contact] Redis init failed:', redisInitError);
-            }
-
-            if (redis) {
+                const redis = new Redis({ url: redisUrl, token: redisToken });
                 const ip = req.headers.get('x-forwarded-for') ?? req.headers.get('x-real-ip') ?? 'unknown';
                 const normalizedEmail = email.toLowerCase().trim();
                 const fingerprint = `${ip}_${normalizedEmail}`;
@@ -73,6 +67,9 @@ export async function POST(req: NextRequest) {
                         );
                     }
                 }
+            } catch (redisError) {
+                // If Redis fails for any reason (bad URL, network, etc.) log and continue without rate limiting
+                console.error('[contact] Rate limiting skipped due to Redis error:', redisError instanceof Error ? redisError.message : redisError);
             }
         }
 
