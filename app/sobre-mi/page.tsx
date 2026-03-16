@@ -17,7 +17,7 @@ export default function AboutPage() {
                     {/* Text */}
                     <div>
                         <h1 className="text-4xl lg:text-5xl font-serif font-bold text-charcoal-900 mb-8">
-                            Más que ordenar, <br /><span className="text-sage-600">creo estructura que aporta calma.</span>
+                            Más que ordenar, <br /><span className="text-sage-600">creo estructuras que aportan calma.</span>
                         </h1>
                         <p className="text-xl font-bold text-gray-800 mb-4 leading-relaxed">
                             Hola, soy Silvia, fundadora de Ordenízate.

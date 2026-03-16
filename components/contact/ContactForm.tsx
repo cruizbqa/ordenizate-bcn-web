@@ -185,7 +185,7 @@ export function ContactForm() {
 
                 <div className="space-y-0">
                     <div className="flex justify-between items-end px-1 mb-1.5">
-                        <label htmlFor="message" className="text-sm font-medium text-charcoal-900 block">Mensaje</label>
+                        <label htmlFor="message" className="text-sm font-medium text-charcoal-900 block">Mensaje <span className="text-gray-500 font-normal">(Opcional)</span></label>
                         <span className={`text-[10px] font-medium ${formData.message.length > 1900 ? 'text-red-500' : 'text-gray-400'}`}>
                             {formData.message.length}/2000
                         </span>
