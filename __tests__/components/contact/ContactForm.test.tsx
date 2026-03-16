@@ -13,7 +13,9 @@ vi.mock('@/lib/constants', () => ({
 }));
 
 // Mock Select component to be a standard HTML select for easier testing
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 vi.mock('@/components/ui/Select', () => ({
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     Select: ({ options, value, onChange, label, error }: any) => (
         <div>
             {label && <label htmlFor="mock-select">{label}</label>}
@@ -24,6 +26,7 @@ vi.mock('@/components/ui/Select', () => ({
                 data-testid="mock-select"
             >
                 <option value="">Selecciona una opción</option>
+                {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
                 {options.map((opt: any) => (
                     <option key={opt.value} value={opt.value}>{opt.label}</option>
                 ))}

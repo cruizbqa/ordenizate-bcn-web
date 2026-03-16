@@ -49,7 +49,7 @@ export function ContactForm() {
         const validation = contactSchema.safeParse(formData);
 
         if (!validation.success) {
-            const fieldErrors: any = {};
+            const fieldErrors: Record<string, string> = {};
             validation.error.issues.forEach(issue => {
                 const path = issue.path[0] as string;
                 if (!fieldErrors[path]) fieldErrors[path] = issue.message;

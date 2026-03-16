@@ -9,8 +9,8 @@ import { ServicesSlider } from "@/components/ui/ServicesSlider";
 import { Check, Home, Sparkles, Clock, Truck, Shirt, ChefHat, ToyBrick, Monitor } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: 'Organizadora Profesional | Ordenízate',
-  description: 'Servicio de organización profesional. Mudanzas, armarios, cocinas, hogar y consultoría online. Sistemas de orden que te devuelven tiempo y paz mental.',
+  title: 'Organizadora Profesional en Barcelona | Ordenízate',
+  description: 'Servicio de organización profesional en Barcelona. Mudanzas, armarios, cocinas, hogar y consultoría online. Recupera tu tiempo y paz mental con sistemas de orden.',
   openGraph: {
     title: 'Ordenízate | Organización Profesional',
     description: 'Transforma tu espacio, transforma tu vida.',
@@ -32,7 +32,7 @@ export default function HomePage() {
         <div className="absolute inset-y-0 right-1/2 -z-10 -mr-96 w-[200%] origin-top-right skew-x-[-30deg] bg-white shadow-xl shadow-sage-600/10 ring-1 ring-sage-50 sm:-mr-80 lg:-mr-96" aria-hidden="true" />
         <Container className="pt-24 pb-16 sm:pb-32 lg:pb-40 lg:pt-40">
           <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-xl">
-            <div className="hidden sm:mb-10 sm:flex">
+            <div className="mb-8 flex sm:mb-10">
               <div className="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-500 ring-1 ring-gray-900/10 hover:ring-sage-500/20">
                 Organización profesional · Servicio presencial y online {" "}
                 <Link href="/sobre-mi" className="whitespace-nowrap font-semibold text-sage-600">
@@ -42,15 +42,15 @@ export default function HomePage() {
               </div>
             </div>
             <h1 className="mt-10 text-4xl font-bold tracking-tight text-charcoal-900 sm:text-6xl font-serif">
-              Orden real para casas reales.
+              Organización profesional del hogar <span className="text-sage-600">en Barcelona</span>
             </h1>
-            <p className="mt-6 text-xl font-medium text-charcoal-800 font-serif">
-              Un buen sistema no se nota, funciona.
-            </p>
+            <h2 className="mt-6 text-xl font-medium text-charcoal-800 font-serif">
+              Orden real para casas reales.
+            </h2>
             <p className="mt-4 text-lg leading-8 text-gray-600">
               Creamos sistemas de organización prácticos, adaptados a la realidad de cada espacio y diseñados para mantenerse en el tiempo.<br className="hidden sm:block" />
-              Trabajamos de forma presencial y también online.<br /><br />
-              Con base en Barcelona y disponible para proyectos en toda España según disponibilidad.
+              Especialistas en <Link href="/servicios#mudanzas" className="text-sage-600 hover:text-sage-700 underline underline-offset-2 font-medium">mudanzas</Link>, <Link href="/servicios#armarios" className="text-sage-600 hover:text-sage-700 underline underline-offset-2 font-medium">armarios</Link>, <Link href="/servicios#cocinas" className="text-sage-600 hover:text-sage-700 underline underline-offset-2 font-medium">cocinas</Link>, <Link href="/servicios#hogar" className="text-sage-600 hover:text-sage-700 underline underline-offset-2 font-medium">estancias</Link> y <Link href="/servicios#infantil" className="text-sage-600 hover:text-sage-700 underline underline-offset-2 font-medium">organización infantil</Link>. Trabajamos de forma presencial y también <Link href="/servicios#online" className="text-sage-600 hover:text-sage-700 underline underline-offset-2 font-medium">online</Link>.<br /><br />
+              Con base en Barcelona y disponible para proyectos en toda España.
             </p>
             <div className="mt-10 flex flex-col sm:flex-row items-center gap-4">
               <Button href="/contacto" size="lg" variant="primary">

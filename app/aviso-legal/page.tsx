@@ -44,7 +44,7 @@ export default function AvisoLegalPage() {
                         <section>
                             <h2 className="text-2xl font-serif font-semibold text-charcoal-900 mb-4">3. Uso del Portal</h2>
                             <p>
-                                {SITE_CONFIG.legal.domain} proporciona el acceso a multitud de informaciones, servicios, programas o datos (en adelante, "los contenidos")
+                                {SITE_CONFIG.legal.domain} proporciona el acceso a multitud de informaciones, servicios, programas o datos (en adelante, &quot;los contenidos&quot;)
                                 en Internet pertenecientes a {SITE_CONFIG.legal.owner} o a sus licenciantes a los que el USUARIO pueda tener acceso.
                                 El USUARIO asume la responsabilidad del uso del portal. Dicha responsabilidad se extiende al registro que fuese necesario
                                 para acceder a determinados servicios o contenidos.
