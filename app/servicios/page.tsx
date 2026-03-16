@@ -243,7 +243,7 @@ export default function ServicesPage() {
                             <h2 className="text-3xl font-serif font-bold text-charcoal-900 mb-6">Organización Infantil</h2>
                             <div className="text-gray-600 mb-6 text-lg space-y-4">
                                 <p>
-                                    Como organizadora profesional con más de 5 años de experiencia, formada en el método KonMari® y experta en el acompañamiento de personas con TDAH, entiendo que el orden en los espacios infantiles es clave para el bienestar familiar.
+                                    Como organizadora profesional especializada en metodologías de organización consciente y experta en el acompañamiento de personas con TDAH, entiendo que el orden en los espacios infantiles es clave para el bienestar familiar.
                                 </p>
                                 <p className="text-gray-600 mb-6 text-lg space-y-4">
                                     Diseñamos sistemas intuitivos, visuales y fáciles de mantener que fomentan la autonomía, reducen la sobreestimulación y se adaptan al ritmo de cada niño, aportando calma y estructura al hogar.
@@ -267,7 +267,7 @@ export default function ServicesPage() {
                         <div className="relative w-full md:w-1/3 aspect-[4/5] bg-sand-200 rounded-3xl overflow-hidden shadow-xl">
                             <NextImage
                                 src={`${SITE_CONFIG.basePath}/images/service-baby-organized.png`}
-                                alt="Habitación infantil con sistema de organización KonMari y TDAH-friendly"
+                                alt="Habitación infantil con sistema de organización consciente y adaptado a niños"
                                 fill
                                 className="object-cover"
                             />
