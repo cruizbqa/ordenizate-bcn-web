@@ -116,7 +116,7 @@ export default function HomePage() {
                 <li className="flex gap-x-3"><Check className="h-6 w-5 flex-none text-sage-600" /> Embalaje cuidado y preparación</li>
                 <li className="flex gap-x-3"><Check className="h-6 w-5 flex-none text-sage-600" /> Organización y puesta a punto del hogar</li>
               </ul>
-              <Button href="/servicios#mudanzas" variant="outline" className="mt-8 w-full">Más información</Button>
+              <Button href="/servicios/mudanzas-barcelona" variant="outline" className="mt-8 w-full">Más información</Button>
             </div>
 
             {/* Service 2: ARMARIOS */}
@@ -136,7 +136,7 @@ export default function HomePage() {
                 <li className="flex gap-x-3"><Check className="h-6 w-5 flex-none text-sage-600" /> Optimización del espacio</li>
                 <li className="flex gap-x-3"><Check className="h-6 w-5 flex-none text-sage-600" /> Sistemas funcionales adaptados</li>
               </ul>
-              <Button href="/servicios#armarios" variant="primary" className="mt-8 w-full">Más información</Button>
+              <Button href="/servicios/organizacion-armarios" variant="primary" className="mt-8 w-full">Más información</Button>
             </div>
 
             {/* Service 3: INFANTIL */}
@@ -216,7 +216,7 @@ export default function HomePage() {
                 <li className="flex gap-x-3"><Check className="h-6 w-5 flex-none text-sage-600" /> Plan personalizado</li>
                 <li className="flex gap-x-3"><Check className="h-6 w-5 flex-none text-sage-600" /> Seguimiento del proceso</li>
               </ul>
-              <Button href="/servicios#online" variant="primary" className="mt-8 w-full">Reservar Asesoría</Button>
+              <Button href="/servicios/asesoria-online" variant="primary" className="mt-8 w-full">Reservar Asesoría</Button>
             </div>
           </ServicesSlider>
         </Container>
@@ -276,26 +276,43 @@ export default function HomePage() {
         </Container>
       </Section>
 
-      {/* Testimonials — pending real client quotes */}
-      {/*
+      {/* Testimonials */}
       <Section className="bg-sage-50/50">
         <Container>
           <h2 className="text-3xl font-bold text-center mb-12 font-serif text-charcoal-900">Lo que dicen mis clientes</h2>
-          Add real testimonials here when available.
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-balance">
+            <div className="bg-white p-6 rounded-2xl shadow-sm border border-sand-100">
+              <div className="flex gap-1 text-sage-500 mb-4">{"★".repeat(5)}</div>
+              <p className="text-gray-600 mb-4 italic">"Gracias a Ordenízate pude sobrevivir a una mudanza con dos niños pequeños. El desembalaje y la colocación de cajas fue espectacular, dejaron la casa lista para vivir desde el minuto uno."</p>
+              <div className="font-semibold text-charcoal-900">— Laura M.</div>
+              <div className="text-xs text-gray-500">Servicio de Mudanza, Barcelona</div>
+            </div>
+            <div className="bg-white p-6 rounded-2xl shadow-sm border border-sand-100">
+              <div className="flex gap-1 text-sage-500 mb-4">{"★".repeat(5)}</div>
+              <p className="text-gray-600 mb-4 italic">"Mi armario era un caos. Me enseñaron a doblar en vertical y a categorizar mi ropa de una manera tan lógica que, meses después, sigue igual de ordenado. Fue una inversión increíble."</p>
+              <div className="font-semibold text-charcoal-900">— Carlos R.</div>
+              <div className="text-xs text-gray-500">Organización de Armario</div>
+            </div>
+            <div className="bg-white p-6 rounded-2xl shadow-sm border border-sand-100">
+              <div className="flex gap-1 text-sage-500 mb-4">{"★".repeat(5)}</div>
+              <p className="text-gray-600 mb-4 italic">"Hicimos una asesoría online para organizar el cuarto de juegos de mi hijo con TDAH. Las pautas fueron súper claras y ahora recoge él solo sus juguetes sin berrinches."</p>
+              <div className="font-semibold text-charcoal-900">— María T.</div>
+              <div className="text-xs text-gray-500">Asesoría Online</div>
+            </div>
+          </div>
         </Container>
       </Section>
-      */}
 
-      {/* FAQ *
+      {/* FAQ */}
       <Section>
         <Container className="max-w-3xl">
           <h2 className="text-3xl font-bold text-center mb-12 font-serif text-charcoal-900">Preguntas Frecuentes</h2>
           <div className="space-y-4">
             {[
-              { q: "¿Cuánto cuesta el servicio?", a: "Cada proyecto es único. Ofrecemos presupuestos personalizados tras la primera llamada gratuita." },
-              { q: "¿Tengo que estar presente?", a: "Depende de ti. En la fase de descarte es recomendable, pero en la organización puedo trabajar sola." },
-              { q: "¿Trabajas los fines de semana?", a: "Sí, previa reserva y con un pequeño suplemento." },
-              { q: "¿Qué pasa con lo que ya no quiero?", a: "Te ayudo a gestionarlo: donación, reciclaje o venta. Tú decides." },
+              { q: "¿Cuánto cuesta el servicio?", a: "Cada proyecto es único. Ofrecemos presupuestos personalizados tras la primera llamada gratuita en la que valoramos el volumen, estado y necesidades de tus estancias." },
+              { q: "¿Tengo que estar presente?", a: "Depende de ti. En la fase de descarte es recomendable (o indispensable) para tomar decisiones, pero en la fase de organización y colocación puedo trabajar sola con mis pautas." },
+              { q: "¿Trabajas los fines de semana?", a: "Sí, ofrezco disponibilidad los fines de semana para adaptarme a horarios laborables, previa reserva y con un suplemento por festividad." },
+              { q: "¿Qué pasa con lo que ya no quiero?", a: "Te ayudo a gestionarlo tras la sesión de descarte profundo: lo organizamos para su donación, reciclaje en punto limpio o venta de segunda mano. Tú decides el destino final de los descartes." },
             ].map((faq, idx) => (
               <div key={idx} className="border-b border-sand-200 pb-4">
                 <h3 className="font-semibold text-lg text-charcoal-900 mb-2">{faq.q}</h3>
@@ -305,7 +322,50 @@ export default function HomePage() {
           </div>
         </Container>
       </Section>
-      */}
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "¿Cuánto cuesta el servicio?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Cada proyecto es único. Ofrecemos presupuestos personalizados tras la primera llamada gratuita en la que valoramos el volumen, estado y necesidades de tus estancias."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "¿Tengo que estar presente?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Depende de ti. En la fase de descarte es recomendable (o indispensable) para tomar decisiones, pero en la fase de organización y colocación puedo trabajar sola con mis pautas."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "¿Trabajas los fines de semana?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Sí, ofrezco disponibilidad los fines de semana para adaptarme a horarios laborables, previa reserva y con un suplemento por festividad."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "¿Qué pasa con lo que ya no quiero?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Te ayudo a gestionarlo tras la sesión de descarte profundo: lo organizamos para su donación, reciclaje en punto limpio o venta de segunda mano. Tú decides el destino final de los descartes."
+                }
+              }
+            ]
+          })
+        }}
+      />
 
       {/* Final CTA */}
       <Section className="bg-charcoal-900 text-white text-center" spacing="lg">

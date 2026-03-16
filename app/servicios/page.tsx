@@ -4,16 +4,62 @@ import { SITE_CONFIG } from '@/lib/constants';
 import { Button } from '@/components/ui/Button';
 import { Container } from '@/components/ui/Container';
 import { Section } from '@/components/ui/Section';
-import { Check, Truck, Home, Bubbles, LampDesk, Container as LucideContainer, Shirt, ChefHat, ToyBrick, Monitor } from 'lucide-react';
+import { Truck, Home, Shirt, ChefHat, ToyBrick, Monitor, ArrowRight } from 'lucide-react';
 import { Heart, Shield, Leaf } from 'lucide-react';
 import { ValueCard } from '@/components/ui/ValueCard';
+import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: 'Servicios | Mudanzas y Organización',
-    description: 'Descubre nuestros servicios de organización profesional en Barcelona. Mudanzas, hogar, armarios, cocinas y más.',
+    title: 'Servicios | Mudanzas y Organización Profesional',
+    description: 'Descubre nuestros servicios de organización en Barcelona. Ayudamos en mudanzas, armarios, cocinas, habitaciones infantiles y hogar en general.',
 };
 
-export default function ServicesPage() {
+export default function ServicesHubPage() {
+    const services = [
+        {
+            title: "Mudanzas Pre y Post",
+            description: "Te acompañamos durante todo el proceso de pre-mudanza y post-mudanza para que aterrices en tu nuevo hogar con paz mental y todo en su sitio.",
+            icon: <Truck size={24} className="text-brand-yellow" />,
+            bgColor: "bg-yellow-50",
+            href: "/servicios/mudanzas-barcelona"
+        },
+        {
+            title: "Armarios y Vestidores",
+            description: "Doblado vertical, unificación visual y un sistema lógico para que elegir qué ponerte deje de ser un caos matutino.",
+            icon: <Shirt size={24} className="text-brand-purple" />,
+            bgColor: "bg-purple-50",
+            href: "/servicios/organizacion-armarios"
+        },
+        {
+            title: "Cocinas y Despensas",
+            description: "Distribución funcional de zonas de trabajo y almacenaje lógico para facilitar tus rutinas, evitar duplicidades y aprovechar lo que tienes.",
+            icon: <ChefHat size={24} className="text-sage-600" />,
+            bgColor: "bg-sage-50",
+            href: "/servicios/organizacion-cocinas"
+        },
+        {
+            title: "Estancias del Hogar",
+            description: "Devolvemos la armonía a zonas problemáticas como trasteros, lavaderos, despachos y baños, adaptándonos al uso real de tu familia.",
+            icon: <Home size={24} className="text-brand-yellow" />,
+            bgColor: "bg-yellow-50",
+            href: "/servicios/organizacion-hogar"
+        },
+        {
+            title: "Organización Infantil",
+            description: "Creemos en sistemas a la altura de los más pequeños (KonMari / TDAH-friendly) para fomentar su autonomía y reducir la sobreestimulación.",
+            icon: <ToyBrick size={24} className="text-brand-pink" />,
+            bgColor: "bg-pink-50",
+            href: "/servicios/organizacion-infantil"
+        },
+        {
+            title: "Asesoría Online",
+            description: "Diagnóstico, plan de acción personalizado a distancia y seguimiento para que organices tu espacio a tu propio ritmo con pautas claras.",
+            icon: <Monitor size={24} className="text-sage-600" />,
+            bgColor: "bg-sage-50",
+            href: "/servicios/asesoria-online"
+        }
+    ];
+
     return (
         <div className="pt-8">
             {/* Header */}
@@ -24,45 +70,35 @@ export default function ServicesPage() {
                             Servicios de Organización
                         </h1>
                         <p className="text-lg text-gray-600">
-                            Acompañamos la transformación de tu hogar a través de sistemas de orden prácticos, realistas y diseñados para mantenerse. Desde mudanzas integrales hasta la organización de armarios, cocinas o espacios infantiles, adaptamos cada solución a tu ritmo y estilo de vida.
+                            Acompañamos la transformación de tu hogar a través de sistemas de orden prácticos, realistas y diseñados para mantenerse. Elige el área en la que necesitas ayuda para ver el detalle.
                         </p>
                     </div>
                 </Container>
             </div>
 
-            {/* category: Mudanzas */}
-            <Section id="mudanzas">
+            {/* Hub Grid */}
+            <Section>
                 <Container>
-                    <div className="flex flex-col md:flex-row gap-12 items-center">
-                        <div className="flex-1">
-                            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-yellow-50 text-brand-yellow text-sm font-medium mb-4">
-                                <Truck size={16} /> Control
-                            </div>
-                            <h2 className="text-3xl font-serif font-bold text-charcoal-900 mb-6">Mudanzas (Pre + Post)</h2>
-                            <p className="text-gray-600 mb-6 text-lg space-y-4">
-                                La mudanza suele venir acompañada de decisiones, tiempos ajustados y una carga añadida. Nos ocupamos de estructurar el proceso para que se viva de forma tranquila y organizada.
-                            </p>
-                            <p className="text-gray-600 mb-6 text-lg space-y-4">
-                                <strong>Nota:</strong> El servicio es completamente adaptable: puede delegarse de forma integral o contratar únicamente la fase de pre-mudanza, mudanza o post-mudanza, según las necesidades de cada hogar.
-                            </p>
-
-                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
-                                <div className="bg-white p-6 rounded-xl border border-sand-200 shadow-sm">
-                                    <h3 className="font-semibold text-lg mb-2">Pre-mudanza</h3>
-                                    <ul className="space-y-2 text-sm text-gray-600">
-                                        <li className="flex gap-2"><Check size={16} className="text-sage-500" /> Descarte guiado</li>
-                                        <li className="flex gap-2"><Check size={16} className="text-sage-500" /> Embalaje profesional</li>
-                                        <li className="flex gap-2"><Check size={16} className="text-sage-500" /> Etiquetado detallado</li>
-                                    </ul>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        {services.map((service, index) => (
+                            <Link 
+                                key={index} 
+                                href={service.href}
+                                className="group flex flex-col bg-white rounded-3xl p-8 shadow-sm border border-sand-200 hover:shadow-xl hover:border-sage-200 transition-all duration-300"
+                            >
+                                <div className={`w-14 h-14 rounded-2xl ${service.bgColor} flex items-center justify-center mb-6`}>
+                                    {service.icon}
                                 </div>
-                                <div className="bg-white p-6 rounded-xl border border-sand-200 shadow-sm">
-                                    <h3 className="font-semibold text-lg mb-2">Post-mudanza</h3>
-                                    <ul className="space-y-2 text-sm text-gray-600">
-                                        <li className="flex gap-2"><Check size={16} className="text-sage-500" /> Desembalaje integral y colocación minuciosa</li>
-                                        <li className="flex gap-2"><Check size={16} className="text-sage-500" /> Organización funcional adaptada a tu estilo de vida</li>
-                                        <li className="flex gap-2"><Check size={16} className="text-sage-500" /> Entrega final del hogar listo para disfrutar</li>
-                                    </ul>
+                                <h2 className="text-2xl font-serif font-bold text-charcoal-900 mb-4 group-hover:text-sage-700 transition-colors">
+                                    {service.title}
+                                </h2>
+                                <p className="text-gray-600 mb-8 flex-1">
+                                    {service.description}
+                                </p>
+                                <div className="flex items-center text-sage-600 font-medium group-hover:underline mt-auto">
+                                    Ver todas las ventajas <ArrowRight size={18} className="ml-2 group-hover:translate-x-1 transition-transform" />
                                 </div>
+<<<<<<< HEAD
                             </div>
 
                             <Button href="/contacto" size="lg" className="w-full sm:w-auto">Pedir Presupuesto Mudanza</Button>
@@ -327,6 +363,10 @@ export default function ServicesPage() {
                                 className="object-cover"
                             />
                         </div>
+=======
+                            </Link>
+                        ))}
+>>>>>>> 30b3c00 (feat split services pages)
                     </div>
                 </Container>
             </Section>
@@ -356,35 +396,4 @@ export default function ServicesPage() {
             </Section>
         </div>
     );
-}
-
-function ServiceItem({ title, description, icon }: { title: string, description: string, icon: React.ReactNode }) {
-    return (
-        <div className="flex gap-4">
-            <div className="mt-1 bg-sand-50 p-2 rounded-lg h-fit">
-                {icon}
-            </div>
-            <div>
-                <h3 className="font-semibold text-charcoal-900">{title}</h3>
-                <p className="text-sm text-gray-600 mt-1">{description}</p>
-            </div>
-        </div>
-    )
-}
-
-function PriceCard({ title, hours, price, features, highlight }: { title: string, hours: string, price: string, features: string[], highlight?: boolean }) {
-    return (
-        <div className={`p-8 rounded-2xl border ${highlight ? 'bg-white border-sage-200 shadow-lg relative' : 'bg-transparent border-sand-200'}`}>
-            {highlight && <div className="absolute top-0 right-0 bg-sage-500 text-white text-xs px-3 py-1 rounded-bl-lg rounded-tr-lg font-medium">Popular</div>}
-            <h3 className="font-serif font-bold text-xl mb-2">{title}</h3>
-            <p className="text-gray-500 text-sm mb-4">{hours}</p>
-            <div className="text-3xl font-bold text-charcoal-900 mb-6">{price}</div>
-            <ul className="space-y-3 text-sm text-gray-600 mb-8">
-                {features.map((f, i) => (
-                    <li key={i} className="flex gap-2"><Check size={16} className="text-sage-500" /> {f}</li>
-                ))}
-            </ul>
-            <Button href="/contacto" variant={highlight ? 'primary' : 'outline'} className="w-full">Reservar</Button>
-        </div>
-    )
 }
