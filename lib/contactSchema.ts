@@ -20,7 +20,6 @@ export const contactSchema = z.object({
 
     message: z.string()
         .trim()
-        .min(1, "Campo obligatorio")
         .max(2000, "El mensaje es demasiado largo"),
 
     privacy: z.boolean().refine(val => val === true, "Campo obligatorio"),
