@@ -44,3 +44,6 @@ next-env.d.ts
 # test output
 coverage
 *test-output.txt
+
+# lint output
+lint_output.txt

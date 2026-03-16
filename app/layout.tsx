@@ -30,8 +30,8 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Ordenízate Bcn',
     description: 'Transforma tu espacio, transforma tu vida.',
-    url: 'https://ordenizatebcn.com',
-    siteName: 'Ordenízate Bcn',
+    url: 'https://ordenizate.es',
+    siteName: 'Ordenízate',
     locale: 'es_ES',
     type: 'website',
   },
@@ -56,6 +56,28 @@ export default function RootLayout({
           "antialiased min-h-screen flex flex-col bg-sand-50"
         )}
       >
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "LocalBusiness",
+              "name": "Ordenízate",
+              "image": "https://ordenizate.es/images/hero-home-2.jpg",
+              "@id": "https://ordenizate.es",
+              "url": "https://ordenizate.es",
+              "telephone": "+34636757684",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Barcelona",
+                "addressRegion": "Barcelona",
+                "addressCountry": "ES"
+              },
+              "description": "Servicios de organización profesional en Barcelona. Transformamos tu hogar con orden, estilo y calma. Mudanzas, armarios, cocinas y más.",
+              "priceRange": "$$"
+            })
+          }}
+        />
         <Navbar />
         <main className="flex-grow">
           {children}

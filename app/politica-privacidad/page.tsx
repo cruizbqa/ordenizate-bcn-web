@@ -26,7 +26,7 @@ export default function PoliticaPrivacidadPage() {
                         <section>
                             <h2 className="text-2xl font-serif font-semibold text-charcoal-900 mb-4">1. Responsable del Tratamiento</h2>
                             <p>
-                                <strong>Nombre:</strong> {SITE_CONFIG.legal.owner} (en adelante, "{SITE_CONFIG.name}")<br />
+                                <strong>Nombre:</strong> {SITE_CONFIG.legal.owner} (en adelante, &quot;{SITE_CONFIG.name}&quot;)<br />
                                 <strong>Email de contacto:</strong> {SITE_CONFIG.legal.email}<br />
                                 <strong>Domicilio:</strong> {SITE_CONFIG.contact.address}
                             </p>

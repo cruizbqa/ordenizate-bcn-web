@@ -36,6 +36,7 @@ export function handleInstagramDeepLink(e: React.MouseEvent<HTMLAnchorElement>) 
     }
 
     const start = Date.now();
+    // eslint-disable-next-line prefer-const
     let timer: NodeJS.Timeout;
 
     // Help avoid the fallback if the app was successfully opened
