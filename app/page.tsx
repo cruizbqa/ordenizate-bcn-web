@@ -137,7 +137,27 @@ export default function HomePage() {
               <Button href="/servicios#armarios" variant="primary" className="mt-8 w-full">Más información</Button>
             </div>
 
-            {/* Service 3: COCINAS */}
+            {/* Service 3: INFANTIL */}
+            <div className="flex-none w-[85vw] sm:w-[400px] snap-center flex flex-col rounded-3xl bg-sand-50 p-8 ring-1 ring-gray-200 xl:p-10 transition-shadow hover:shadow-lg border-t-4 border-brand-pink">
+              <div className="flex items-center justify-between gap-x-4">
+                <h3 className="text-lg font-semibold leading-8 text-charcoal-900 font-serif uppercase">INFANTIL</h3>
+                <ToyBrick className="h-6 w-6 text-brand-pink" />
+              </div>
+              <p className="mt-4 flex items-baseline gap-x-1">
+                <span className="text-4xl font-bold tracking-tight text-gray-900">CUIDADO</span>
+              </p>
+              <p className="mt-6 text-base leading-7 text-gray-600">
+                Preparación y adaptación de espacios infantiles para acompañar cada etapa, reduciendo la carga mental familiar y facilitando la rutina diaria.
+              </p>
+              <ul role="list" className="mt-8 space-y-3 text-sm leading-6 text-gray-600 xl:mt-10 mb-auto">
+                <li className="flex gap-x-3"><Check className="h-6 w-5 flex-none text-sage-600" /> Preparación del espacio para la llegada del bebé</li>
+                <li className="flex gap-x-3"><Check className="h-6 w-5 flex-none text-sage-600" /> Organización evolutiva según el crecimiento</li>
+                <li className="flex gap-x-3"><Check className="h-6 w-5 flex-none text-sage-600" /> Sistemas que fomentan autonomía y orden</li>
+              </ul>
+              <Button href="/servicios#infantil" variant="outline" className="mt-8 w-full">Más información</Button>
+            </div>
+
+            {/* Service 4: COCINAS */}
             <div className="flex-none w-[85vw] sm:w-[400px] snap-center flex flex-col rounded-3xl bg-sand-50 p-8 ring-1 ring-gray-200 xl:p-10 transition-shadow hover:shadow-lg border-t-4 border-sage-500">
               <div className="flex items-center justify-between gap-x-4">
                 <h3 className="text-lg font-semibold leading-8 text-charcoal-900 font-serif uppercase">COCINAS Y DESPENSAS</h3>
@@ -157,7 +177,7 @@ export default function HomePage() {
               <Button href="/servicios#cocinas" variant="outline" className="mt-8 w-full">Más información</Button>
             </div>
 
-            {/* Service 4: ESTANCIAS */}
+            {/* Service 5: ESTANCIAS */}
             <div className="flex-none w-[85vw] sm:w-[400px] snap-center flex flex-col rounded-3xl bg-white p-8 ring-1 ring-gray-200 xl:p-10 transition-shadow hover:shadow-lg border-t-4 border-brand-yellow">
               <div className="flex items-center justify-between gap-x-4">
                 <h3 className="text-lg font-semibold leading-8 text-charcoal-900 font-serif uppercase">ESTANCIAS</h3>
@@ -175,26 +195,6 @@ export default function HomePage() {
                 <li className="flex gap-x-3"><Check className="h-6 w-5 flex-none text-sage-600" /> Trasteros y almacenaje profundo</li>
               </ul>
               <Button href="/servicios#hogar" variant="primary" className="mt-8 w-full">Más información</Button>
-            </div>
-
-            {/* Service 5: INFANTIL */}
-            <div className="flex-none w-[85vw] sm:w-[400px] snap-center flex flex-col rounded-3xl bg-sand-50 p-8 ring-1 ring-gray-200 xl:p-10 transition-shadow hover:shadow-lg border-t-4 border-brand-pink">
-              <div className="flex items-center justify-between gap-x-4">
-                <h3 className="text-lg font-semibold leading-8 text-charcoal-900 font-serif uppercase">INFANTIL</h3>
-                <ToyBrick className="h-6 w-6 text-brand-pink" />
-              </div>
-              <p className="mt-4 flex items-baseline gap-x-1">
-                <span className="text-4xl font-bold tracking-tight text-gray-900">CUIDADO</span>
-              </p>
-              <p className="mt-6 text-base leading-7 text-gray-600">
-                Preparación y adaptación de espacios infantiles para acompañar cada etapa, reduciendo la carga mental familiar y facilitando la rutina diaria.
-              </p>
-              <ul role="list" className="mt-8 space-y-3 text-sm leading-6 text-gray-600 xl:mt-10 mb-auto">
-                <li className="flex gap-x-3"><Check className="h-6 w-5 flex-none text-sage-600" /> Preparación del espacio para la llegada del bebé</li>
-                <li className="flex gap-x-3"><Check className="h-6 w-5 flex-none text-sage-600" /> Organización evolutiva según el crecimiento</li>
-                <li className="flex gap-x-3"><Check className="h-6 w-5 flex-none text-sage-600" /> Sistemas que fomentan autonomía y orden</li>
-              </ul>
-              <Button href="/servicios#infantil" variant="outline" className="mt-8 w-full">Más información</Button>
             </div>
 
             {/* Service 6: ASESORÍA ONLINE */}
