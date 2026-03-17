@@ -37,12 +37,12 @@ export function Footer() {
                     <div>
                         <h3 className="font-serif text-lg font-semibold text-charcoal-900 mb-4">Servicios</h3>
                         <ul className="space-y-3 text-sm text-gray-600">
-                            <li><Link href="/servicios#mudanzas" className="hover:text-sage-600 transition-colors">Mudanzas (Pre + Post)</Link></li>
-                            <li><Link href="/servicios#armarios" className="hover:text-sage-600 transition-colors">Armarios y Vestidores</Link></li>
-                            <li><Link href="/servicios#cocinas" className="hover:text-sage-600 transition-colors">Cocinas y Despensas</Link></li>
-                            <li><Link href="/servicios#hogar" className="hover:text-sage-600 transition-colors">Estancias</Link></li>
-                            <li><Link href="/servicios#infantil" className="hover:text-sage-600 transition-colors">Organización Infantil</Link></li>
-                            <li><Link href="/servicios#online" className="hover:text-sage-600 transition-colors">Asesoría Online</Link></li>
+                            <li><Link href="/servicios/mudanzas-barcelona" className="hover:text-sage-600 transition-colors">Mudanzas (Pre + Post)</Link></li>
+                            <li><Link href="/servicios/organizacion-armarios" className="hover:text-sage-600 transition-colors">Armarios y Vestidores</Link></li>
+                            <li><Link href="/servicios/organizacion-infantil" className="hover:text-sage-600 transition-colors">Organización Infantil</Link></li>
+                            <li><Link href="/servicios/organizacion-cocinas" className="hover:text-sage-600 transition-colors">Cocinas y Despensas</Link></li>
+                            <li><Link href="/servicios/organizacion-hogar" className="hover:text-sage-600 transition-colors">Estancias</Link></li>
+                            <li><Link href="/servicios/asesoria-online" className="hover:text-sage-600 transition-colors">Asesoría Online</Link></li>
                         </ul>
                     </div>
 

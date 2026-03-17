@@ -4,7 +4,8 @@ import { SITE_CONFIG } from '@/lib/constants';
 import { Button } from '@/components/ui/Button';
 import { Container } from '@/components/ui/Container';
 import { Section } from '@/components/ui/Section';
-import { Home, Bubbles, LampDesk, Container as LucideContainer } from 'lucide-react';
+import { Home, Bubbles, LampDesk, Container as LucideContainer, ArrowLeft } from 'lucide-react';
+import Link from 'next/link';
 
 export const metadata: Metadata = {
     title: 'Organización de Estancias del Hogar | Ordenízate',
@@ -13,13 +14,17 @@ export const metadata: Metadata = {
 
 export default function HogarPage() {
     return (
-        <div className="pt-24 pb-16">
+        <div className="pt-8 pb-12">
             <Section className="bg-sand-50/50">
                 <Container>
+                    <Link href="/servicios" className="inline-flex items-center gap-2 text-sm text-gray-500 hover:text-sage-600 transition-colors mb-8">
+                        <ArrowLeft size={16} />
+                        Volver a Servicios
+                    </Link>
                     <div className="flex flex-col md:flex-row-reverse gap-12 items-center">
                         <div className="flex-1">
                             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-yellow-50 text-brand-yellow text-sm font-medium mb-4">
-                                <Home size={16} /> Especialistas en el Hogar
+                                <Home size={16} /> Armonía
                             </div>
                             <h1 className="text-4xl sm:text-5xl font-serif font-bold text-charcoal-900 mb-6">
                                 Organización de Estancias

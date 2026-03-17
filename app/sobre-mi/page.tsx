@@ -11,9 +11,9 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
     return (
-        <div className="pt-8">
+        <div className="pt-0">
             <Container>
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center py-16">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center py-8 md:py-16">
                     {/* Text */}
                     <div>
                         <h1 className="text-4xl lg:text-5xl font-serif font-bold text-charcoal-900 mb-8">

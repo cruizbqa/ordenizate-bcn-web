@@ -30,7 +30,7 @@ export default function HomePage() {
       {/* Hero Section */}
       <div className="relative isolate overflow-hidden bg-sand-50">
         <div className="absolute inset-y-0 right-1/2 -z-10 -mr-96 w-[200%] origin-top-right skew-x-[-30deg] bg-white shadow-xl shadow-sage-600/10 ring-1 ring-sage-50 sm:-mr-80 lg:-mr-96" aria-hidden="true" />
-        <Container className="pt-24 pb-16 sm:pb-32 lg:pb-40 lg:pt-40">
+        <Container className="pt-8 pb-16 sm:pb-24 lg:pb-32 lg:pt-16">
           <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-xl">
             <div className="mb-8 flex sm:mb-10">
               <div className="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-500 ring-1 ring-gray-900/10 hover:ring-sage-500/20">
@@ -156,7 +156,7 @@ export default function HomePage() {
                 <li className="flex gap-x-3"><Check className="h-6 w-5 flex-none text-sage-600" /> Organización evolutiva según el crecimiento</li>
                 <li className="flex gap-x-3"><Check className="h-6 w-5 flex-none text-sage-600" /> Sistemas que fomentan autonomía y orden</li>
               </ul>
-              <Button href="/servicios#infantil" variant="outline" className="mt-8 w-full">Más información</Button>
+              <Button href="/servicios/organizacion-infantil" variant="outline" className="mt-8 w-full">Más información</Button>
             </div>
 
             {/* Service 4: COCINAS */}
@@ -176,7 +176,7 @@ export default function HomePage() {
                 <li className="flex gap-x-3"><Check className="h-6 w-5 flex-none text-sage-600" /> Unificación de formatos adecuados</li>
                 <li className="flex gap-x-3"><Check className="h-6 w-5 flex-none text-sage-600" /> Distribución funcional según uso</li>
               </ul>
-              <Button href="/servicios#cocinas" variant="primary" className="mt-8 w-full">Más información</Button>
+              <Button href="/servicios/organizacion-cocinas" variant="primary" className="mt-8 w-full">Más información</Button>
             </div>
 
             {/* Service 5: ESTANCIAS */}
@@ -196,7 +196,7 @@ export default function HomePage() {
                 <li className="flex gap-x-3"><Check className="h-6 w-5 flex-none text-sage-600" /> Despachos</li>
                 <li className="flex gap-x-3"><Check className="h-6 w-5 flex-none text-sage-600" /> Trasteros y almacenaje profundo</li>
               </ul>
-              <Button href="/servicios#hogar" variant="outline" className="mt-8 w-full">Más información</Button>
+              <Button href="/servicios/organizacion-hogar" variant="outline" className="mt-8 w-full">Más información</Button>
             </div>
 
             {/* Service 6: ASESORÍA ONLINE */}
@@ -276,7 +276,7 @@ export default function HomePage() {
         </Container>
       </Section>
 
-      {/* Testimonials */}
+      {/* Testimonials *
       <Section className="bg-sage-50/50">
         <Container>
           <h2 className="text-3xl font-bold text-center mb-12 font-serif text-charcoal-900">Lo que dicen mis clientes</h2>
@@ -302,8 +302,9 @@ export default function HomePage() {
           </div>
         </Container>
       </Section>
+      */}
 
-      {/* FAQ */}
+      {/* FAQ
       <Section>
         <Container className="max-w-3xl">
           <h2 className="text-3xl font-bold text-center mb-12 font-serif text-charcoal-900">Preguntas Frecuentes</h2>
@@ -366,6 +367,7 @@ export default function HomePage() {
           })
         }}
       />
+      */}
 
       {/* Final CTA */}
       <Section className="bg-charcoal-900 text-white text-center" spacing="lg">

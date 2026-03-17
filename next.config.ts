@@ -21,6 +21,37 @@ const nextConfig: NextConfig = {
         destination: '/:path*',
         permanent: true,
       },
+      // Service Redirects
+      {
+        source: '/servicios/mudanzas',
+        destination: '/servicios/mudanzas-barcelona',
+        permanent: true,
+      },
+      {
+        source: '/servicios/armarios',
+        destination: '/servicios/organizacion-armarios',
+        permanent: true,
+      },
+      {
+        source: '/servicios/cocinas',
+        destination: '/servicios/organizacion-cocinas',
+        permanent: true,
+      },
+      {
+        source: '/servicios/hogar',
+        destination: '/servicios/organizacion-hogar',
+        permanent: true,
+      },
+      {
+        source: '/servicios/infantil',
+        destination: '/servicios/organizacion-infantil',
+        permanent: true,
+      },
+      {
+        source: '/servicios/online',
+        destination: '/servicios/asesoria-online',
+        permanent: true,
+      },
     ];
   },
 };
