@@ -49,8 +49,10 @@ export default function HomePage() {
             </h2>
             <p className="mt-4 text-lg leading-8 text-gray-600">
               Creamos sistemas de organización prácticos, adaptados a la realidad de cada espacio y diseñados para mantenerse en el tiempo.<br className="hidden sm:block" />
-              Especialistas en <Link href="/servicios#mudanzas" className="text-sage-600 hover:text-sage-700 underline underline-offset-2 font-medium">mudanzas</Link>, <Link href="/servicios#armarios" className="text-sage-600 hover:text-sage-700 underline underline-offset-2 font-medium">armarios</Link>, <Link href="/servicios#cocinas" className="text-sage-600 hover:text-sage-700 underline underline-offset-2 font-medium">cocinas</Link>, <Link href="/servicios#hogar" className="text-sage-600 hover:text-sage-700 underline underline-offset-2 font-medium">estancias</Link> y <Link href="/servicios#infantil" className="text-sage-600 hover:text-sage-700 underline underline-offset-2 font-medium">organización infantil</Link>. Trabajamos de forma presencial y también <Link href="/servicios#online" className="text-sage-600 hover:text-sage-700 underline underline-offset-2 font-medium">online</Link>.<br /><br />
-              Con base en Barcelona y disponible para proyectos en toda España.
+              Trabajamos de forma presencial y también online
+            </p>
+            <p className="mt-4 text-lg leading-8 text-gray-600">
+              Con base en Barcelona y disponible para proyectos en toda España según disponibilidad.
             </p>
             <div className="mt-10 flex flex-col sm:flex-row items-center gap-4">
               <Button href="/contacto" size="lg" variant="primary">
@@ -174,7 +176,7 @@ export default function HomePage() {
                 <li className="flex gap-x-3"><Check className="h-6 w-5 flex-none text-sage-600" /> Unificación de formatos adecuados</li>
                 <li className="flex gap-x-3"><Check className="h-6 w-5 flex-none text-sage-600" /> Distribución funcional según uso</li>
               </ul>
-              <Button href="/servicios#cocinas" variant="outline" className="mt-8 w-full">Más información</Button>
+              <Button href="/servicios#cocinas" variant="primary" className="mt-8 w-full">Más información</Button>
             </div>
 
             {/* Service 5: ESTANCIAS */}
@@ -194,7 +196,7 @@ export default function HomePage() {
                 <li className="flex gap-x-3"><Check className="h-6 w-5 flex-none text-sage-600" /> Despachos</li>
                 <li className="flex gap-x-3"><Check className="h-6 w-5 flex-none text-sage-600" /> Trasteros y almacenaje profundo</li>
               </ul>
-              <Button href="/servicios#hogar" variant="primary" className="mt-8 w-full">Más información</Button>
+              <Button href="/servicios#hogar" variant="outline" className="mt-8 w-full">Más información</Button>
             </div>
 
             {/* Service 6: ASESORÍA ONLINE */}
