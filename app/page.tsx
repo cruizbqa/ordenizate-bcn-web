@@ -9,8 +9,8 @@ import { ServicesSlider } from "@/components/ui/ServicesSlider";
 import { Check, Home, Sparkles, Clock, Truck, Shirt, ChefHat, ToyBrick, Monitor } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: 'Organizadora Profesional | Ordenízate',
-  description: 'Servicio de organización profesional. Mudanzas, armarios, cocinas, hogar y consultoría online. Sistemas de orden que te devuelven tiempo y paz mental.',
+  title: 'Organizadora Profesional en Barcelona | Ordenízate',
+  description: 'Servicio de organización profesional en Barcelona. Mudanzas, armarios, cocinas, hogar y consultoría online. Recupera tu tiempo y paz mental con sistemas de orden.',
   openGraph: {
     title: 'Ordenízate | Organización Profesional',
     description: 'Transforma tu espacio, transforma tu vida.',
@@ -32,7 +32,7 @@ export default function HomePage() {
         <div className="absolute inset-y-0 right-1/2 -z-10 -mr-96 w-[200%] origin-top-right skew-x-[-30deg] bg-white shadow-xl shadow-sage-600/10 ring-1 ring-sage-50 sm:-mr-80 lg:-mr-96" aria-hidden="true" />
         <Container className="pt-24 pb-16 sm:pb-32 lg:pb-40 lg:pt-40">
           <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-xl">
-            <div className="hidden sm:mb-10 sm:flex">
+            <div className="mb-8 flex sm:mb-10">
               <div className="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-500 ring-1 ring-gray-900/10 hover:ring-sage-500/20">
                 Organización profesional · Servicio presencial y online {" "}
                 <Link href="/sobre-mi" className="whitespace-nowrap font-semibold text-sage-600">
@@ -42,14 +42,16 @@ export default function HomePage() {
               </div>
             </div>
             <h1 className="mt-10 text-4xl font-bold tracking-tight text-charcoal-900 sm:text-6xl font-serif">
-              Orden real para casas reales.
+              Organización profesional del hogar <span className="text-sage-600">en Barcelona</span>
             </h1>
-            <p className="mt-6 text-xl font-medium text-charcoal-800 font-serif">
-              Un buen sistema no se nota, funciona.
-            </p>
+            <h2 className="mt-6 text-xl font-medium text-charcoal-800 font-serif">
+              Orden real para casas reales.
+            </h2>
             <p className="mt-4 text-lg leading-8 text-gray-600">
               Creamos sistemas de organización prácticos, adaptados a la realidad de cada espacio y diseñados para mantenerse en el tiempo.<br className="hidden sm:block" />
-              Trabajamos de forma presencial y también online.<br /><br />
+              Trabajamos de forma presencial y también online
+            </p>
+            <p className="mt-4 text-lg leading-8 text-gray-600">
               Con base en Barcelona y disponible para proyectos en toda España según disponibilidad.
             </p>
             <div className="mt-10 flex flex-col sm:flex-row items-center gap-4">
@@ -174,7 +176,7 @@ export default function HomePage() {
                 <li className="flex gap-x-3"><Check className="h-6 w-5 flex-none text-sage-600" /> Unificación de formatos adecuados</li>
                 <li className="flex gap-x-3"><Check className="h-6 w-5 flex-none text-sage-600" /> Distribución funcional según uso</li>
               </ul>
-              <Button href="/servicios#cocinas" variant="outline" className="mt-8 w-full">Más información</Button>
+              <Button href="/servicios#cocinas" variant="primary" className="mt-8 w-full">Más información</Button>
             </div>
 
             {/* Service 5: ESTANCIAS */}
@@ -194,7 +196,7 @@ export default function HomePage() {
                 <li className="flex gap-x-3"><Check className="h-6 w-5 flex-none text-sage-600" /> Despachos</li>
                 <li className="flex gap-x-3"><Check className="h-6 w-5 flex-none text-sage-600" /> Trasteros y almacenaje profundo</li>
               </ul>
-              <Button href="/servicios#hogar" variant="primary" className="mt-8 w-full">Más información</Button>
+              <Button href="/servicios#hogar" variant="outline" className="mt-8 w-full">Más información</Button>
             </div>
 
             {/* Service 6: ASESORÍA ONLINE */}

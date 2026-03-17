@@ -17,7 +17,7 @@ export default function AboutPage() {
                     {/* Text */}
                     <div>
                         <h1 className="text-4xl lg:text-5xl font-serif font-bold text-charcoal-900 mb-8">
-                            Más que ordenar, <br /><span className="text-sage-600">creo estructuras que aporta calma.</span>
+                            Más que ordenar, <br /><span className="text-sage-600">creo estructura que aporta calma</span>
                         </h1>
                         <p className="text-xl font-bold text-gray-800 mb-4 leading-relaxed">
                             Hola, soy Silvia, fundadora de Ordenízate.
@@ -58,32 +58,6 @@ export default function AboutPage() {
                     </div>
                 </div>
             </Container>
-
-            {/* Values */}
-            {/*
-            <Section className="bg-sand-50">
-                <Container>
-                    <h2 className="text-3xl font-serif font-bold text-center mb-16">Por qué elegirnos</h2>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        <ValueCard
-                            icon={<Heart className="w-8 h-8 text-brand-pink" />}
-                            title="Sin Juicios"
-                            desc="Acompañamiento desde el respeto y la empatía en cada proceso."
-                        />
-                        <ValueCard
-                            icon={<Shield className="w-8 h-8 text-brand-purple" />}
-                            title="Confidencialidad"
-                            desc="Máxima discreción y confidencialidad en cada servicio."
-                        />
-                        <ValueCard
-                            icon={<Leaf className="w-8 h-8 text-brand-yellow" />}
-                            title="Sostenibilidad"
-                            desc="Fomentamos el consumo responsable y una gestión más consciente de lo que ya no se necesita."
-                        />
-                    </div>
-                </Container>
-            </Section>
-            */}
         </div>
     );
 }
