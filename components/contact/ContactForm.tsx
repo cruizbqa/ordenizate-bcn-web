@@ -103,7 +103,7 @@ export function ContactForm() {
                 </div>
                 <h2 className="text-3xl font-serif font-bold text-charcoal-900 mb-4 text-balance">¡Mensaje enviado correctamente!</h2>
                 <p className="text-gray-600 mb-10 max-w-sm mx-auto leading-relaxed">
-                    Gracias por contactar conmigo. Te responderé personalmente en un plazo de 24-48 horas.
+                    Gracias por contactar conmigo. Te responderé personalmente y valoraremos la mejor solución para tu espacio.
                 </p>
                 <button
                     onClick={() => setStatus('idle')}
@@ -260,7 +260,7 @@ export function ContactForm() {
 
                 <div className="text-center mt-6 pt-6 border-t border-sand-100 space-y-1">
                     <p className="text-sm text-sage-800 font-bold tracking-tight">
-                        Completa los datos y te contactaré lo antes posible para valorar tu caso.
+                        Te responderé personalmente y valoraremos la mejor solución para tu espacio.
                     </p>
                 </div>
             </form>

@@ -17,31 +17,30 @@ export default function AboutPage() {
                     {/* Text */}
                     <div>
                         <h1 className="text-4xl lg:text-5xl font-serif font-bold text-charcoal-900 mb-8">
-                            Más que ordenar, <br /><span className="text-sage-600">creo estructuras que aportan calma.</span>
+                            Más que ordenar, <br /><span className="text-sage-600">creo estructuras que aporta calma.</span>
                         </h1>
                         <p className="text-xl font-bold text-gray-800 mb-4 leading-relaxed">
                             Hola, soy Silvia, fundadora de Ordenízate.
                         </p>
                         <div className="space-y-4 text-lg text-gray-600 mb-8 leading-relaxed">
                             <p>
-                                Durante años entendí el orden como una necesidad personal: una forma de reducir la saturación, optimizar el tiempo y evitar tensiones innecesarias en el día a día. Con el tiempo descubrí que no se trataba de perfeccionismo, sino de funcionalidad real.
+                                Durante años entendí el orden como una necesidad personal, una forma de reducir el estrés, aprovechar el tiempo al máximo y evitar tensiones innecesarias en el día a día. Con el tiempo descubrí que no se trataba de perfeccionismo, sino de funcionalidad real.
                             </p>
                             <p>
-                                Soy una persona con TDAH y alta sensibilidad, y eso me ha enseñado algo importante: el entorno influye directamente en cómo pensamos, cómo nos organizamos y cómo nos sentimos. Cuando todo está desestructurado, la mente también lo está. Cuando el espacio es claro y ordenado, la mente gana calma y enfoque.
+                                Soy una persona con TDAH y alta sensibilidad, y eso me ha enseñado algo importante, y es que el entorno influye directamente en cómo pensamos, nos organizamos y nos sentimos. Cuando todo está desestructurado, la mente también lo está, y cuando el espacio está ordenado, la mente gana calma y enfoque.
                             </p>
                             <p>
-                                Para mí, el orden no es estética. Es reducir ruido mental y crear estructura para que el día a día fluya con más claridad.
+                                Para mí, el orden no es estética, es reducir ruido mental y crear estructura para que el día a día fluya con más claridad.
                             </p>
                             <p>
-                                Cuando existe un sistema bien pensado, incluso si el caos aparece -porque aparece- el orden vuelve en pocas minutos. Y eso cambia todo.
+                                Cuando existe un sistema bien pensado, incluso si el caos aparece (porque aparece), el orden vuelve en pocos minutos y eso lo cambia todo.
                             </p>
                             <p>
-                                Mi método no busca casas perfectas. Busca estructuras reales para familias reales. Espacios que funcionen incluso cuando la vida es intensa y se desordena un poco.
+                                Mi método no busca casas perfectas, busca estructuras reales para familias reales, espacios que funcionen incluso cuando la vida es intensa y se desordena un poco.
                             </p>
                             <p className="font-bold text-charcoal-900 italic">
-                                Porque el orden no es rigidez. Es claridad. Y la claridad libera.
+                                Porque el orden no es rigidez, es claridad, y la claridad libera.
                             </p>
-                            <p>Hablemos.</p>
                         </div>
                         <div className="flex gap-4">
                             <Button href="/contacto">Hablemos</Button>
