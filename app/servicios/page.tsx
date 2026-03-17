@@ -93,7 +93,7 @@ export default function ServicesPage() {
                             <h2 className="text-3xl font-serif font-bold text-charcoal-900 mb-6">Armarios y Vestidores</h2>
                             <div className="text-gray-600 mb-6 text-lg space-y-4">
                                 <p>
-                                    Creamos un sistema de organización claro y coherente con la realidad de cada hogar, donde cada prenda encuentra su lugar y el espacio se vuelve más ligero, claro y fácil de mantener.
+                                    Creamos sistemas de organización claro y coherente con la realidad de cada hogar, donde cada prenda encuentra su lugar y el espacio se vuelve más ligero, claro y fácil de mantener.
                                 </p>
                                 <p className="text-gray-600 mb-6 text-lg space-y-4">
                                     Aplicamos técnicas profesionales adaptadas a la tipología de cada prenda y a la configuración del armario, asegurando un resultado práctico, estético y duradero en el tiempo.
@@ -158,11 +158,11 @@ export default function ServicesPage() {
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
                                 <div className="bg-white p-5 rounded-2xl border border-sand-200 shadow-sm">
                                     <h3 className="font-semibold text-charcoal-900 mb-1">Cocina</h3>
-                                    <p className="text-xs text-gray-500 leading-relaxed text-balance">Distribución funcional de utensilios y vajilla, priorizando el acceso cómodo.</p>
+                                    <p className="text-xs text-gray-500 leading-relaxed text-balance">Distribución funcional de utensilios, vajilla y zonas de trabajo, priorizando el acceso cómodo y la coherencia en el uso diario.</p>
                                 </div>
                                 <div className="bg-white p-5 rounded-2xl border border-sand-200 shadow-sm">
                                     <h3 className="font-semibold text-charcoal-900 mb-1">Despensa</h3>
-                                    <p className="text-xs text-gray-500 leading-relaxed text-balance">  Organización por categorías lógicas que facilitan la rotación de productos.</p>
+                                    <p className="text-xs text-gray-500 leading-relaxed text-balance">Organización por categorías y agrupaciones lógicas que facilitan la rotación de productos y reducen la acumulación innecesaria.</p>
                                 </div>
                             </div>
 
@@ -212,7 +212,7 @@ export default function ServicesPage() {
                                 />
                                 <ServiceItem
                                     title="Trasteros"
-                                    description="Reorganización estratégica de almacenaje profundo, priorizando accesibilidad."
+                                    description="Reorganización estratégica de almacenaje profundo, priorizando accesibilidad y coherencia."
                                     icon={<LucideContainer className="text-brand-yellow" />}
                                 />
                             </div>
@@ -243,21 +243,21 @@ export default function ServicesPage() {
                             <h2 className="text-3xl font-serif font-bold text-charcoal-900 mb-6">Organización Infantil</h2>
                             <div className="text-gray-600 mb-6 text-lg space-y-4">
                                 <p>
-                                    Como organizadora profesional especializada en metodologías de organización consciente y experta en el acompañamiento de personas con TDAH, entiendo que el orden en los espacios infantiles es clave para el bienestar familiar.
+                                    La llegada de un bebé o los cambios de etapa traen ilusión, pero también decisiones y organización constante. Diseñamos espacios claros y funcionales que acompañan este proceso, aportando estructura sin añadir presión.
                                 </p>
-                                <p className="text-gray-600 mb-6 text-lg space-y-4">
-                                    Diseñamos sistemas intuitivos, visuales y fáciles de mantener que fomentan la autonomía, reducen la sobreestimulación y se adaptan al ritmo de cada niño, aportando calma y estructura al hogar.
+                                <p className="text-base text-gray-500">
+                                    Creamos sistemas prácticos y fáciles de mantener, pensados para aliviar la carga mental y facilitar el día a día familiar.
                                 </p>
                             </div>
 
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
                                 <div className="bg-white p-5 rounded-2xl border border-sand-200 shadow-sm">
                                     <h3 className="font-semibold text-charcoal-900 mb-1">Llegada del Bebé</h3>
-                                    <p className="text-xs text-gray-500 leading-relaxed">Organización integral, priorizando accesibilidad y el descanso.</p>
+                                    <p className="text-xs text-gray-500 leading-relaxed">Organización integral de la habitación y zonas asociadas, priorizando accesibilidad, practicidad y descanso para la madre.</p>
                                 </div>
                                 <div className="bg-white p-5 rounded-2xl border border-sand-200 shadow-sm">
-                                    <h3 className="font-semibold text-charcoal-900 mb-1 text-balance">Cambios de Etapa</h3>
-                                    <p className="text-xs text-gray-500 leading-relaxed">Adaptación del espacio a nuevas tallas y necesidades evolutivas.</p>
+                                    <h3 className="font-semibold text-charcoal-900 mb-1 text-balance">Crecimiento y Cambios de Etapa</h3>
+                                    <p className="text-xs text-gray-500 leading-relaxed">Adaptación del espacio a nuevas tallas, materiales y necesidades, manteniendo un sistema coherente que evoluciona con cada etapa.</p>
                                 </div>
                             </div>
 
@@ -287,13 +287,13 @@ export default function ServicesPage() {
                             <h2 className="text-3xl font-serif font-bold text-charcoal-900 mb-6">Asesoría Online</h2>
                             <div className="text-gray-600 mb-6 text-lg space-y-4">
                                 <p>
-                                    La asesoría online está pensada para quienes necesitan acompañamiento profesional a distancia o desean implementar el sistema por su cuenta, manteniendo el mismo criterio y estructura que en el servicio presencial.
+                                    No siempre es necesario un servicio presencial.
                                 </p>
                                 <p>
                                     A través de videollamadas estructuradas, analizamos el espacio y diseñamos un plan claro, realista y fácil de aplicar.
                                 </p>
                                 <p className="text-gray-600 mb-6 text-lg space-y-4">
-                                    Es una modalidad práctica y resolutiva, pensada para organizar con autonomía pero sin improvisar.
+                                    Es una modalidad práctica y resolutiva, pensada para quienes quieren organizar por sí mismas, pero con criterio profesional y evitando la sensación de improvisar o hacerlo solas.
                                 </p>
                             </div>
 
@@ -302,11 +302,11 @@ export default function ServicesPage() {
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                     <div className="flex items-start gap-3">
                                         <Check className="mt-1 text-sage-600 shrink-0" size={20} />
-                                        <p className="text-gray-600 text-sm">Videollamada de diagnóstico y planificación.</p>
+                                        <p className="text-gray-600 text-sm">Videollamada de diagnóstico y planificación personalizada.</p>
                                     </div>
                                     <div className="flex items-start gap-3">
                                         <Check className="mt-1 text-sage-600 shrink-0" size={20} />
-                                        <p className="text-gray-600 text-sm">Propuesta estructurada con recomendaciones.</p>
+                                        <p className="text-gray-600 text-sm">Propuesta estructurada con lista de recomendaciones.</p>
                                     </div>
                                     <div className="flex items-start gap-3">
                                         <Check className="mt-1 text-sage-600 shrink-0" size={20} />
@@ -314,7 +314,7 @@ export default function ServicesPage() {
                                     </div>
                                     <div className="flex items-start gap-3">
                                         <Check className="mt-1 text-sage-600 shrink-0" size={20} />
-                                        <p className="text-gray-600 text-sm">Seguimiento durante la implementación.</p>
+                                        <p className="text-gray-600 text-sm">Seguimiento y resolución de dudas durante la implementación.</p>
                                     </div>
                                 </div>
                             </div>

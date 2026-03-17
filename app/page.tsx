@@ -50,7 +50,7 @@ export default function HomePage() {
             <p className="mt-4 text-lg leading-8 text-gray-600">
               Creamos sistemas de organización prácticos, adaptados a la realidad de cada espacio y diseñados para mantenerse en el tiempo.<br className="hidden sm:block" />
               Trabajamos de forma presencial y también online.<br /><br />
-              Con base en Barcelona y disponible para proyectos en toda España.
+              Con base en Barcelona y disponible para proyectos en toda España según disponibilidad.
             </p>
             <div className="mt-10 flex flex-col sm:flex-row items-center gap-4">
               <Button href="/contacto" size="lg" variant="primary">
@@ -171,8 +171,8 @@ export default function HomePage() {
               </p>
               <ul role="list" className="mt-8 space-y-3 text-sm leading-6 text-gray-600 xl:mt-10 mb-auto">
                 <li className="flex gap-x-3"><Check className="h-6 w-5 flex-none text-sage-600" /> Baños y zonas de lavado</li>
-                <li className="flex gap-x-3"><Check className="h-6 w-5 flex-none text-sage-600" /> Despachos y materiales</li>
-                <li className="flex gap-x-3"><Check className="h-6 w-5 flex-none text-sage-600" /> Almacenaje profundo</li>
+                <li className="flex gap-x-3"><Check className="h-6 w-5 flex-none text-sage-600" /> Despachos</li>
+                <li className="flex gap-x-3"><Check className="h-6 w-5 flex-none text-sage-600" /> Trasteros y almacenaje profundo</li>
               </ul>
               <Button href="/servicios#hogar" variant="primary" className="mt-8 w-full">Más información</Button>
             </div>
@@ -187,12 +187,12 @@ export default function HomePage() {
                 <span className="text-4xl font-bold tracking-tight text-gray-900">CUIDADO</span>
               </p>
               <p className="mt-6 text-base leading-7 text-gray-600">
-                Preparación y adaptación de espacios infantiles para acompañar cada etapa, reduciendo la carga mental familiar.
+                Preparación y adaptación de espacios infantiles para acompañar cada etapa, reduciendo la carga mental familiar y facilitando la rutina diaria.
               </p>
               <ul role="list" className="mt-8 space-y-3 text-sm leading-6 text-gray-600 xl:mt-10 mb-auto">
-                <li className="flex gap-x-3"><Check className="h-6 w-5 flex-none text-sage-600" /> Llegada del bebé</li>
-                <li className="flex gap-x-3"><Check className="h-6 w-5 flex-none text-sage-600" /> Organización evolutiva</li>
-                <li className="flex gap-x-3"><Check className="h-6 w-5 flex-none text-sage-600" /> Autonomía y orden</li>
+                <li className="flex gap-x-3"><Check className="h-6 w-5 flex-none text-sage-600" /> Preparación del espacio para la llegada del bebé</li>
+                <li className="flex gap-x-3"><Check className="h-6 w-5 flex-none text-sage-600" /> Organización evolutiva según el crecimiento</li>
+                <li className="flex gap-x-3"><Check className="h-6 w-5 flex-none text-sage-600" /> Sistemas que fomentan autonomía y orden</li>
               </ul>
               <Button href="/servicios#infantil" variant="outline" className="mt-8 w-full">Más información</Button>
             </div>
@@ -252,15 +252,15 @@ export default function HomePage() {
         <Container>
           <div className="mx-auto max-w-2xl text-center mb-16">
             <h2 className="text-3xl font-bold tracking-tight text-charcoal-900 sm:text-4xl font-serif">Cómo trabajamos</h2>
-            <p className="mt-6 text-lg leading-8 text-gray-600">Cada hogar tiene una realidad distinta, por ello diseñamos procesos prácticos, estructurados y adaptados a tus necesidades. Sin juicio, con criterio.</p>
+            <p className="mt-6 text-lg leading-8 text-gray-600">Cada proyecto es diferente, por eso trabajamos con un proceso flexible, estructurado y 100% personalizado.</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             {[
-              { title: "1. Contacto y valoración inicial", desc: "Hablamos para entender qué necesitas y cómo podemos ayudarte. Sin compromiso.", icon: <Clock /> },
-              { title: "2. Propuesta y planificación", desc: "Definimos la hoja de ruta y los tiempos para que tengas claro cómo se llevará a cabo el proceso.", icon: <ShowcaseIcon /> },
-              { title: "3. Sesión de organización", desc: "Implementamos sistemas de orden coherentes, prácticos y fáciles de mantener en el tiempo.", icon: <Sparkles /> },
-              { title: "4. Seguimiento y cierre", desc: "Aseguramos que el sistema funciona para ti para garantizar que el orden sea duradero.", icon: <Check /> }
+              { title: "1. Contacto", desc: "Hablamos para entender tus necesidades.", icon: <Clock /> },
+              { title: "2. Plan personalizado", desc: "Recibes una propuesta a medida sin compromiso.", icon: <ShowcaseIcon /> },
+              { title: "3. Sesión de organización", desc: "Aplicamos el sistema definido y organizamos el espacio", icon: <Sparkles /> },
+              { title: "4. Seguimiento", desc: "Resolvemos posibles dudas y te acompañamos en la aplicación del sistema.", icon: <Check /> }
             ].map((step, idx) => (
               <div key={idx} className="flex flex-col items-center text-center p-6 bg-white rounded-2xl shadow-sm ring-1 ring-gray-200/50">
                 <div className={`mb-4 p-3 bg-sand-50 rounded-full ${idx === 0 ? 'text-sage-600' : idx === 1 ? 'text-brand-yellow' : idx === 2 ? 'text-brand-purple' : 'text-brand-pink'}`}>
