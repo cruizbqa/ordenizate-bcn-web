@@ -53,7 +53,14 @@ export function Footer() {
                             <li>Barcelona, España</li>
                             <li><a href={`mailto:${SITE_CONFIG.contact.email}`} className="hover:text-sage-600 transition-colors">{SITE_CONFIG.contact.email}</a></li>
                             <li className="flex items-center gap-3">
-                                <a href={SITE_CONFIG.contact.instagram.webUrl} onClick={handleInstagramDeepLink} className="hover:text-sage-600 transition-colors">@{SITE_CONFIG.contact.instagram.username}</a>
+                                <a 
+                                    href={SITE_CONFIG.contact.instagram.webUrl} 
+                                    onClick={handleInstagramDeepLink} 
+                                    className="hover:text-sage-600 transition-colors"
+                                    aria-label="Visítanos en Instagram de Ordenízate Bcn"
+                                >
+                                    @{SITE_CONFIG.contact.instagram.username}
+                                </a>
                             </li>
                             <li><a href={`tel:${SITE_CONFIG.contact.phone}`} className="hover:text-sage-600 transition-colors">{SITE_CONFIG.contact.phone}</a></li>
                         </ul>

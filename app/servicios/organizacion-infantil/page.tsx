@@ -8,8 +8,23 @@ import { ToyBrick, ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: 'Organización de Espacios Infantiles | Ordenízate',
-    description: 'Sistemas de orden infantiles intuitivos y TDAH-friendly. Fomenta la autonomía de tus hijos con habitaciones y cuartos de juegos organizados.',
+    title: 'Organización de Espacios Infantiles en Barcelona | Ordenízate Bcn',
+    description: 'Sistemas de orden infantiles intuitivos y TDAH-friendly en Barcelona. Fomenta la autonomía de tus hijos con habitaciones y cuartos de juegos organizados.',
+    alternates: {
+        canonical: '/servicios/organizacion-infantil',
+    },
+    openGraph: {
+        title: 'Organización de Espacios Infantiles en Barcelona | Ordenízate Bcn',
+        description: 'Sistemas de orden infantiles intuitivos y TDAH-friendly en Barcelona. Fomenta la autonomía de tus hijos con habitaciones y cuartos de juegos organizados.',
+        images: [
+            {
+                url: '/images/service-baby-organized.png',
+                width: 800,
+                height: 1000,
+                alt: 'Habitación infantil organizada por Ordenízate Bcn',
+            }
+        ]
+    }
 };
 
 export default function InfantilPage() {
@@ -45,7 +60,7 @@ export default function InfantilPage() {
                                 </div>
                                 <div className="bg-white p-5 rounded-2xl border border-sand-200 shadow-sm">
                                     <h3 className="font-semibold text-charcoal-900 mb-1 text-balance">Crecimiento y Cambios de Etapa</h3>
-                                    <p className="text-xs text-gray-500 leading-relaxed">Adaptación del espacio a nuevas tallas, materiales y necesidades, manteniendo un sistema coherente que evoluciona con cada etapa.</p>
+                                    <p className="text-xs text-gray-500 leading-relaxed">Adaptación del espacio a nuevas tallas, materiales and necesidades, manteniendo un sistema coherente que evoluciona con cada etapa.</p>
                                 </div>
                             </div>
 
@@ -57,12 +72,65 @@ export default function InfantilPage() {
                                 src={`${SITE_CONFIG.basePath}/images/service-baby-organized.png`}
                                 alt="Habitación infantil con ropa de bebé doblegada en vertical y juguetes ordenados"
                                 fill
+                                sizes="(max-width: 768px) 100vw, 42vw"
                                 className="object-cover"
                             />
                         </div>
                     </div>
                 </Container>
             </Section>
+
+            {/* Structured Schemas */}
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify([
+                        {
+                            "@context": "https://schema.org",
+                            "@type": "Service",
+                            "name": "Servicio de Organización de Espacios Infantiles en Barcelona",
+                            "serviceType": "Professional Kids Space Organizing Service",
+                            "provider": {
+                                "@type": "LocalBusiness",
+                                "name": "Ordenízate Bcn",
+                                "url": "https://ordenizate.es"
+                            },
+                            "areaServed": [
+                                { "@type": "AdministrativeArea", "name": "Barcelona" },
+                                { "@type": "AdministrativeArea", "name": "Sant Cugat del Vallès" },
+                                { "@type": "AdministrativeArea", "name": "Sitges" },
+                                { "@type": "AdministrativeArea", "name": "Castelldefels" },
+                                { "@type": "AdministrativeArea", "name": "Maresme" }
+                            ],
+                            "description": "Sistemas de orden infantiles intuitivos, adaptativos y TDAH-friendly que promueven la autonomía del niño y reducen la carga mental en casa."
+                        },
+                        {
+                            "@context": "https://schema.org",
+                            "@type": "BreadcrumbList",
+                            "itemListElement": [
+                                {
+                                    "@type": "ListItem",
+                                    "position": 1,
+                                    "name": "Inicio",
+                                    "item": "https://ordenizate.es"
+                                },
+                                {
+                                    "@type": "ListItem",
+                                    "position": 2,
+                                    "name": "Servicios",
+                                    "item": "https://ordenizate.es/servicios"
+                                },
+                                {
+                                    "@type": "ListItem",
+                                    "position": 3,
+                                    "name": "Organización Infantil",
+                                    "item": "https://ordenizate.es/servicios/organizacion-infantil"
+                                }
+                            ]
+                        }
+                    ])
+                }}
+            />
         </div>
     );
 }

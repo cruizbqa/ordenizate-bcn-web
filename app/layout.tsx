@@ -7,21 +7,20 @@ import { Footer } from "@/components/layout/Footer";
 
 const mosk = localFont({
   src: [
-    { path: './fonts/Mosk Thin 100.ttf', weight: '100', style: 'normal' },
-    { path: './fonts/Mosk Extra-Light 200.ttf', weight: '200', style: 'normal' },
-    { path: './fonts/Mosk Light 300.ttf', weight: '300', style: 'normal' },
     { path: './fonts/Mosk Normal 400.ttf', weight: '400', style: 'normal' },
     { path: './fonts/Mosk Medium 500.ttf', weight: '500', style: 'normal' },
     { path: './fonts/Mosk Semi-Bold 600.ttf', weight: '600', style: 'normal' },
     { path: './fonts/Mosk Bold 700.ttf', weight: '700', style: 'normal' },
-    { path: './fonts/Mosk Extra-Bold 800.ttf', weight: '800', style: 'normal' },
-    { path: './fonts/Mosk Ultra-Bold 900.ttf', weight: '900', style: 'normal' },
   ],
   variable: '--font-mosk',
   display: 'swap',
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://ordenizate.es'),
+  alternates: {
+    canonical: '/',
+  },
   title: {
     template: '%s | Ordenízate Bcn',
     default: 'Ordenízate Bcn | Organizadora Profesional en Barcelona',
@@ -31,7 +30,15 @@ export const metadata: Metadata = {
     title: 'Ordenízate Bcn',
     description: 'Transforma tu espacio, transforma tu vida.',
     url: 'https://ordenizate.es',
-    siteName: 'Ordenízate',
+    siteName: 'Ordenízate Bcn',
+    images: [
+      {
+        url: '/images/hero-home-2.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Ordenízate Bcn - Organizadora Profesional de Espacios en Barcelona',
+      }
+    ],
     locale: 'es_ES',
     type: 'website',
   },
@@ -39,6 +46,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Ordenízate Bcn | Organizadora Profesional en Barcelona',
     description: 'Transforma tu espacio, transforma tu vida.',
+    images: ['/images/hero-home-2.jpg'],
   },
 };
 
@@ -62,19 +70,47 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "LocalBusiness",
-              "name": "Ordenízate",
+              "name": "Ordenízate Bcn",
               "image": "https://ordenizate.es/images/hero-home-2.jpg",
+              "logo": "https://ordenizate.es/images/logo.png",
               "@id": "https://ordenizate.es",
               "url": "https://ordenizate.es",
               "telephone": "+34636757684",
+              "priceRange": "$$",
               "address": {
                 "@type": "PostalAddress",
                 "addressLocality": "Barcelona",
-                "addressRegion": "Barcelona",
+                "addressRegion": "Cataluña",
                 "addressCountry": "ES"
               },
-              "description": "Servicios de organización profesional en Barcelona. Transformamos tu hogar con orden, estilo y calma. Mudanzas, armarios, cocinas y más.",
-              "priceRange": "$$"
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 41.3851,
+                "longitude": 2.1734
+              },
+              "openingHoursSpecification": [
+                {
+                  "@type": "OpeningHoursSpecification",
+                  "dayOfWeek": [
+                    "Monday",
+                    "Tuesday",
+                    "Wednesday",
+                    "Thursday",
+                    "Friday",
+                    "Saturday"
+                  ],
+                  "opens": "09:00",
+                  "closes": "20:00"
+                }
+              ],
+              "areaServed": {
+                "@type": "AdministrativeArea",
+                "name": "Barcelona y alrededores"
+              },
+              "sameAs": [
+                "https://instagram.com/ordenizatebcn/"
+              ],
+              "description": "Servicios de organización profesional en Barcelona. Transformamos tu hogar con orden, estilo y calma. Mudanzas, armarios, cocinas y más."
             })
           }}
         />

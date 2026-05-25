@@ -4,12 +4,27 @@ import { SITE_CONFIG } from '@/lib/constants';
 import { Button } from '@/components/ui/Button';
 import { Container } from '@/components/ui/Container';
 import { Section } from '@/components/ui/Section';
-import { Home, Bubbles, LampDesk, Container as LucideContainer, ArrowLeft } from 'lucide-react';
+import { Home, Sparkles, LampDesk, Container as LucideContainer, ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: 'Organización de Estancias del Hogar | Ordenízate',
-    description: 'Servicio de organización para trasteros, despachos y baños. Devolvemos la funcionalidad y la armonía a cualquier rincón de tu casa.',
+    title: 'Organización de Estancias del Hogar en Barcelona | Ordenízate Bcn',
+    description: 'Servicio de organización para trasteros, despachos y baños en Barcelona. Devolvemos la funcionalidad y la armonía a cualquier rincón de tu casa.',
+    alternates: {
+        canonical: '/servicios/organizacion-hogar',
+    },
+    openGraph: {
+        title: 'Organización de Estancias del Hogar en Barcelona | Ordenízate Bcn',
+        description: 'Servicio de organización para trasteros, despachos y baños en Barcelona. Devolvemos la funcionalidad y la armonía a cualquier rincón de tu casa.',
+        images: [
+            {
+                url: '/images/service-home.jpg',
+                width: 800,
+                height: 1000,
+                alt: 'Estancias del hogar organizadas por Ordenízate Bcn',
+            }
+        ]
+    }
 };
 
 export default function HogarPage() {
@@ -42,7 +57,7 @@ export default function HogarPage() {
                                 <ServiceItem
                                     title="Baños y Zonas de Lavado"
                                     description="Clasificación lógica de productos para simplificar la rutina diaria."
-                                    icon={<Bubbles className="text-brand-yellow" />}
+                                    icon={<Sparkles className="text-brand-yellow" />}
                                 />
                                 <ServiceItem
                                     title="Despachos"
@@ -64,12 +79,65 @@ export default function HogarPage() {
                                 src={`${SITE_CONFIG.basePath}/images/service-home.jpg`}
                                 alt="Estancia del hogar armonizada con estanterías ordenadas"
                                 fill
+                                sizes="(max-width: 768px) 100vw, 42vw"
                                 className="object-cover"
                             />
                         </div>
                     </div>
                 </Container>
             </Section>
+
+            {/* Structured Schemas */}
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify([
+                        {
+                            "@context": "https://schema.org",
+                            "@type": "Service",
+                            "name": "Servicio de Organización de Estancias del Hogar en Barcelona",
+                            "serviceType": "Professional Home Organizing Service",
+                            "provider": {
+                                "@type": "LocalBusiness",
+                                "name": "Ordenízate Bcn",
+                                "url": "https://ordenizate.es"
+                            },
+                            "areaServed": [
+                                { "@type": "AdministrativeArea", "name": "Barcelona" },
+                                { "@type": "AdministrativeArea", "name": "Sant Cugat del Vallès" },
+                                { "@type": "AdministrativeArea", "name": "Sitges" },
+                                { "@type": "AdministrativeArea", "name": "Castelldefels" },
+                                { "@type": "AdministrativeArea", "name": "Maresme" }
+                            ],
+                            "description": "Orden integral y diseño de sistemas funcionales para baños, zonas de lavado, despachos personales y trasteros de almacenaje profundo."
+                        },
+                        {
+                            "@context": "https://schema.org",
+                            "@type": "BreadcrumbList",
+                            "itemListElement": [
+                                {
+                                    "@type": "ListItem",
+                                    "position": 1,
+                                    "name": "Inicio",
+                                    "item": "https://ordenizate.es"
+                                },
+                                {
+                                    "@type": "ListItem",
+                                    "position": 2,
+                                    "name": "Servicios",
+                                    "item": "https://ordenizate.es/servicios"
+                                },
+                                {
+                                    "@type": "ListItem",
+                                    "position": 3,
+                                    "name": "Organización de Estancias",
+                                    "item": "https://ordenizate.es/servicios/organizacion-hogar"
+                                }
+                            ]
+                        }
+                    ])
+                }}
+            />
         </div>
     );
 }

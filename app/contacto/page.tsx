@@ -8,11 +8,14 @@ import { ContactForm } from '@/components/contact/ContactForm';
 import { MapPin, Mail, MessageCircle } from 'lucide-react';
 
 export const metadata: Metadata = {
-    title: 'Contacto',
-    description: 'Contacta con Ordenízate. Organizadora profesional. Escríbenos por email o WhatsApp para empezar.',
+    title: 'Contacto — Pide Presupuesto de Organización',
+    description: 'Contacta con Ordenízate Bcn. Organizadora profesional en Barcelona. Pide presupuesto para organizar armarios, cocinas, mudanzas o asesoría online.',
+    alternates: {
+        canonical: '/contacto',
+    },
     openGraph: {
-        title: 'Contacto | Ordenízate',
-        description: 'Cuéntanos qué necesitas. Te ayudamos a transformar tu espacio.',
+        title: 'Contacto — Ordenízate Bcn',
+        description: 'Cuéntanos qué necesitas. Te ayudamos a transformar tu espacio en un lugar de calma.',
     },
 };
 
@@ -65,6 +68,7 @@ export default function ContactPage() {
                                     src={`${SITE_CONFIG.basePath}/images/contact-ordenizate.jpg`}
                                     alt="Espacio de trabajo ordenado"
                                     fill
+                                    sizes="(max-width: 1024px) 100vw, 50vw"
                                     className="object-cover object-[center_31%]"
                                 />
                             </div>

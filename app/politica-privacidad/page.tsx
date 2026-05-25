@@ -4,8 +4,11 @@ import { Container } from '@/components/ui/Container';
 import { Section } from '@/components/ui/Section';
 
 export const metadata: Metadata = {
-    title: 'Política de Privacidad | Ordenízate Bcn',
+    title: 'Política de Privacidad',
     description: 'Política de privacidad y protección de datos tratados por Ordenízate Bcn.',
+    alternates: {
+        canonical: '/politica-privacidad',
+    },
 };
 
 export default function PoliticaPrivacidadPage() {

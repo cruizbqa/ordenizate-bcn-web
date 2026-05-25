@@ -4,7 +4,7 @@ const nextConfig: NextConfig = {
   /* config options here */
   reactCompiler: true,
   images: {
-    unoptimized: true,
+    // Let Next.js optimize images automatically on Vercel for faster load times.
   },
   experimental: {
     // turbopack options if needed

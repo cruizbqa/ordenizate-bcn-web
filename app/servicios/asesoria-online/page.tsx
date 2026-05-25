@@ -8,8 +8,23 @@ import { Monitor, Check, ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: 'Asesoría de Organización Online | Ordenízate',
+    title: 'Asesoría de Organización Online | Ordenízate Bcn',
     description: 'Servicio de organización profesional a distancia por videollamada. Evaluamos tu espacio y te entregamos un plan de acción para que ordenes a tu ritmo.',
+    alternates: {
+        canonical: '/servicios/asesoria-online',
+    },
+    openGraph: {
+        title: 'Asesoría de Organización Online | Ordenízate Bcn',
+        description: 'Servicio de organización profesional a distancia por videollamada. Evaluamos tu espacio y te entregamos un plan de acción para que ordenes a tu ritmo.',
+        images: [
+            {
+                url: '/images/service-online.png',
+                width: 800,
+                height: 1000,
+                alt: 'Asesoría de organización online por videollamada de Ordenízate Bcn',
+            }
+        ]
+    }
 };
 
 export default function AsesoriaOnlinePage() {
@@ -71,12 +86,58 @@ export default function AsesoriaOnlinePage() {
                                 src={`${SITE_CONFIG.basePath}/images/service-online.png`}
                                 alt="Sesión de organización online por videollamada desde un despacho"
                                 fill
+                                sizes="(max-width: 768px) 100vw, 42vw"
                                 className="object-cover"
                             />
                         </div>
                     </div>
                 </Container>
             </Section>
+
+            {/* Structured Schemas */}
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify([
+                        {
+                            "@context": "https://schema.org",
+                            "@type": "Service",
+                            "name": "Servicio de Asesoría de Organización Online de Ordenízate Bcn",
+                            "serviceType": "Professional Online Organizing Consultation",
+                            "provider": {
+                                "@type": "LocalBusiness",
+                                "name": "Ordenízate Bcn",
+                                "url": "https://ordenizate.es"
+                            },
+                            "description": "Asesoramiento profesional de orden y descarte a distancia por videollamada. Plan estratégico detallado de reorganización."
+                        },
+                        {
+                            "@context": "https://schema.org",
+                            "@type": "BreadcrumbList",
+                            "itemListElement": [
+                                {
+                                    "@type": "ListItem",
+                                    "position": 1,
+                                    "name": "Inicio",
+                                    "item": "https://ordenizate.es"
+                                },
+                                {
+                                    "@type": "ListItem",
+                                    "position": 2,
+                                    "name": "Servicios",
+                                    "item": "https://ordenizate.es/servicios"
+                                },
+                                {
+                                    "@type": "ListItem",
+                                    "position": 3,
+                                    "name": "Asesoría Online",
+                                    "item": "https://ordenizate.es/servicios/asesoria-online"
+                                }
+                            ]
+                        }
+                    ])
+                }}
+            />
         </div>
     );
 }

@@ -80,13 +80,13 @@ Always use these tokens instead of arbitrary color values. Do not introduce new 
 
 ### Best practices
 
-- One `<h1>` per page, with proper heading hierarchy
-- Export `metadata` per page for SEO
-- Use `next/image` for all images (with `alt` text)
-- Use `next/font` for font loading (custom font: Mosk)
-- Accessibility is required: semantic HTML, ARIA labels, keyboard navigation
-- Keep components small, composable, and focused
-- Avoid duplicating Tailwind utility combinations — extract to components
+- One `<h1>` per page, with proper heading hierarchy.
+- Export `metadata` per page for SEO, always adding `alternates: { canonical: '...' }`.
+- Use `next/image` for all images with explicit `sizes` matching the grid layout (e.g. `sizes="(max-width: 1024px) 100vw, 50vw"` for hero/profile and `sizes="(max-width: 768px) 100vw, 42vw"` for standard grid columns).
+- Use `next/font` for font loading (custom font: Mosk, limited to weights 400, 500, 600, 700 to keep the bundle size small).
+- Accessibility is required: semantic HTML, ARIA labels for icon links, keyboard navigation.
+- Keep components small, composable, and focused.
+- Avoid duplicating Tailwind utility combinations — extract to components.
 
 ---
 
@@ -112,11 +112,11 @@ The contact form submits to `/api/contact` (POST).
 
 - No sensitive data is logged
 - Rate limit errors return user-friendly messages in Spanish explaining the temporary block.
-- All contact details are centralized in `lib/constants.ts` — never hardcoded in components
+- All contact details are centralized in `lib/constants.ts` — never hardcoded in components. Use standard HTTPS `https://wa.me/34636757684?text=...` link format for all WhatsApp CTAs.
 
 ---
 
-## 5. SEO Strategy
+## 5. SEO & Structured Data Strategy
 
 **Target keywords:**
 
@@ -125,60 +125,60 @@ The contact form submits to `/api/contact` (POST).
 - "Organización de cocinas"
 - "Mudanza organizada"
 
-**Implementation:**
+**Implementation Checklist for New/Modified Pages:**
 
-- Local SEO emphasis (Barcelona province, service areas)
-- Clean, descriptive URLs (`/servicios`, `/sobre-mi`, `/contacto`)
-- Semantic heading structure on every page
-- `sitemap.xml` and `robots.txt` configured
-- OpenGraph and Twitter Card metadata per page
-- Structured, keyword-relevant page titles and meta descriptions
+- **Canonical URL:** Every route MUST export an `alternates` metadata object with the correct absolute or relative canonical path.
+- **OpenGraph Images:** Every main page and service page must configure `openGraph` metadata specifying `images` to display rich snippet details on social shares.
+- **Image Optimization:** Avoid setting `unoptimized: true` in `next.config.ts`. Always set optimized `sizes` properties on `<Image fill>` tags to prevent large layout shifts and optimize Core Web Vitals.
+- **JSON-LD Schema**:
+  - **Main Route (`/`)**: Must include the enriched `LocalBusiness` schema (contains geo-coordinates, logo, 6-day opening hours Mon-Sat 09:00-20:00, social sameAs links) and `FAQPage` schema.
+  - **Service Pages (`/servicios/*`)**: Must include individual `Service` schema detailing the provider, areaServed (Barcelona y alrededores) and descriptions, plus a `BreadcrumbList` schema outlining the hierarchical path.
 
 ---
 
 ## 6. UX & Conversion Principles
 
-- **Primary CTA:** WhatsApp (lowest friction for the target audience)
-- **Secondary CTA:** Contact form / "Reserva una llamada"
-- Copy is friendly but premium — no exaggerated or pushy language
+- **Primary CTA:** WhatsApp (lowest friction for the target audience).
+- **Secondary CTA:** Contact form / "Reserva una llamada".
+- Copy is friendly but premium — no exaggerated or pushy language.
 - **Premium Alignment:** All form inputs (Input, Select, Textarea) must share a consistent height (`h-11`) and label spacing (`mb-1.5`) to maintain visual harmony in desktop views.
-- **Mobile-first** design; all layouts must work flawlessly on small screens
-- Fast loading is non-negotiable — minimize JS, optimize images
-- Clear trust signals: real testimonials, real service descriptions
-- No fake urgency, no invented statistics
+- **Mobile-first** design; all layouts must work flawlessly on small screens.
+- Fast loading is non-negotiable — minimize JS, optimize images.
+- Clear trust signals: real testimonials, real service descriptions.
+- No fake urgency, no invented statistics.
 
 ---
 
 ## 7. Image Guidelines
 
-- Prefer **real before/after photos** of organized spaces
-- Avoid generic stock photography — it undermines trust
-- Always use `next/image` with explicit `width`, `height`, and descriptive `alt` text
-- Maintain a calm, neutral, and clean aesthetic in all imagery
-- Optimize images before adding them to `public/`
+- Prefer **real before/after photos** of organized spaces.
+- Avoid generic stock photography — it undermines trust.
+- Always use `next/image` with explicit `width`, `height` or `fill` combined with descriptive `alt` text.
+- Maintain a calm, neutral, and clean aesthetic in all imagery.
+- Optimize images before adding them to `public/`.
 
 ---
 
 ## 8. Security Guidelines
 
-- **Never** hardcode secrets, API keys, or tokens
-- **Never** commit `.env.local` or any `.env` file with real values
-- Use environment variables for all external service credentials
-- Rate limit all public-facing API endpoints
-- Never expose internal error details, stack traces, or system paths to the client
-- Sanitize all user input server-side
+- **Never** hardcode secrets, API keys, or tokens.
+- **Never** commit `.env.local` or any `.env` file with real values.
+- Use environment variables for all external service credentials.
+- Rate limit all public-facing API endpoints.
+- Never expose internal error details, stack traces, or system paths to the client.
+- Sanitize all user input server-side.
 
 ---
 
 ## 9. Code Quality Rules
 
-- All code must be **type-safe** — avoid `any` unless absolutely necessary
-- No `console.log` in production code (use proper error handling)
-- No large monolithic components — break down into smaller, testable units
-- Reusable utilities belong in `lib/`
-- Keep imports clean and organized
-- Minimize bundle size — avoid heavy client-side dependencies
-- Use `const` by default; prefer functional patterns
+- All code must be **type-safe** — avoid `any` unless absolutely necessary.
+- No `console.log` in production code (use proper error handling).
+- No large monolithic components — break down into smaller, testable units.
+- Reusable utilities belong in `lib/`.
+- Keep imports clean and organized.
+- Minimize bundle size — avoid heavy client-side dependencies.
+- Use `const` by default; prefer functional patterns.
 
 ---
 
@@ -194,6 +194,7 @@ The contact form submits to `/api/contact` (POST).
 | Add large unnecessary dependencies         | Keep the bundle lean                                |
 | Skip alt text on images                    | Always provide descriptive alt text                 |
 | Use inline styles or arbitrary colors      | Use Tailwind classes with design tokens             |
+| Disable Next.js image optimization globally| Remove `unoptimized` and supply appropriate `sizes`  |
 
 ---
 
@@ -210,65 +211,36 @@ The contact form submits to `/api/contact` (POST).
 | **@testing-library/user-event** | Simulating real user interactions |
 | **@testing-library/jest-dom** | Extended matchers (`toBeInTheDocument`, etc.) |
 | **jsdom** | Browser-like environment for Vitest |
-| **msw** *(optional)* | Network mocking — only if components fetch data directly |
 
 Keep tests fast, deterministic, and focused on **behavior** (what the user sees/does), not implementation details.
 
 ### Run Commands
 
 ```bash
-npm test          # Run all tests once (used in CI)
-npm run test:watch  # Interactive watch mode for development
+powershell -ExecutionPolicy Bypass -Command "npx vitest run"    # Run all tests once
 ```
 
-### What to Test (Priorities)
+---
 
-**UI Primitives (`components/ui/*`)**
-- Renders without crashing
-- Correct semantics (`button`, `link`, `input`)
-- Disabled/loading states
-- Accessibility attributes when applicable
+## 12. Token & Resource Optimization Rules for AI Assistants
 
-**Shared Components (`components/*`)**
-- Navigation items exist with correct `href`
-- WhatsApp CTA renders correct link/phone
-- Hero sections include max 1 `<h1>` per page
-- Images include descriptive `alt` text
+To optimize context window efficiency, minimize response latency, and drastically lower token utilization, all subsequent AI agents must adhere to the following operational parameters:
 
-**Pages (`app/*`)**
-- `metadata` exports include `title`, `description`, `openGraph`, `twitter`
-- Primary CTA (WhatsApp) present on key pages
-- Contact page form behavior (client validation, required fields, custom Select behavior)
-- Form validation error messages (must use "Campo obligatorio" and "Email no válido")
-- Form submission flow (pending state, success/error feedback)
+1. **Leverage Knowledge Items (KIs):** Before performing any codebase analysis, search the localized `.gemini` memory workspace for relevant artifacts.
+2. **Avoid Full-File Re-reads:** Use targeted `StartLine` and `EndLine` parameters when invoking `view_file` to query only the necessary sections.
+3. **Surgical Multi-Edits:** For modifications spanning non-contiguous regions, exclusively use `multi_replace_file_content` instead of doing broad, single-block rewrites that exceed active limits.
+4. **No Code Redundancies:** Ensure all contact properties, paths, and metadata constants are referenced from `lib/constants.ts`. Do not duplicate definitions.
 
-### What NOT to Test
+---
 
-- Tailwind class lists — avoid snapshots that break on styling changes
-- Next.js router internals
-- Animations or purely visual layout
-- Internal component state shape unless it encodes critical logic
+## 13. SOLID, TDD & Design Patterns Reference
 
-### Test Conventions
+For exhaustive development guidelines covering:
+* **TDD Loop** (Test-First rule).
+* **SOLID Component Design** implementation in Next.js & React.
+* **Approved Design Patterns** (Strategy, Registry, Compound Components).
 
-- Prefer role-based queries: `getByRole`, `findByRole`, `getByLabelText`
-- Add accessible labels where needed to enable robust queries
-- Avoid brittle selectors (`querySelector`, class names)
-- Mock external dependencies:
-  - `next/image` → simple `<img />` mock
-  - `next/navigation` hooks → mock only the hooks used
-- Test file location mirrors source structure:
-  - `components/ui/Button.test.tsx`
-  - `components/layout/Navbar.test.tsx`
-  - `app/contacto/page.test.tsx` (only if page is a Server Component or props-driven)
+Refer to the official skill guidelines at **[.github/developer-skills.md](file:///.github/developer-skills.md)**.
 
-### Coverage Expectations
 
-Aim for **high coverage on critical flows**, not 100% everywhere.
-
-**Minimum required coverage:**
-- Core CTA components (Button, WhatsApp links)
-- Contact item copy interaction
-- Navbar navigation and mobile menu toggle
-- Any non-trivial utility logic in `lib/`
 

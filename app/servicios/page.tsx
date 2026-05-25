@@ -1,7 +1,4 @@
 import { Metadata } from 'next';
-import NextImage from 'next/image';
-import { SITE_CONFIG } from '@/lib/constants';
-import { Button } from '@/components/ui/Button';
 import { Container } from '@/components/ui/Container';
 import { Section } from '@/components/ui/Section';
 import { Truck, Home, Shirt, ChefHat, ToyBrick, Monitor, ArrowRight } from 'lucide-react';
@@ -10,8 +7,11 @@ import { ValueCard } from '@/components/ui/ValueCard';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: 'Servicios | Mudanzas y Organización Profesional',
-    description: 'Descubre nuestros servicios de organización en Barcelona. Ayudamos en mudanzas, armarios, cocinas, habitaciones infantiles y hogar en general.',
+    title: 'Servicios de Organización del Hogar en Barcelona',
+    description: 'Servicios de organización profesional en Barcelona. Soluciones a medida para mudanzas organizadas, vaciado de cajas, orden de armarios, cocinas, trasteros y asesoramiento online.',
+    alternates: {
+        canonical: '/servicios',
+    },
 };
 
 export default function ServicesHubPage() {

@@ -8,8 +8,23 @@ import { Check, Shirt, ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: 'Organización de Armarios y Vestidores | Ordenízate',
-    description: 'Servicio profesional de organización de armarios y vestidores. Optimiza tu ropa, aplica el doblado vertical y recupera el control de lo que vistes.',
+    title: 'Organización de Armarios y Vestidores en Barcelona | Ordenízate Bcn',
+    description: 'Servicio profesional de organización de armarios y vestidores en Barcelona. Optimiza tu ropa, aplica el doblado vertical y recupera el control de lo que vistes.',
+    alternates: {
+        canonical: '/servicios/organizacion-armarios',
+    },
+    openGraph: {
+        title: 'Organización de Armarios y Vestidores en Barcelona | Ordenízate Bcn',
+        description: 'Servicio profesional de organización de armarios y vestidores en Barcelona. Optimiza tu ropa, aplica el doblado vertical y recupera el control de lo que vistes.',
+        images: [
+            {
+                url: '/images/service-closet.png',
+                width: 800,
+                height: 1000,
+                alt: 'Armario y vestidor perfectamente organizado por Ordenízate Bcn',
+            }
+        ]
+    }
 };
 
 export default function ArmariosPage() {
@@ -68,12 +83,65 @@ export default function ArmariosPage() {
                                 src={`${SITE_CONFIG.basePath}/images/service-closet.png`}
                                 alt="Armario y vestidor perfectamente organizado con ropa categorizada por color"
                                 fill
+                                sizes="(max-width: 768px) 100vw, 42vw"
                                 className="object-cover"
                             />
                         </div>
                     </div>
                 </Container>
             </Section>
+
+            {/* Structured Schemas */}
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify([
+                        {
+                            "@context": "https://schema.org",
+                            "@type": "Service",
+                            "name": "Servicio de Organización de Armarios y Vestidores en Barcelona",
+                            "serviceType": "Professional Closet Organizing Service",
+                            "provider": {
+                                "@type": "LocalBusiness",
+                                "name": "Ordenízate Bcn",
+                                "url": "https://ordenizate.es"
+                            },
+                            "areaServed": [
+                                { "@type": "AdministrativeArea", "name": "Barcelona" },
+                                { "@type": "AdministrativeArea", "name": "Sant Cugat del Vallès" },
+                                { "@type": "AdministrativeArea", "name": "Sitges" },
+                                { "@type": "AdministrativeArea", "name": "Castelldefels" },
+                                { "@type": "AdministrativeArea", "name": "Maresme" }
+                            ],
+                            "description": "Optimización profunda de armarios y vestidores aplicando doblado vertical, categorización y distribución lógica."
+                        },
+                        {
+                            "@context": "https://schema.org",
+                            "@type": "BreadcrumbList",
+                            "itemListElement": [
+                                {
+                                    "@type": "ListItem",
+                                    "position": 1,
+                                    "name": "Inicio",
+                                    "item": "https://ordenizate.es"
+                                },
+                                {
+                                    "@type": "ListItem",
+                                    "position": 2,
+                                    "name": "Servicios",
+                                    "item": "https://ordenizate.es/servicios"
+                                },
+                                {
+                                    "@type": "ListItem",
+                                    "position": 3,
+                                    "name": "Organización de Armarios",
+                                    "item": "https://ordenizate.es/servicios/organizacion-armarios"
+                                }
+                            ]
+                        }
+                    ])
+                }}
+            />
         </div>
     );
 }

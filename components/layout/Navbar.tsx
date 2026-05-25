@@ -55,6 +55,7 @@ export function Navbar() {
                                 onClick={handleInstagramDeepLink}
                                 className="p-2 rounded-full bg-instagram text-white hover:scale-110 active:scale-95 transition-all duration-300 shadow-sm hover:shadow-md"
                                 title="Instagram"
+                                aria-label="Visítanos en Instagram de Ordenízate Bcn"
                             >
                                 <InstagramIcon className="w-5 h-5" />
                             </a>
@@ -64,6 +65,7 @@ export function Navbar() {
                                 rel="noopener noreferrer"
                                 className="p-2 rounded-full bg-green-500 text-white hover:bg-green-600 transition-colors"
                                 title="WhatsApp"
+                                aria-label="Contactar por WhatsApp con Silvia"
                             >
                                 <WhatsAppIcon className="w-5 h-5" />
                             </a>
@@ -109,6 +111,7 @@ export function Navbar() {
                                     onClick={handleInstagramDeepLink}
                                     className="p-3 rounded-full bg-instagram text-white hover:scale-110 active:scale-95 transition-all duration-300 shadow-sm hover:shadow-md"
                                     title="Instagram"
+                                    aria-label="Visítanos en Instagram de Ordenízate Bcn"
                                 >
                                     <InstagramIcon className="w-6 h-6" />
                                 </a>
@@ -118,6 +121,7 @@ export function Navbar() {
                                     rel="noopener noreferrer"
                                     className="p-3 rounded-full bg-green-500 text-white hover:bg-green-600 transition-colors"
                                     title="WhatsApp"
+                                    aria-label="Contactar por WhatsApp con Silvia"
                                 >
                                     <WhatsAppIcon className="w-6 h-6" />
                                 </a>

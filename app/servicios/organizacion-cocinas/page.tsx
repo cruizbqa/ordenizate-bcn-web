@@ -8,8 +8,23 @@ import { ChefHat, ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: 'Organización de Cocinas y Despensas | Ordenízate',
-    description: 'Recupera el control de tu cocina. Sistemas de orden prácticos para despensas y armarios que facilitan tu día a día y evitan el desperdicio.',
+    title: 'Organización de Cocinas y Despensas en Barcelona | Ordenízate Bcn',
+    description: 'Recupera el control de tu cocina. Sistemas de orden prácticos para despensas y armarios que facilitan tu día a día en Barcelona y evitan el desperdicio.',
+    alternates: {
+        canonical: '/servicios/organizacion-cocinas',
+    },
+    openGraph: {
+        title: 'Organización de Cocinas y Despensas en Barcelona | Ordenízate Bcn',
+        description: 'Recupera el control de tu cocina. Sistemas de orden prácticos para despensas y armarios que facilitan tu día a día en Barcelona y evitan el desperdicio.',
+        images: [
+            {
+                url: '/images/service-kitchen-organized-2.png',
+                width: 800,
+                height: 1000,
+                alt: 'Cocinas y despensas organizadas por Ordenízate Bcn',
+            }
+        ]
+    }
 };
 
 export default function CocinasPage() {
@@ -61,12 +76,65 @@ export default function CocinasPage() {
                                 src={`${SITE_CONFIG.basePath}/images/service-kitchen-organized-2.png`}
                                 alt="Despensa de cocina organizada con botes etiquetados y cestas"
                                 fill
+                                sizes="(max-width: 768px) 100vw, 42vw"
                                 className="object-cover"
                             />
                         </div>
                     </div>
                 </Container>
             </Section>
+
+            {/* Structured Schemas */}
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify([
+                        {
+                            "@context": "https://schema.org",
+                            "@type": "Service",
+                            "name": "Servicio de Organización de Cocinas y Despensas en Barcelona",
+                            "serviceType": "Professional Kitchen Organizing Service",
+                            "provider": {
+                                "@type": "LocalBusiness",
+                                "name": "Ordenízate Bcn",
+                                "url": "https://ordenizate.es"
+                            },
+                            "areaServed": [
+                                { "@type": "AdministrativeArea", "name": "Barcelona" },
+                                { "@type": "AdministrativeArea", "name": "Sant Cugat del Vallès" },
+                                { "@type": "AdministrativeArea", "name": "Sitges" },
+                                { "@type": "AdministrativeArea", "name": "Castelldefels" },
+                                { "@type": "AdministrativeArea", "name": "Maresme" }
+                            ],
+                            "description": "Optimización funcional de cocinas y organización metódica de despensas por categorías lógicas para evitar el desperdicio."
+                        },
+                        {
+                            "@context": "https://schema.org",
+                            "@type": "BreadcrumbList",
+                            "itemListElement": [
+                                {
+                                    "@type": "ListItem",
+                                    "position": 1,
+                                    "name": "Inicio",
+                                    "item": "https://ordenizate.es"
+                                },
+                                {
+                                    "@type": "ListItem",
+                                    "position": 2,
+                                    "name": "Servicios",
+                                    "item": "https://ordenizate.es/servicios"
+                                },
+                                {
+                                    "@type": "ListItem",
+                                    "position": 3,
+                                    "name": "Organización de Cocinas",
+                                    "item": "https://ordenizate.es/servicios/organizacion-cocinas"
+                                }
+                            ]
+                        }
+                    ])
+                }}
+            />
         </div>
     );
 }

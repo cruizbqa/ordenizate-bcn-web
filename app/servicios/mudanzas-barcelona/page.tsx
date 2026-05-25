@@ -10,6 +10,21 @@ import Link from 'next/link';
 export const metadata: Metadata = {
     title: 'Pre y Post Mudanzas en Barcelona | Organización Profesional',
     description: 'Servicio integral de mudanzas en Barcelona. Descarte, embalaje profesional y desembalaje para que empieces en tu nueva casa con orden y tranquilidad.',
+    alternates: {
+        canonical: '/servicios/mudanzas-barcelona',
+    },
+    openGraph: {
+        title: 'Pre y Post Mudanzas en Barcelona | Organización Profesional',
+        description: 'Servicio integral de mudanzas en Barcelona. Descarte, embalaje profesional y desembalaje para que empieces en tu nueva casa con orden y tranquilidad.',
+        images: [
+            {
+                url: '/images/service-moving.png',
+                width: 800,
+                height: 1000,
+                alt: 'Mudanzas organizadas en Barcelona por Ordenízate Bcn',
+            }
+        ]
+    }
 };
 
 export default function MudanzasPage() {
@@ -63,12 +78,65 @@ export default function MudanzasPage() {
                                 src={`${SITE_CONFIG.basePath}/images/service-moving.png`}
                                 alt="Cajas de mudanza perfectamente ordenadas con la marca Ordenizate Bcn"
                                 fill
+                                sizes="(max-width: 768px) 100vw, 42vw"
                                 className="object-cover"
                             />
                         </div>
                     </div>
                 </Container>
             </Section>
+
+            {/* Structured Schemas */}
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify([
+                        {
+                            "@context": "https://schema.org",
+                            "@type": "Service",
+                            "name": "Servicio de Mudanza Organizada (Pre y Post Mudanza) en Barcelona",
+                            "serviceType": "Professional Organizing Service",
+                            "provider": {
+                                "@type": "LocalBusiness",
+                                "name": "Ordenízate Bcn",
+                                "url": "https://ordenizate.es"
+                            },
+                            "areaServed": [
+                                { "@type": "AdministrativeArea", "name": "Barcelona" },
+                                { "@type": "AdministrativeArea", "name": "Sant Cugat del Vallès" },
+                                { "@type": "AdministrativeArea", "name": "Sitges" },
+                                { "@type": "AdministrativeArea", "name": "Castelldefels" },
+                                { "@type": "AdministrativeArea", "name": "Maresme" }
+                            ],
+                            "description": "Estructuración, embalaje cuidadoso, descarte y desembalaje organizado con colocación funcional de estancias para asegurar una mudanza sin estrés."
+                        },
+                        {
+                            "@context": "https://schema.org",
+                            "@type": "BreadcrumbList",
+                            "itemListElement": [
+                                {
+                                    "@type": "ListItem",
+                                    "position": 1,
+                                    "name": "Inicio",
+                                    "item": "https://ordenizate.es"
+                                },
+                                {
+                                    "@type": "ListItem",
+                                    "position": 2,
+                                    "name": "Servicios",
+                                    "item": "https://ordenizate.es/servicios"
+                                },
+                                {
+                                    "@type": "ListItem",
+                                    "position": 3,
+                                    "name": "Mudanzas Barcelona",
+                                    "item": "https://ordenizate.es/servicios/mudanzas-barcelona"
+                                }
+                            ]
+                        }
+                    ])
+                }}
+            />
         </div>
     );
 }

@@ -11,6 +11,9 @@ import { Check, Home, Sparkles, Clock, Truck, Shirt, ChefHat, ToyBrick, Monitor 
 export const metadata: Metadata = {
   title: 'Organizadora Profesional en Barcelona | Ordenízate',
   description: 'Servicio de organización profesional en Barcelona. Mudanzas, armarios, cocinas, hogar y consultoría online. Recupera tu tiempo y paz mental con sistemas de orden.',
+  alternates: {
+    canonical: 'https://ordenizate.es',
+  },
   openGraph: {
     title: 'Ordenízate | Organización Profesional',
     description: 'Transforma tu espacio, transforma tu vida.',
@@ -70,6 +73,7 @@ export default function HomePage() {
                 src={`${SITE_CONFIG.basePath}/images/hero-home-2.jpg`}
                 alt="Espacio Luminoso y Ordenado"
                 fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
                 priority
               />
@@ -276,7 +280,8 @@ export default function HomePage() {
         </Container>
       </Section>
 
-      {/* Testimonials *
+      {/* Testimonials */}
+      {/*
       <Section className="bg-sage-50/50">
         <Container>
           <h2 className="text-3xl font-bold text-center mb-12 font-serif text-charcoal-900">Lo que dicen mis clientes</h2>
@@ -301,28 +306,88 @@ export default function HomePage() {
             </div>
           </div>
         </Container>
-      </Section>
-      */}
+      </Section> 
+        
+      <Section>
+  <Container>
+    <h2 className="text-3xl font-bold text-center mb-12 font-serif text-charcoal-900">¿Cómo funciona el servicio?</h2>
+    <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
+      <div className="space-y-3">
+        <div className="w-16 h-16 rounded-full bg-brand-purple/10 flex items-center justify-center mx-auto text-brand-purple font-bold text-xl border-2 border-brand-purple/20 mb-4">
+          1
+        </div>
+        <h3 className="font-semibold text-lg">Contacto</h3>
+        <p className="text-gray-600 text-sm">Hablamos para entender tus necesidades y resolvemos todas tus dudas.</p>
+      </div>
 
-      {/* FAQ
+      <div className="space-y-3">
+        <div className="w-16 h-16 rounded-full bg-brand-pink/10 flex items-center justify-center mx-auto text-brand-pink font-bold text-xl border-2 border-brand-pink/20 mb-4">
+          2
+        </div>
+        <h3 className="font-semibold text-lg">Plan personalizado</h3>
+        <p className="text-gray-600 text-sm">Recibirás un presupuesto cerrado y adaptado a tu espacio y situación.</p>
+      </div>
+
+      <div className="space-y-3">
+        <div className="w-16 h-16 rounded-full bg-brand-blue/10 flex items-center justify-center mx-auto text-brand-blue font-bold text-xl border-2 border-brand-blue/20 mb-4">
+          3
+        </div>
+        <h3 className="font-semibold text-lg">Día de organización</h3>
+        <p className="text-gray-600 text-sm">Trabajamos juntos para despejar, clasificar y ordenar todo el espacio.</p>
+      </div>
+
+      <div className="space-y-3">
+        <div className="w-16 h-16 rounded-full bg-brand-green/10 flex items-center justify-center mx-auto text-brand-green font-bold text-xl border-2 border-brand-green/20 mb-4">
+          4
+        </div>
+        <h3 className="font-semibold text-lg">Seguimiento</h3>
+        <p className="text-gray-600 text-sm">Te acompaño en todo el proceso, incluso después de terminar, si lo necesitas.</p>
+      </div>
+    </div>
+  </Container>
+</Section>
+
+      {/* FAQ */}
+      {/*
       <Section>
         <Container className="max-w-3xl">
-          <h2 className="text-3xl font-bold text-center mb-12 font-serif text-charcoal-900">Preguntas Frecuentes</h2>
-          <div className="space-y-4">
+          <h2 className="text-3xl font-bold text-center mb-12 font-serif text-charcoal-900">Preguntas Frecuentes sobre Organización Profesional</h2>
+          <div className="space-y-6">
             {[
-              { q: "¿Cuánto cuesta el servicio?", a: "Cada proyecto es único. Ofrecemos presupuestos personalizados tras la primera llamada gratuita en la que valoramos el volumen, estado y necesidades de tus estancias." },
-              { q: "¿Tengo que estar presente?", a: "Depende de ti. En la fase de descarte es recomendable (o indispensable) para tomar decisiones, pero en la fase de organización y colocación puedo trabajar sola con mis pautas." },
-              { q: "¿Trabajas los fines de semana?", a: "Sí, ofrezco disponibilidad los fines de semana para adaptarme a horarios laborables, previa reserva y con un suplemento por festividad." },
-              { q: "¿Qué pasa con lo que ya no quiero?", a: "Te ayudo a gestionarlo tras la sesión de descarte profundo: lo organizamos para su donación, reciclaje en punto limpio o venta de segunda mano. Tú decides el destino final de los descartes." },
+              {
+                q: "¿Qué es y qué hace exactamente una organizadora profesional en Barcelona?",
+                a: "Una organizadora profesional te ayuda a optimizar, simplificar y estructurar tus espacios para ganar tiempo, comodidad y paz mental. En Ordenízate Bcn diseñamos sistemas personalizados que se adaptan a tus hábitos diarios, resolviendo problemas de desorden en armarios, cocinas, mudanzas y cualquier estancia del hogar de forma definitiva."
+              },
+              {
+                q: "¿Cuánto cuesta un servicio de organización y cómo se calcula el presupuesto?",
+                a: "Cada vivienda y situación son únicas, por lo que no aplicamos tarifas genéricas. Tras una primera llamada de valoración gratuita y sin compromiso, evaluamos el volumen de objetos, el tamaño de las estancias y tus necesidades específicas para presentarte un presupuesto cerrado y a tu medida."
+              },
+              {
+                q: "¿Es necesario que esté presente durante toda la sesión de orden?",
+                a: "Para la primera fase de descarte consciente, es muy recomendable (y en ocasiones indispensable) tu presencia, ya que solo tú decides qué elementos conservar. Sin embargo, para la fase de diseño de sistemas, categorización y colocación final, puedo trabajar de forma autónoma siguiendo las pautas acordadas previamente."
+              },
+              {
+                q: "¿Tengo que comprar cajas, perchas u organizadores especiales antes de la visita?",
+                a: "No, en absoluto. Siempre priorizamos el uso de los recursos de almacenaje que ya tengas en casa. Si durante la sesión detectamos que hacen falta organizadores adicionales (como cestas o perchas homogéneas) para maximizar el espacio, te asesoraré sobre los modelos idóneos y podré gestionarlos por ti."
+              },
+              {
+                q: "¿Qué ocurre con los objetos y ropa que decido descartar?",
+                a: "Te acompaño y asesoro en la toma de decisiones sin juzgar. Para aquello que decidas retirar, planificamos su destino de forma responsable: te facilito su gestión para donarlo a entidades benéficas locales en Barcelona, llevarlo a un punto verde de reciclaje o prepararlo para su venta en plataformas de segunda mano."
+              },
+              {
+                q: "¿Ofreces servicios los fines de semana?",
+                a: "Sí, entiendo perfectamente la falta de tiempo debido a la rutina laboral diaria. Por ello, ofrezco total flexibilidad y disponibilidad para realizar las sesiones presenciales en sábado, facilitando que puedas estar presente de forma relajada y sin prisas."
+              }
             ].map((faq, idx) => (
-              <div key={idx} className="border-b border-sand-200 pb-4">
+              <div key={idx} className="border-b border-sand-200 pb-5">
                 <h3 className="font-semibold text-lg text-charcoal-900 mb-2">{faq.q}</h3>
-                <p className="text-gray-600">{faq.a}</p>
+                <p className="text-gray-600 leading-relaxed text-base">{faq.a}</p>
               </div>
             ))}
           </div>
         </Container>
       </Section>
+
 
       <script
         type="application/ld+json"
@@ -333,40 +398,48 @@ export default function HomePage() {
             "mainEntity": [
               {
                 "@type": "Question",
-                "name": "¿Cuánto cuesta el servicio?",
+                "name": "¿Qué es y qué hace exactamente una organizadora profesional en Barcelona?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Cada proyecto es único. Ofrecemos presupuestos personalizados tras la primera llamada gratuita en la que valoramos el volumen, estado y necesidades de tus estancias."
+                  "text": "Una organizadora profesional te ayuda a optimizar, simplificar y estructurar tus espacios para ganar tiempo, comodidad y paz mental. En Ordenízate Bcn diseñamos sistemas personalizados que se adaptan a tus hábitos diarios, resolviendo problemas de desorden en armarios, cocinas, mudanzas y cualquier estancia del hogar de forma definitiva."
                 }
               },
               {
                 "@type": "Question",
-                "name": "¿Tengo que estar presente?",
+                "name": "¿Cuánto cuesta un servicio de organización y cómo se calcula el presupuesto?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Depende de ti. En la fase de descarte es recomendable (o indispensable) para tomar decisiones, pero en la fase de organización y colocación puedo trabajar sola con mis pautas."
+                  "text": "Cada vivienda y situación son únicas, por lo que no aplicamos tarifas genéricas. Tras una primera llamada de valoración gratuita y sin compromiso, evaluamos el volumen de objetos, el tamaño de las estancias y tus necesidades específicas para presentarte un presupuesto cerrado y a tu medida."
                 }
               },
               {
                 "@type": "Question",
-                "name": "¿Trabajas los fines de semana?",
+                "name": "¿Es necesario que esté presente durante toda la sesión de orden?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Sí, ofrezco disponibilidad los fines de semana para adaptarme a horarios laborables, previa reserva y con un suplemento por festividad."
+                  "text": "Para la primera fase de descarte consciente, es muy recomendable (y en ocasiones indispensable) tu presencia, ya que solo tú decides qué elementos conservar. Sin embargo, para la fase de diseño de sistemas, categorización y colocación final, puedo trabajar de forma autónoma siguiendo las pautas acordadas previamente."
                 }
               },
               {
                 "@type": "Question",
-                "name": "¿Qué pasa con lo que ya no quiero?",
+                "name": "¿Tengo que comprar cajas, perchas u organizadores especiales antes de la visita?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Te ayudo a gestionarlo tras la sesión de descarte profundo: lo organizamos para su donación, reciclaje en punto limpio o venta de segunda mano. Tú decides el destino final de los descartes."
+                  "text": "No, en absoluto. Siempre priorizamos el uso de los recursos de almacenaje que ya tengas en casa. Si durante la sesión detectamos que hacen falta organizadores adicionales (como cestas o perchas homogéneas) para maximizar el espacio, te asesoraré sobre los modelos idóneos y podré gestionarlos por ti."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "¿Ofreces servicios los fines de semana?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Sí, entiendo perfectamente la falta de tiempo debido a la rutina laboral diaria. Por ello, ofrezco total flexibilidad y disponibilidad para realizar las sesiones presenciales en sábado, facilitando que puedas estar presente de forma relajada y sin prisas."
                 }
               }
             ]
           })
         }}
-      />
+      /> 
       */}
 
       {/* Final CTA */}

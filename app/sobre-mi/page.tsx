@@ -5,8 +5,11 @@ import { Button } from '@/components/ui/Button';
 import { Container } from '@/components/ui/Container';
 
 export const metadata: Metadata = {
-    title: 'Sobre Mí',
-    description: 'Conoce a la organizadora profesional detrás de Ordenízate Bcn.',
+    title: 'Silvia — Organizadora Profesional en Barcelona',
+    description: 'Conoce a Silvia, organizadora profesional detrás de Ordenízate Bcn. Sistemas de orden prácticos adaptados a la realidad de tu hogar y tu mente.',
+    alternates: {
+        canonical: '/sobre-mi',
+    },
 };
 
 export default function AboutPage() {
@@ -53,6 +56,7 @@ export default function AboutPage() {
                             src={`${SITE_CONFIG.basePath}/images/about-profile.jpeg`}
                             alt="Silvia - Organizadora Profesional de Ordenízate"
                             fill
+                            sizes="(max-width: 1024px) 100vw, 50vw"
                             className="object-cover"
                         />
                     </div>

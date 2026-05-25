@@ -5,8 +5,11 @@ import { Container } from '@/components/ui/Container';
 import { Section } from '@/components/ui/Section';
 
 export const metadata: Metadata = {
-    title: 'Aviso Legal | Ordenízate Bcn',
+    title: 'Aviso Legal',
     description: 'Aviso legal y términos de uso del sitio web de Ordenízate Bcn.',
+    alternates: {
+        canonical: '/aviso-legal',
+    },
 };
 
 export default function AvisoLegalPage() {
