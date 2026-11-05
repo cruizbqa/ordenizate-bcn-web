@@ -47,3 +47,7 @@ coverage
 
 # lint output
 lint_output.txt
+
+# graphify (knowledge graph, rebuild with: graphify update .)
+/graphify-out/
+.graphifyrc

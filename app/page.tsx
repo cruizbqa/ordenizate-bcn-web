@@ -45,14 +45,13 @@ export default function HomePage() {
               Organización profesional del hogar <span className="text-sage-600">en Barcelona</span>
             </h1>
             <h2 className="mt-6 text-xl font-medium text-charcoal-800 font-serif">
-              Orden real para casas reales.
+              Orden real para casas reales. Un buen sistema no se nota, funciona.
             </h2>
             <p className="mt-4 text-lg leading-8 text-gray-600">
               Creamos sistemas de organización prácticos, adaptados a la realidad de cada espacio y diseñados para mantenerse en el tiempo.<br className="hidden sm:block" />
-              Trabajamos de forma presencial y también online
-            </p>
-            <p className="mt-4 text-lg leading-8 text-gray-600">
-              Con base en Barcelona y disponible para proyectos en toda España según disponibilidad.
+              Especialistas en <Link href="/servicios#mudanzas" className="text-sage-600 hover:text-sage-700 underline underline-offset-2 font-medium">mudanzas</Link>, <Link href="/servicios#armarios" className="text-sage-600 hover:text-sage-700 underline underline-offset-2 font-medium">armarios</Link>, <Link href="/servicios#cocinas" className="text-sage-600 hover:text-sage-700 underline underline-offset-2 font-medium">cocinas</Link>, <Link href="/servicios#hogar" className="text-sage-600 hover:text-sage-700 underline underline-offset-2 font-medium">estancias</Link> y <Link href="/servicios#infantil" className="text-sage-600 hover:text-sage-700 underline underline-offset-2 font-medium">organización infantil</Link>. Trabajamos de forma presencial y también <Link href="/servicios#online" className="text-sage-600 hover:text-sage-700 underline underline-offset-2 font-medium">online</Link>.<br /><br />
+              Con base en Barcelona y disponible para proyectos en toda España.
+
             </p>
             <div className="mt-10 flex flex-col sm:flex-row items-center gap-4">
               <Button href="/contacto" size="lg" variant="primary">
