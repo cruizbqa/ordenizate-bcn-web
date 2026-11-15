@@ -7,6 +7,7 @@ import { Container } from '@/components/ui/Container';
 export const metadata: Metadata = {
     title: 'Sobre Mí',
     description: 'Conoce a la organizadora profesional detrás de Ordenízate Bcn.',
+    alternates: { canonical: '/sobre-mi' },
 };
 
 export default function AboutPage() {

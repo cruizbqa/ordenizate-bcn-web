@@ -51,3 +51,6 @@ lint_output.txt
 # graphify (knowledge graph, rebuild with: graphify update .)
 /graphify-out/
 .graphifyrc
+
+# playwright mcp artifacts (screenshots, session snapshots)
+/.playwright-mcp/

@@ -23,7 +23,7 @@ export function Button({
 
     const variants = {
         primary:
-            "bg-sage-500 text-white hover:bg-sage-600 shadow-md hover:shadow-lg focus:ring-sage-500",
+            "bg-sage-600 text-white hover:bg-sage-700 shadow-md hover:shadow-lg focus:ring-sage-600",
         secondary:
             "bg-sand-200 text-charcoal-900 hover:bg-sand-300 shadow-sm hover:shadow-md focus:ring-sand-400",
         outline:

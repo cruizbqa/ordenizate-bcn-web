@@ -10,9 +10,11 @@ import { MapPin, Mail, MessageCircle } from 'lucide-react';
 export const metadata: Metadata = {
     title: 'Contacto',
     description: 'Contacta con Ordenízate. Organizadora profesional. Escríbenos por email o WhatsApp para empezar.',
+    alternates: { canonical: '/contacto' },
     openGraph: {
         title: 'Contacto | Ordenízate',
         description: 'Cuéntanos qué necesitas. Te ayudamos a transformar tu espacio.',
+        images: ['/images/contact-ordenizate.jpg'],
     },
 };
 
