@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import { Button } from '@/components/ui/Button';
+import Link from 'next/link';
 import { Container } from '@/components/ui/Container';
 import { Section } from '@/components/ui/Section';
 import { Truck, Home, Shirt, ChefHat, ToyBrick, Monitor } from 'lucide-react';
@@ -13,12 +13,12 @@ export const metadata: Metadata = {
 };
 
 const services = [
-    { href: '/servicios/mudanzas', icon: Truck, label: 'Control' },
-    { href: '/servicios/armarios', icon: Shirt, label: 'Funcionalidad' },
-    { href: '/servicios/cocinas', icon: ChefHat, label: 'Criterio' },
-    { href: '/servicios/estancias', icon: Home, label: 'Armonía' },
-    { href: '/servicios/infantil', icon: ToyBrick, label: 'Cuidado' },
-    { href: '/servicios/online', icon: Monitor, label: 'A tu ritmo' },
+    { href: '/servicios/mudanzas', icon: Truck, label: 'Control', bg: 'bg-sand-50', border: 'border-brand-yellow', iconColor: 'text-brand-yellow' },
+    { href: '/servicios/armarios', icon: Shirt, label: 'Funcionalidad', bg: 'bg-white', border: 'border-brand-purple', iconColor: 'text-brand-purple' },
+    { href: '/servicios/cocinas', icon: ChefHat, label: 'Criterio', bg: 'bg-sand-50', border: 'border-sage-500', iconColor: 'text-sage-600' },
+    { href: '/servicios/estancias', icon: Home, label: 'Armonía', bg: 'bg-white', border: 'border-brand-yellow', iconColor: 'text-brand-yellow' },
+    { href: '/servicios/infantil', icon: ToyBrick, label: 'Cuidado', bg: 'bg-sand-50', border: 'border-brand-pink', iconColor: 'text-brand-pink' },
+    { href: '/servicios/online', icon: Monitor, label: 'A tu ritmo', bg: 'bg-white', border: 'border-sage-400', iconColor: 'text-sage-600' },
 ];
 
 export default function ServicesPage() {
@@ -43,14 +43,15 @@ export default function ServicesPage() {
                 <Container>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                         {services.map((s) => (
-                            <div
+                            <Link
                                 key={s.href}
-                                className="flex flex-col items-center text-center gap-3 p-8 bg-white rounded-2xl border border-sand-200 shadow-sm hover:shadow-md transition-shadow"
+                                href={s.href}
+                                className={`group flex flex-col items-center text-center gap-3 p-8 rounded-2xl ring-1 ring-gray-200 shadow-sm hover:shadow-md transition-shadow border-t-4 ${s.bg} ${s.border}`}
                             >
-                                <s.icon size={32} strokeWidth={1.5} className="text-sage-600" />
+                                <s.icon size={32} strokeWidth={1.5} className={s.iconColor} />
                                 <p className="font-serif font-semibold text-charcoal-900">{s.label}</p>
-                                <Button href={s.href} variant="outline" size="sm" className="mt-2">Ver servicio</Button>
-                            </div>
+                                <span className="mt-2 inline-flex items-center justify-center h-9 px-4 text-sm rounded-full font-medium border border-sage-500 text-sage-600 group-hover:bg-sage-50 transition-colors duration-300">Ver servicio</span>
+                            </Link>
                         ))}
                     </div>
                 </Container>
