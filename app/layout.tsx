@@ -82,12 +82,6 @@ export default function RootLayout({
                 "longitude": 2.1686
               },
               "areaServed": "Barcelona y área metropolitana",
-              "openingHoursSpecification": {
-                "@type": "OpeningHoursSpecification",
-                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-                "opens": "09:00",
-                "closes": "19:00"
-              },
               "sameAs": ["https://instagram.com/ordenizatebcn/"],
               "description": "Servicios de organización profesional en Barcelona. Transformamos tu hogar con orden, estilo y calma. Mudanzas, armarios, cocinas y más.",
               "priceRange": "$$"
