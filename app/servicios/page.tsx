@@ -7,7 +7,7 @@ import { ValueCard } from '@/components/ui/ValueCard';
 import { Heart, Shield, Leaf } from 'lucide-react';
 
 export const metadata: Metadata = {
-    title: 'Servicios | Mudanzas y Organización',
+    title: 'Servicios: Mudanzas y Organización',
     description: 'Descubre nuestros servicios de organización profesional en Barcelona. Mudanzas, hogar, armarios, cocinas y más.',
     alternates: { canonical: '/servicios' },
 };
