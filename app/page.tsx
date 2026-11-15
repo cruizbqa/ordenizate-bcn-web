@@ -112,7 +112,7 @@ export default function HomePage() {
           </div>
           <ServicesSlider>
             {/* Service 1: MUDANZAS */}
-            <div className="flex-none w-[85vw] sm:w-[400px] snap-center flex flex-col rounded-3xl bg-sand-50 p-8 ring-1 ring-gray-200 xl:p-10 transition-shadow hover:shadow-lg border-t-4 border-brand-yellow">
+            <div className="flex-none w-[85vw] sm:w-[400px] snap-center flex flex-col rounded-3xl bg-white p-8 ring-1 ring-gray-200 xl:p-10 transition-shadow hover:shadow-lg border-t-4 border-brand-yellow">
               <div className="flex items-center justify-between gap-x-4">
                 <h3 className="text-lg font-semibold leading-8 text-charcoal-900 font-serif uppercase">MUDANZAS (PRE + POST)</h3>
                 <Truck className="h-6 w-6 text-brand-yellow" />
@@ -152,7 +152,7 @@ export default function HomePage() {
             </div>
 
             {/* Service 3: INFANTIL */}
-            <div className="flex-none w-[85vw] sm:w-[400px] snap-center flex flex-col rounded-3xl bg-sand-50 p-8 ring-1 ring-gray-200 xl:p-10 transition-shadow hover:shadow-lg border-t-4 border-brand-pink">
+            <div className="flex-none w-[85vw] sm:w-[400px] snap-center flex flex-col rounded-3xl bg-white p-8 ring-1 ring-gray-200 xl:p-10 transition-shadow hover:shadow-lg border-t-4 border-brand-pink">
               <div className="flex items-center justify-between gap-x-4">
                 <h3 className="text-lg font-semibold leading-8 text-charcoal-900 font-serif uppercase">INFANTIL</h3>
                 <ToyBrick className="h-6 w-6 text-brand-pink" />
@@ -172,7 +172,7 @@ export default function HomePage() {
             </div>
 
             {/* Service 4: COCINAS */}
-            <div className="flex-none w-[85vw] sm:w-[400px] snap-center flex flex-col rounded-3xl bg-sand-50 p-8 ring-1 ring-gray-200 xl:p-10 transition-shadow hover:shadow-lg border-t-4 border-sage-500">
+            <div className="flex-none w-[85vw] sm:w-[400px] snap-center flex flex-col rounded-3xl bg-white p-8 ring-1 ring-gray-200 xl:p-10 transition-shadow hover:shadow-lg border-t-4 border-sage-500">
               <div className="flex items-center justify-between gap-x-4">
                 <h3 className="text-lg font-semibold leading-8 text-charcoal-900 font-serif uppercase">COCINAS Y DESPENSAS</h3>
                 <ChefHat className="h-6 w-6 text-sage-600" />
