@@ -16,12 +16,21 @@ export const metadata: Metadata = {
     title: 'Ordenízate | Organización Profesional',
     description: 'Transforma tu espacio, transforma tu vida.',
     url: 'https://ordenizate.es',
+    siteName: 'Ordenízate',
+    locale: 'es_ES',
     type: 'website',
-    images: ['/images/hero-home-2.jpg'],
+    images: [
+      {
+        url: '/images/hero-home-2.jpg',
+        width: 1200,
+        height: 1800,
+        alt: 'Espacio Luminoso y Ordenado',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Ordenízate Bcn | Organización Profesional en Barcelona',
+    title: 'Ordenízate | Organización Profesional en Barcelona',
     description: 'Transforma tu espacio, transforma tu vida.',
     images: ['/images/hero-home-2.jpg'],
   },
@@ -74,6 +83,7 @@ export default function HomePage() {
                 fill
                 className="object-cover"
                 priority
+                fetchPriority="high"
               />
             </div>
           </div>

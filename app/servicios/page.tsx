@@ -13,12 +13,12 @@ export const metadata: Metadata = {
 };
 
 const services = [
-    { href: '/servicios/mudanzas', icon: Truck, label: 'Control', border: 'border-brand-yellow', iconColor: 'text-brand-yellow' },
-    { href: '/servicios/armarios', icon: Shirt, label: 'Funcionalidad', border: 'border-brand-purple', iconColor: 'text-brand-purple' },
-    { href: '/servicios/cocinas', icon: ChefHat, label: 'Criterio', border: 'border-sage-500', iconColor: 'text-sage-600' },
-    { href: '/servicios/estancias', icon: Home, label: 'Armonía', border: 'border-brand-yellow', iconColor: 'text-brand-yellow' },
-    { href: '/servicios/infantil', icon: ToyBrick, label: 'Cuidado', border: 'border-brand-pink', iconColor: 'text-brand-pink' },
-    { href: '/servicios/online', icon: Monitor, label: 'A tu ritmo', border: 'border-sage-400', iconColor: 'text-sage-600' },
+    { href: '/servicios/mudanzas', icon: Truck, label: 'Mudanzas (Pre + Post)', border: 'border-brand-yellow', iconColor: 'text-brand-yellow' },
+    { href: '/servicios/armarios', icon: Shirt, label: 'Armarios y Vestidores', border: 'border-brand-purple', iconColor: 'text-brand-purple' },
+    { href: '/servicios/cocinas', icon: ChefHat, label: 'Cocinas y Despensas', border: 'border-sage-500', iconColor: 'text-sage-600' },
+    { href: '/servicios/estancias', icon: Home, label: 'Organización de Estancias', border: 'border-brand-yellow', iconColor: 'text-brand-yellow' },
+    { href: '/servicios/infantil', icon: ToyBrick, label: 'Organización Infantil', border: 'border-brand-pink', iconColor: 'text-brand-pink' },
+    { href: '/servicios/online', icon: Monitor, label: 'Asesoría Online', border: 'border-sage-400', iconColor: 'text-sage-600' },
 ];
 
 export default function ServicesPage() {
