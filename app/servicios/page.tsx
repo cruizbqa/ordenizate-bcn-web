@@ -11,6 +11,7 @@ import { ValueCard } from '@/components/ui/ValueCard';
 export const metadata: Metadata = {
     title: 'Servicios | Mudanzas y Organización',
     description: 'Descubre nuestros servicios de organización profesional en Barcelona. Mudanzas, hogar, armarios, cocinas y más.',
+    alternates: { canonical: '/servicios' },
 };
 
 export default function ServicesPage() {
@@ -35,7 +36,7 @@ export default function ServicesPage() {
                 <Container>
                     <div className="flex flex-col md:flex-row gap-12 items-center">
                         <div className="flex-1">
-                            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-yellow-50 text-brand-yellow text-sm font-medium mb-4">
+                            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-yellow-50 text-brand-yellow-700 text-sm font-medium mb-4">
                                 <Truck size={16} /> Control
                             </div>
                             <h2 className="text-3xl font-serif font-bold text-charcoal-900 mb-6">Mudanzas (Pre + Post)</h2>
@@ -85,7 +86,7 @@ export default function ServicesPage() {
                 <Container>
                     <div className="flex flex-col md:flex-row-reverse gap-12 items-center">
                         <div className="flex-1">
-                            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-50 text-brand-purple text-sm font-medium mb-4">
+                            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-50 text-brand-purple-700 text-sm font-medium mb-4">
                                 <Shirt size={16} /> Funcionalidad
                             </div>
                             <h2 className="text-3xl font-serif font-bold text-charcoal-900 mb-6">Armarios y Vestidores</h2>
@@ -140,7 +141,7 @@ export default function ServicesPage() {
                 <Container>
                     <div className="flex flex-col md:flex-row gap-12 items-center">
                         <div className="flex-1">
-                            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-pink-50 text-brand-pink text-sm font-medium mb-4">
+                            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-pink-50 text-brand-pink-700 text-sm font-medium mb-4">
                                 <ToyBrick size={16} /> Cuidado
                             </div>
                             <h2 className="text-3xl font-serif font-bold text-charcoal-900 mb-6">Organización Infantil</h2>
@@ -184,7 +185,7 @@ export default function ServicesPage() {
                 <Container>
                     <div className="flex flex-col md:flex-row-reverse gap-12 items-center">
                         <div className="flex-1">
-                            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sage-50 text-sage-600 text-sm font-medium mb-4">
+                            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sage-50 text-sage-700 text-sm font-medium mb-4">
                                 <ChefHat size={16} /> Criterio
                             </div>
                             <h2 className="text-3xl font-serif font-bold text-charcoal-900 mb-6">Cocinas y Despensas</h2>
@@ -228,7 +229,7 @@ export default function ServicesPage() {
                 <Container>
                     <div className="flex flex-col md:flex-row-reverse gap-12 items-center">
                         <div className="flex-1">
-                            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-yellow-50 text-brand-yellow text-sm font-medium mb-4">
+                            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-yellow-50 text-brand-yellow-700 text-sm font-medium mb-4">
                                 <Home size={16} /> Armonía
                             </div>
                             <h2 className="text-3xl font-serif font-bold text-charcoal-900 mb-6">Organización de Estancias</h2>
@@ -279,7 +280,7 @@ export default function ServicesPage() {
                 <Container>
                     <div className="flex flex-col md:flex-row gap-12 items-center">
                         <div className="flex-1">
-                            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sage-50 text-sage-600 text-sm font-medium mb-4">
+                            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sage-50 text-sage-700 text-sm font-medium mb-4">
                                 <Monitor size={16} /> A tu ritmo
                             </div>
                             <h2 className="text-3xl font-serif font-bold text-charcoal-900 mb-6">Asesoría Online</h2>
@@ -375,7 +376,7 @@ function ServiceItem({ title, description, icon }: { title: string, description:
 function PriceCard({ title, hours, price, features, highlight }: { title: string, hours: string, price: string, features: string[], highlight?: boolean }) {
     return (
         <div className={`p-8 rounded-2xl border ${highlight ? 'bg-white border-sage-200 shadow-lg relative' : 'bg-transparent border-sand-200'}`}>
-            {highlight && <div className="absolute top-0 right-0 bg-sage-500 text-white text-xs px-3 py-1 rounded-bl-lg rounded-tr-lg font-medium">Popular</div>}
+            {highlight && <div className="absolute top-0 right-0 bg-sage-600 text-white text-xs px-3 py-1 rounded-bl-lg rounded-tr-lg font-medium">Popular</div>}
             <h3 className="font-serif font-bold text-xl mb-2">{title}</h3>
             <p className="text-gray-500 text-sm mb-4">{hours}</p>
             <div className="text-3xl font-bold text-charcoal-900 mb-6">{price}</div>

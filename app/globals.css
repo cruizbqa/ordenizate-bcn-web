@@ -15,6 +15,7 @@
   --color-sage-400: #00a6d9;
   --color-sage-500: #0090be;
   --color-sage-600: #007a9f;
+  --color-sage-700: #006587;
   --color-sage-800: #004d66;
   --color-sage-900: #003344;
 
@@ -32,6 +33,10 @@
   --color-brand-yellow: #f3bb00;
   --color-brand-purple: #888ebd;
   --color-brand-pink: #eaa3b1;
+  /* AA contrast variants for text over pale backgrounds */
+  --color-brand-yellow-700: #7a5f00;
+  --color-brand-purple-700: #4b4f78;
+  --color-brand-pink-700: #a3455a;
 
   --color-charcoal-50: #f8fafc;
   --color-charcoal-900: #0f172a;

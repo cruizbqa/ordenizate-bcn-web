@@ -22,6 +22,7 @@ const mosk = localFont({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://ordenizate.es'),
   title: {
     template: '%s | Ordenízate Bcn',
     default: 'Ordenízate Bcn | Organizadora Profesional en Barcelona',
@@ -34,11 +35,13 @@ export const metadata: Metadata = {
     siteName: 'Ordenízate',
     locale: 'es_ES',
     type: 'website',
+    images: ['/images/hero-home-2.jpg'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Ordenízate Bcn | Organizadora Profesional en Barcelona',
     description: 'Transforma tu espacio, transforma tu vida.',
+    images: ['/images/hero-home-2.jpg'],
   },
 };
 
@@ -73,6 +76,13 @@ export default function RootLayout({
                 "addressRegion": "Barcelona",
                 "addressCountry": "ES"
               },
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 41.3874,
+                "longitude": 2.1686
+              },
+              "areaServed": "Barcelona y área metropolitana",
+              "sameAs": ["https://instagram.com/ordenizatebcn/"],
               "description": "Servicios de organización profesional en Barcelona. Transformamos tu hogar con orden, estilo y calma. Mudanzas, armarios, cocinas y más.",
               "priceRange": "$$"
             })

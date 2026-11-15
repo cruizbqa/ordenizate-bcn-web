@@ -11,16 +11,19 @@ import { Check, Home, Sparkles, Clock, Truck, Shirt, ChefHat, ToyBrick, Monitor 
 export const metadata: Metadata = {
   title: 'Organizadora Profesional en Barcelona | Ordenízate',
   description: 'Servicio de organización profesional en Barcelona. Mudanzas, armarios, cocinas, hogar y consultoría online. Recupera tu tiempo y paz mental con sistemas de orden.',
+  alternates: { canonical: '/' },
   openGraph: {
     title: 'Ordenízate | Organización Profesional',
     description: 'Transforma tu espacio, transforma tu vida.',
     url: 'https://ordenizate.es',
     type: 'website',
+    images: ['/images/hero-home-2.jpg'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Ordenízate Bcn | Organización Profesional en Barcelona',
     description: 'Transforma tu espacio, transforma tu vida.',
+    images: ['/images/hero-home-2.jpg'],
   },
 };
 
@@ -310,7 +313,7 @@ export default function HomePage() {
       <Section className="bg-charcoal-900 text-white text-center" spacing="lg">
         <Container className="max-w-2xl">
           <h2 className="text-3xl md:text-4xl font-bold font-serif mb-6 text-white">¿Hablamos?</h2>
-          <p className="text-sand-300 text-lg mb-10">
+          <p className="text-gray-600 text-lg mb-10">
             Ordenízate: orden profesional adaptado a la realidad de cada hogar.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
