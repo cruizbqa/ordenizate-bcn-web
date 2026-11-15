@@ -1,18 +1,25 @@
 import { Metadata } from 'next';
-import NextImage from 'next/image';
-import { SITE_CONFIG } from '@/lib/constants';
 import { Button } from '@/components/ui/Button';
 import { Container } from '@/components/ui/Container';
 import { Section } from '@/components/ui/Section';
-import { Check, Truck, Home, Bubbles, LampDesk, Container as LucideContainer, Shirt, ChefHat, ToyBrick, Monitor } from 'lucide-react';
-import { Heart, Shield, Leaf } from 'lucide-react';
+import { Truck, Home, Shirt, ChefHat, ToyBrick, Monitor } from 'lucide-react';
 import { ValueCard } from '@/components/ui/ValueCard';
+import { Heart, Shield, Leaf } from 'lucide-react';
 
 export const metadata: Metadata = {
     title: 'Servicios | Mudanzas y Organización',
     description: 'Descubre nuestros servicios de organización profesional en Barcelona. Mudanzas, hogar, armarios, cocinas y más.',
     alternates: { canonical: '/servicios' },
 };
+
+const services = [
+    { href: '/servicios/mudanzas', icon: Truck, label: 'Control' },
+    { href: '/servicios/armarios', icon: Shirt, label: 'Funcionalidad' },
+    { href: '/servicios/cocinas', icon: ChefHat, label: 'Criterio' },
+    { href: '/servicios/estancias', icon: Home, label: 'Armonía' },
+    { href: '/servicios/infantil', icon: ToyBrick, label: 'Cuidado' },
+    { href: '/servicios/online', icon: Monitor, label: 'A tu ritmo' },
+];
 
 export default function ServicesPage() {
     return (
@@ -30,6 +37,24 @@ export default function ServicesPage() {
                     </div>
                 </Container>
             </div>
+
+            {/* Services index */}
+            <Section>
+                <Container>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                        {services.map((s) => (
+                            <div
+                                key={s.href}
+                                className="flex flex-col items-center text-center gap-3 p-8 bg-white rounded-2xl border border-sand-200 shadow-sm hover:shadow-md transition-shadow"
+                            >
+                                <s.icon size={32} strokeWidth={1.5} className="text-sage-600" />
+                                <p className="font-serif font-semibold text-charcoal-900">{s.label}</p>
+                                <Button href={s.href} variant="outline" size="sm" className="mt-2">Ver servicio</Button>
+                            </div>
+                        ))}
+                    </div>
+                </Container>
+            </Section>
 
             {/* Values */}
             <Section className="bg-sand-50">
@@ -56,35 +81,4 @@ export default function ServicesPage() {
             </Section>
         </div>
     );
-}
-
-function ServiceItem({ title, description, icon }: { title: string, description: string, icon: React.ReactNode }) {
-    return (
-        <div className="flex gap-4">
-            <div className="mt-1 bg-sand-50 p-2 rounded-lg h-fit">
-                {icon}
-            </div>
-            <div>
-                <h3 className="font-semibold text-charcoal-900">{title}</h3>
-                <p className="text-sm text-gray-600 mt-1">{description}</p>
-            </div>
-        </div>
-    )
-}
-
-function PriceCard({ title, hours, price, features, highlight }: { title: string, hours: string, price: string, features: string[], highlight?: boolean }) {
-    return (
-        <div className={`p-8 rounded-2xl border ${highlight ? 'bg-white border-sage-200 shadow-lg relative' : 'bg-transparent border-sand-200'}`}>
-            {highlight && <div className="absolute top-0 right-0 bg-sage-600 text-white text-xs px-3 py-1 rounded-bl-lg rounded-tr-lg font-medium">Popular</div>}
-            <h3 className="font-serif font-bold text-xl mb-2">{title}</h3>
-            <p className="text-gray-500 text-sm mb-4">{hours}</p>
-            <div className="text-3xl font-bold text-charcoal-900 mb-6">{price}</div>
-            <ul className="space-y-3 text-sm text-gray-600 mb-8">
-                {features.map((f, i) => (
-                    <li key={i} className="flex gap-2"><Check size={16} className="text-sage-500" /> {f}</li>
-                ))}
-            </ul>
-            <Button href="/contacto" variant={highlight ? 'primary' : 'outline'} className="w-full">Reservar</Button>
-        </div>
-    )
 }
