@@ -9,13 +9,13 @@ import { Bubbles, Home, LampDesk, Container as LucideContainer } from 'lucide-re
 
 export const metadata: Metadata = {
     title: 'Organización de Estancias',
-    description: 'Diseñamos sistemas adaptados al uso real de cada espacio del hogar, facilitando su mantenimiento y reduciendo el desorden acumulado.',
+    description: 'Cada rincón del hogar tiene una función. Cuando el orden se pierde, aumenta la sensación de saturación.',
     alternates: { canonical: '/servicios/estancias' },
 };
 
 export default function EstanciasPage() {
     return (
-        <Section>
+        <Section className="bg-white">
             <Container>
                 <div className="flex flex-col md:flex-row-reverse gap-12 items-center">
                     <div className="flex-1">

@@ -8,13 +8,13 @@ import { ToyBrick } from 'lucide-react';
 
 export const metadata: Metadata = {
     title: 'Organización Infantil',
-    description: 'Diseñamos espacios infantiles claros y funcionales que acompañan la llegada de un bebé y los cambios de etapa, aportando estructura sin añadir presión.',
+    description: 'La llegada de un bebé o los cambios de etapa traen ilusión, pero también decisiones y organización constante. Diseñamos espacios claros y funcionales que acompañan este proceso, aportando estructura sin añadir presión.',
     alternates: { canonical: '/servicios/infantil' },
 };
 
 export default function InfantilPage() {
     return (
-        <Section>
+        <Section className="bg-white">
             <Container>
                 <div className="flex flex-col md:flex-row gap-12 items-center">
                     <div className="flex-1">

@@ -8,7 +8,7 @@ import { Check, Monitor } from 'lucide-react';
 
 export const metadata: Metadata = {
     title: 'Asesoría Online',
-    description: 'Acompañamiento profesional a distancia: videollamadas estructuradas para analizar tu espacio y diseñar un plan claro, realista y fácil de aplicar.',
+    description: 'La asesoría online está pensada para quienes necesitan acompañamiento profesional a distancia o desean implementar el sistema por su cuenta, manteniendo el mismo criterio y estructura que en el servicio presencial.',
     alternates: { canonical: '/servicios/online' },
 };
 

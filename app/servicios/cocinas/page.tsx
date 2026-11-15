@@ -8,7 +8,7 @@ import { ChefHat } from 'lucide-react';
 
 export const metadata: Metadata = {
     title: 'Cocinas y Despensas',
-    description: 'Diseñamos una organización coherente y fácil de mantener en cocina y despensa, donde cada categoría tiene su lugar y cada zona responde a un uso real.',
+    description: 'La cocina es un espacio de movimiento continuo. Cuando no existe una estructura clara, se generan duplicidades, acumulaciones y una sensación constante de desorden.',
     alternates: { canonical: '/servicios/cocinas' },
 };
 
