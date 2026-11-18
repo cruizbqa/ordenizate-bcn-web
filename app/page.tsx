@@ -16,12 +16,21 @@ export const metadata: Metadata = {
     title: 'Ordenízate | Organización Profesional',
     description: 'Transforma tu espacio, transforma tu vida.',
     url: 'https://ordenizate.es',
+    siteName: 'Ordenízate',
+    locale: 'es_ES',
     type: 'website',
-    images: ['/images/hero-home-2.jpg'],
+    images: [
+      {
+        url: '/images/hero-home-2.jpg',
+        width: 1200,
+        height: 1800,
+        alt: 'Espacio Luminoso y Ordenado',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Ordenízate Bcn | Organización Profesional en Barcelona',
+    title: 'Ordenízate | Organización Profesional en Barcelona',
     description: 'Transforma tu espacio, transforma tu vida.',
     images: ['/images/hero-home-2.jpg'],
   },
@@ -52,7 +61,7 @@ export default function HomePage() {
             </h2>
             <p className="mt-4 text-lg leading-8 text-gray-600">
               Creamos sistemas de organización prácticos, adaptados a la realidad de cada espacio y diseñados para mantenerse en el tiempo.<br className="hidden sm:block" />
-              Especialistas en <Link href="/servicios#mudanzas" className="text-sage-600 hover:text-sage-700 underline underline-offset-2 font-medium">mudanzas</Link>, <Link href="/servicios#armarios" className="text-sage-600 hover:text-sage-700 underline underline-offset-2 font-medium">armarios</Link>, <Link href="/servicios#cocinas" className="text-sage-600 hover:text-sage-700 underline underline-offset-2 font-medium">cocinas</Link>, <Link href="/servicios#hogar" className="text-sage-600 hover:text-sage-700 underline underline-offset-2 font-medium">estancias</Link> y <Link href="/servicios#infantil" className="text-sage-600 hover:text-sage-700 underline underline-offset-2 font-medium">organización infantil</Link>. Trabajamos de forma presencial y también <Link href="/servicios#online" className="text-sage-600 hover:text-sage-700 underline underline-offset-2 font-medium">online</Link>.<br /><br />
+              Especialistas en <Link href="/servicios/mudanzas" className="text-sage-600 hover:text-sage-700 underline underline-offset-2 font-medium">mudanzas</Link>, <Link href="/servicios/armarios" className="text-sage-600 hover:text-sage-700 underline underline-offset-2 font-medium">armarios</Link>, <Link href="/servicios/cocinas" className="text-sage-600 hover:text-sage-700 underline underline-offset-2 font-medium">cocinas</Link>, <Link href="/servicios/estancias" className="text-sage-600 hover:text-sage-700 underline underline-offset-2 font-medium">estancias</Link> y <Link href="/servicios/infantil" className="text-sage-600 hover:text-sage-700 underline underline-offset-2 font-medium">organización infantil</Link>. Trabajamos de forma presencial y también <Link href="/servicios/online" className="text-sage-600 hover:text-sage-700 underline underline-offset-2 font-medium">online</Link>.<br /><br />
               Con base en Barcelona y disponible para proyectos en toda España.
 
             </p>
@@ -74,6 +83,7 @@ export default function HomePage() {
                 fill
                 className="object-cover"
                 priority
+                fetchPriority="high"
               />
             </div>
           </div>
@@ -102,7 +112,7 @@ export default function HomePage() {
           </div>
           <ServicesSlider>
             {/* Service 1: MUDANZAS */}
-            <div className="flex-none w-[85vw] sm:w-[400px] snap-center flex flex-col rounded-3xl bg-sand-50 p-8 ring-1 ring-gray-200 xl:p-10 transition-shadow hover:shadow-lg border-t-4 border-brand-yellow">
+            <div className="flex-none w-[85vw] sm:w-[400px] snap-center flex flex-col rounded-3xl bg-white p-8 ring-1 ring-gray-200 xl:p-10 transition-shadow hover:shadow-lg border-t-4 border-brand-yellow">
               <div className="flex items-center justify-between gap-x-4">
                 <h3 className="text-lg font-semibold leading-8 text-charcoal-900 font-serif uppercase">MUDANZAS (PRE + POST)</h3>
                 <Truck className="h-6 w-6 text-brand-yellow" />
@@ -118,7 +128,7 @@ export default function HomePage() {
                 <li className="flex gap-x-3"><Check className="h-6 w-5 flex-none text-sage-600" /> Embalaje cuidado y preparación</li>
                 <li className="flex gap-x-3"><Check className="h-6 w-5 flex-none text-sage-600" /> Organización y puesta a punto del hogar</li>
               </ul>
-              <Button href="/servicios#mudanzas" variant="outline" className="mt-8 w-full">Más información</Button>
+              <Button href="/servicios/mudanzas" variant="outline" className="mt-8 w-full">Más información</Button>
             </div>
 
             {/* Service 2: ARMARIOS */}
@@ -138,11 +148,11 @@ export default function HomePage() {
                 <li className="flex gap-x-3"><Check className="h-6 w-5 flex-none text-sage-600" /> Optimización del espacio</li>
                 <li className="flex gap-x-3"><Check className="h-6 w-5 flex-none text-sage-600" /> Sistemas funcionales adaptados</li>
               </ul>
-              <Button href="/servicios#armarios" variant="primary" className="mt-8 w-full">Más información</Button>
+              <Button href="/servicios/armarios" variant="primary" className="mt-8 w-full">Más información</Button>
             </div>
 
             {/* Service 3: INFANTIL */}
-            <div className="flex-none w-[85vw] sm:w-[400px] snap-center flex flex-col rounded-3xl bg-sand-50 p-8 ring-1 ring-gray-200 xl:p-10 transition-shadow hover:shadow-lg border-t-4 border-brand-pink">
+            <div className="flex-none w-[85vw] sm:w-[400px] snap-center flex flex-col rounded-3xl bg-white p-8 ring-1 ring-gray-200 xl:p-10 transition-shadow hover:shadow-lg border-t-4 border-brand-pink">
               <div className="flex items-center justify-between gap-x-4">
                 <h3 className="text-lg font-semibold leading-8 text-charcoal-900 font-serif uppercase">INFANTIL</h3>
                 <ToyBrick className="h-6 w-6 text-brand-pink" />
@@ -158,11 +168,11 @@ export default function HomePage() {
                 <li className="flex gap-x-3"><Check className="h-6 w-5 flex-none text-sage-600" /> Organización evolutiva según el crecimiento</li>
                 <li className="flex gap-x-3"><Check className="h-6 w-5 flex-none text-sage-600" /> Sistemas que fomentan autonomía y orden</li>
               </ul>
-              <Button href="/servicios#infantil" variant="outline" className="mt-8 w-full">Más información</Button>
+              <Button href="/servicios/infantil" variant="outline" className="mt-8 w-full">Más información</Button>
             </div>
 
             {/* Service 4: COCINAS */}
-            <div className="flex-none w-[85vw] sm:w-[400px] snap-center flex flex-col rounded-3xl bg-sand-50 p-8 ring-1 ring-gray-200 xl:p-10 transition-shadow hover:shadow-lg border-t-4 border-sage-500">
+            <div className="flex-none w-[85vw] sm:w-[400px] snap-center flex flex-col rounded-3xl bg-white p-8 ring-1 ring-gray-200 xl:p-10 transition-shadow hover:shadow-lg border-t-4 border-sage-500">
               <div className="flex items-center justify-between gap-x-4">
                 <h3 className="text-lg font-semibold leading-8 text-charcoal-900 font-serif uppercase">COCINAS Y DESPENSAS</h3>
                 <ChefHat className="h-6 w-6 text-sage-600" />
@@ -178,7 +188,7 @@ export default function HomePage() {
                 <li className="flex gap-x-3"><Check className="h-6 w-5 flex-none text-sage-600" /> Unificación de formatos adecuados</li>
                 <li className="flex gap-x-3"><Check className="h-6 w-5 flex-none text-sage-600" /> Distribución funcional según uso</li>
               </ul>
-              <Button href="/servicios#cocinas" variant="primary" className="mt-8 w-full">Más información</Button>
+              <Button href="/servicios/cocinas" variant="primary" className="mt-8 w-full">Más información</Button>
             </div>
 
             {/* Service 5: ESTANCIAS */}
@@ -198,7 +208,7 @@ export default function HomePage() {
                 <li className="flex gap-x-3"><Check className="h-6 w-5 flex-none text-sage-600" /> Despachos</li>
                 <li className="flex gap-x-3"><Check className="h-6 w-5 flex-none text-sage-600" /> Trasteros y almacenaje profundo</li>
               </ul>
-              <Button href="/servicios#hogar" variant="outline" className="mt-8 w-full">Más información</Button>
+              <Button href="/servicios/estancias" variant="outline" className="mt-8 w-full">Más información</Button>
             </div>
 
             {/* Service 6: ASESORÍA ONLINE */}
@@ -218,7 +228,7 @@ export default function HomePage() {
                 <li className="flex gap-x-3"><Check className="h-6 w-5 flex-none text-sage-600" /> Plan personalizado</li>
                 <li className="flex gap-x-3"><Check className="h-6 w-5 flex-none text-sage-600" /> Seguimiento del proceso</li>
               </ul>
-              <Button href="/servicios#online" variant="primary" className="mt-8 w-full">Reservar Asesoría</Button>
+              <Button href="/servicios/online" variant="primary" className="mt-8 w-full">Reservar Asesoría</Button>
             </div>
           </ServicesSlider>
         </Container>
