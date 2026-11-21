@@ -165,6 +165,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                   </ul>
                   <Button href={service.href} variant={visual.variant} className="mt-8 w-full">
                     {service.cta ?? home.services.cta}
+                    <span className="sr-only">: {service.title}</span>
                   </Button>
                 </div>
               );
