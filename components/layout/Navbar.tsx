@@ -15,6 +15,7 @@ import { LanguageSwitcher } from "./LanguageSwitcher";
 export function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
     const t = useTranslations('nav');
+    const tc = useTranslations('common');
 
     const navigation = [
         { name: t('home'), href: "/" },
@@ -63,7 +64,7 @@ export function Navbar() {
                                 <InstagramIcon className="w-5 h-5" />
                             </a>
                             <a
-                                href={SITE_CONFIG.contact.whatsapp.getLink()}
+                                href={SITE_CONFIG.contact.whatsapp.getLink(tc('whatsappMessage'))}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="p-2 rounded-full bg-green-500 text-white hover:bg-green-600 transition-colors"
@@ -120,7 +121,7 @@ export function Navbar() {
                                     <InstagramIcon className="w-6 h-6" />
                                 </a>
                                 <a
-                                    href={SITE_CONFIG.contact.whatsapp.getLink()}
+                                    href={SITE_CONFIG.contact.whatsapp.getLink(tc('whatsappMessage'))}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="p-3 rounded-full bg-green-500 text-white hover:bg-green-600 transition-colors"

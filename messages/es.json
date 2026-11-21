@@ -88,6 +88,7 @@
     "selectPlaceholder": "Selecciona una opción",
     "slideLabel": "Ir al servicio {n}",
     "copyTitle": "Copiar al portapapeles",
-    "copyLabel": "Copiar {title}"
+    "copyLabel": "Copiar {title}",
+    "whatsappMessage": "Hola Silvia, me gustaría recibir información sobre tus servicios de organización. Te cuento brevemente mi caso:"
   }
 }

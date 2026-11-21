@@ -88,6 +88,7 @@
     "selectPlaceholder": "Selecciona una opció",
     "slideLabel": "Ves al servei {n}",
     "copyTitle": "Copiar al porta-retalls",
-    "copyLabel": "Copiar {title}"
+    "copyLabel": "Copiar {title}",
+    "whatsappMessage": "Hola Silvia, m'agradaria rebre informació sobre els teus serveis d'organització. T'explico breument el meu cas:"
   }
 }

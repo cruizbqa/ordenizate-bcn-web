@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { Fragment } from 'react';
-import { setRequestLocale } from 'next-intl/server';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { SITE_CONFIG } from '@/lib/constants';
 import { Link } from '@/i18n/navigation';
 import NextImage from 'next/image';
@@ -58,6 +58,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
   const { locale } = await params;
   setRequestLocale(locale);
   const home = getContent(locale).home;
+  const tc = await getTranslations('common');
 
   return (
     <>
@@ -100,7 +101,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
               <Button href="/contacto" size="lg" variant="primary">
                 {home.hero.ctaPrimary}
               </Button>
-              <Button href={SITE_CONFIG.contact.whatsapp.getLink()} variant="outline" size="lg">
+              <Button href={SITE_CONFIG.contact.whatsapp.getLink(tc('whatsappMessage'))} variant="outline" size="lg">
                 {home.hero.ctaWhatsapp}
               </Button>
             </div>
@@ -203,7 +204,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button href="/contacto" variant="secondary" size="lg">{home.finalCta.primary}</Button>
-            <Button href={SITE_CONFIG.contact.whatsapp.getLink()} variant="outline" className="border-white/20 text-white hover:bg-white/10 hover:text-white" size="lg">{home.finalCta.whatsapp}</Button>
+            <Button href={SITE_CONFIG.contact.whatsapp.getLink(tc('whatsappMessage'))} variant="outline" className="border-white/20 text-white hover:bg-white/10 hover:text-white" size="lg">{home.finalCta.whatsapp}</Button>
           </div>
         </Container>
       </Section>

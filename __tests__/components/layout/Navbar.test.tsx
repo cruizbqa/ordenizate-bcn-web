@@ -61,6 +61,16 @@ describe('Navbar', () => {
         expect(waLinks.length).toBeGreaterThan(0);
     });
 
+    it('localizes the WhatsApp prefill message', () => {
+        renderWithIntl(<Navbar />, 'ca');
+        const waLink = screen.getAllByRole('link').find(
+            (el) => el.getAttribute('href')?.startsWith('whatsapp://')
+        );
+        expect(decodeURIComponent(waLink?.getAttribute('href') ?? '')).toContain(
+            "m'agradaria rebre informació sobre els teus serveis"
+        );
+    });
+
     it('toggles mobile menu open and closed on button click', async () => {
         const user = userEvent.setup();
         renderWithIntl(<Navbar />);

@@ -6,8 +6,7 @@ export const SITE_CONFIG = {
         phone: "+34636757684",
         whatsapp: {
             number: "34636757684",
-            message: "Hola Silvia, me gustaría recibir información sobre tus servicios de organización. Te cuento brevemente mi caso:",
-            getLink: () => `whatsapp://send?phone=34636757684&text=${encodeURIComponent("Hola Silvia, me gustaría recibir información sobre tus servicios de organización. Te cuento brevemente mi caso:")}`,
+            getLink: (message: string) => `whatsapp://send?phone=34636757684&text=${encodeURIComponent(message)}`,
         },
         address: "Barcelona, España",
         instagram: {
