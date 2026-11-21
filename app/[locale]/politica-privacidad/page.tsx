@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import { setRequestLocale } from 'next-intl/server';
 import { SITE_CONFIG } from '@/lib/constants';
 import { Container } from '@/components/ui/Container';
 import { Section } from '@/components/ui/Section';
@@ -8,7 +9,10 @@ export const metadata: Metadata = {
     description: 'Política de privacidad y protección de datos tratados por Ordenízate Bcn.',
 };
 
-export default function PoliticaPrivacidadPage() {
+export default async function PoliticaPrivacidadPage({ params }: { params: Promise<{ locale: string }> }) {
+    const { locale } = await params;
+    setRequestLocale(locale);
+
     return (
         <div className="pt-24 pb-16">
             <Section>

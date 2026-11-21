@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import { setRequestLocale } from 'next-intl/server';
 import Link from 'next/link';
 import { SITE_CONFIG } from '@/lib/constants';
 import { Container } from '@/components/ui/Container';
@@ -9,7 +10,10 @@ export const metadata: Metadata = {
     description: 'Aviso legal y términos de uso del sitio web de Ordenízate Bcn.',
 };
 
-export default function AvisoLegalPage() {
+export default async function AvisoLegalPage({ params }: { params: Promise<{ locale: string }> }) {
+    const { locale } = await params;
+    setRequestLocale(locale);
+
     return (
         <div className="pt-24 pb-16">
             <Section>

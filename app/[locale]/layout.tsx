@@ -1,21 +1,26 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import "./globals.css";
+import { notFound } from "next/navigation";
+import { hasLocale, NextIntlClientProvider } from "next-intl";
+import { setRequestLocale } from "next-intl/server";
+import "../globals.css";
 import { cn } from "@/lib/utils";
+import { htmlLang } from "@/lib/i18n";
+import { routing } from "@/i18n/routing";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 
 const mosk = localFont({
   src: [
-    { path: './fonts/Mosk Thin 100.ttf', weight: '100', style: 'normal' },
-    { path: './fonts/Mosk Extra-Light 200.ttf', weight: '200', style: 'normal' },
-    { path: './fonts/Mosk Light 300.ttf', weight: '300', style: 'normal' },
-    { path: './fonts/Mosk Normal 400.ttf', weight: '400', style: 'normal' },
-    { path: './fonts/Mosk Medium 500.ttf', weight: '500', style: 'normal' },
-    { path: './fonts/Mosk Semi-Bold 600.ttf', weight: '600', style: 'normal' },
-    { path: './fonts/Mosk Bold 700.ttf', weight: '700', style: 'normal' },
-    { path: './fonts/Mosk Extra-Bold 800.ttf', weight: '800', style: 'normal' },
-    { path: './fonts/Mosk Ultra-Bold 900.ttf', weight: '900', style: 'normal' },
+    { path: '../fonts/Mosk Thin 100.ttf', weight: '100', style: 'normal' },
+    { path: '../fonts/Mosk Extra-Light 200.ttf', weight: '200', style: 'normal' },
+    { path: '../fonts/Mosk Light 300.ttf', weight: '300', style: 'normal' },
+    { path: '../fonts/Mosk Normal 400.ttf', weight: '400', style: 'normal' },
+    { path: '../fonts/Mosk Medium 500.ttf', weight: '500', style: 'normal' },
+    { path: '../fonts/Mosk Semi-Bold 600.ttf', weight: '600', style: 'normal' },
+    { path: '../fonts/Mosk Bold 700.ttf', weight: '700', style: 'normal' },
+    { path: '../fonts/Mosk Extra-Bold 800.ttf', weight: '800', style: 'normal' },
+    { path: '../fonts/Mosk Ultra-Bold 900.ttf', weight: '900', style: 'normal' },
   ],
   variable: '--font-mosk',
   display: 'swap',
@@ -45,13 +50,27 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
+
+export default async function LocaleLayout({
   children,
+  params,
 }: Readonly<{
   children: React.ReactNode;
+  params: Promise<{ locale: string }>;
 }>) {
+  const { locale } = await params;
+
+  if (!hasLocale(routing.locales, locale)) {
+    notFound();
+  }
+
+  setRequestLocale(locale);
+
   return (
-    <html lang="es" className="scroll-smooth">
+    <html lang={htmlLang[locale]} className="scroll-smooth">
       <body
         suppressHydrationWarning
         className={cn(
@@ -88,11 +107,13 @@ export default function RootLayout({
             })
           }}
         />
-        <Navbar />
-        <main className="flex-grow">
-          {children}
-        </main>
-        <Footer />
+        <NextIntlClientProvider>
+          <Navbar />
+          <main className="flex-grow">
+            {children}
+          </main>
+          <Footer />
+        </NextIntlClientProvider>
       </body>
     </html>
   );

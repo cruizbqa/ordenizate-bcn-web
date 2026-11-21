@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import { setRequestLocale } from 'next-intl/server';
 import Link from 'next/link';
 import { Container } from '@/components/ui/Container';
 import { Section } from '@/components/ui/Section';
@@ -21,7 +22,10 @@ const services = [
     { href: '/servicios/online', icon: Monitor, label: 'Asesoría Online', border: 'border-sage-400', iconColor: 'text-sage-600' },
 ];
 
-export default function ServicesPage() {
+export default async function ServicesPage({ params }: { params: Promise<{ locale: string }> }) {
+    const { locale } = await params;
+    setRequestLocale(locale);
+
     return (
         <div className="pt-8">
             {/* Header */}

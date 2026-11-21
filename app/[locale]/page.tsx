@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import { setRequestLocale } from 'next-intl/server';
 import { SITE_CONFIG } from "@/lib/constants";
 import Link from "next/link";
 import NextImage from "next/image";
@@ -36,7 +37,10 @@ export const metadata: Metadata = {
   },
 };
 
-export default function HomePage() {
+export default async function HomePage({ params }: { params: Promise<{ locale: string }> }) {
+    const { locale } = await params;
+    setRequestLocale(locale);
+
   return (
     <>
       {/* Hero Section */}

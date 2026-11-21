@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import { setRequestLocale } from 'next-intl/server';
 import NextImage from 'next/image';
 import { SITE_CONFIG } from '@/lib/constants';
 import { Button } from '@/components/ui/Button';
@@ -10,7 +11,10 @@ export const metadata: Metadata = {
     alternates: { canonical: '/sobre-mi' },
 };
 
-export default function AboutPage() {
+export default async function AboutPage({ params }: { params: Promise<{ locale: string }> }) {
+    const { locale } = await params;
+    setRequestLocale(locale);
+
     return (
         <div className="pt-8">
             <Container>
