@@ -112,15 +112,9 @@ export async function POST(req: NextRequest) {
 
         const resend = new Resend(resendApiKey);
 
-        const serviceLabels: Record<string, string> = {
-            "mudanza": "Mudanzas (Pre/Post)",
-            "hogar": "Organización de Hogar",
-            "armarios": "Armarios y Vestidores",
-            "cocinas": "Cocinas y Despensas",
-            "online": "Asesoría Online",
-            "otro": "Otro",
-        };
-        const serviceLabel = serviceLabels[service] || service;
+        // Labels come from the same source as the select, so new services need no extra mapping.
+        const serviceOptions: Record<string, string> = esMessages.form.options;
+        const serviceLabel = Object.hasOwn(serviceOptions, service) ? serviceOptions[service] : service;
 
         console.log('[contact] Sending email from:', process.env.CONTACT_FROM_EMAIL, 'to:', process.env.CONTACT_TO_EMAIL);
 
