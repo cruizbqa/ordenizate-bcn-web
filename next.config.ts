@@ -6,9 +6,6 @@ const withNextIntl = createNextIntlPlugin();
 const nextConfig: NextConfig = {
   /* config options here */
   reactCompiler: true,
-  images: {
-    unoptimized: true,
-  },
   experimental: {
     // turbopack options if needed
   },
