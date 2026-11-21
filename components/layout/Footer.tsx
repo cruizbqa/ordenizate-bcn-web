@@ -27,7 +27,7 @@ export function Footer() {
 
                     {/* Navigation */}
                     <div>
-                        <h3 className="font-serif text-lg font-semibold text-charcoal-900 mb-4">{t('menu')}</h3>
+                        <h2 className="font-serif text-lg font-semibold text-charcoal-900 mb-4">{t('menu')}</h2>
                         <nav aria-label={t('menu')}>
                         <ul className="space-y-3 text-sm text-gray-600">
                             <li><Link href="/" className="hover:text-sage-600 transition-colors">{t('home')}</Link></li>
@@ -40,7 +40,7 @@ export function Footer() {
 
                     {/* Services */}
                     <div>
-                        <h3 className="font-serif text-lg font-semibold text-charcoal-900 mb-4">{t('services')}</h3>
+                        <h2 className="font-serif text-lg font-semibold text-charcoal-900 mb-4">{t('services')}</h2>
                         <nav aria-label={t('services')}>
                         <ul className="space-y-3 text-sm text-gray-600">
                             <li><Link href="/servicios/mudanzas" className="hover:text-sage-600 transition-colors">{t('servicesList.mudanzas')}</Link></li>
@@ -55,7 +55,7 @@ export function Footer() {
 
                     {/* Contact & Social */}
                     <div>
-                        <h3 className="font-serif text-lg font-semibold text-charcoal-900 mb-4">{t('contact')}</h3>
+                        <h2 className="font-serif text-lg font-semibold text-charcoal-900 mb-4">{t('contact')}</h2>
                         <ul className="space-y-3 text-sm text-gray-600">
                             <li>{t('location')}</li>
                             <li><a href={`mailto:${SITE_CONFIG.contact.email}`} className="hover:text-sage-600 transition-colors">{SITE_CONFIG.contact.email}</a></li>
@@ -67,7 +67,7 @@ export function Footer() {
                     </div>
                 </div>
 
-                <div className="border-t border-sand-200 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500">
+                <div className="border-t border-sand-200 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-600">
                     <p>&copy; {new Date().getFullYear()} Ordenízate. {t('rights')}</p>
                     <div className="flex gap-6">
                         <Link href="/aviso-legal" locale="es" className="hover:text-sage-600">{t('legalNotice')}</Link>

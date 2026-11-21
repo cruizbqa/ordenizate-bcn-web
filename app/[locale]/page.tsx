@@ -198,7 +198,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       <Section className="bg-charcoal-900 text-white text-center" spacing="lg">
         <Container className="max-w-2xl">
           <h2 className="text-3xl md:text-4xl font-bold font-serif mb-6 text-white">{home.finalCta.heading}</h2>
-          <p className="text-gray-600 text-lg mb-10">
+          <p className="text-gray-300 text-lg mb-10">
             {home.finalCta.text}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
