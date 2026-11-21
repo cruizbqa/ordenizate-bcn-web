@@ -3,7 +3,8 @@
 import { SITE_CONFIG } from "@/lib/constants";
 import { handleInstagramDeepLink } from "@/lib/utils";
 import { useState } from "react";
-import Link from "next/link";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import NextImage from "next/image";
 import { Container } from "../ui/Container";
 import { Menu, X } from "lucide-react";
@@ -12,13 +13,14 @@ import { InstagramIcon, WhatsAppIcon } from "../ui/Icons";
 
 export function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
+    const t = useTranslations('nav');
 
     const navigation = [
-        { name: "Inicio", href: "/" },
-        { name: "Servicios", href: "/servicios" },
-        { name: "Sobre Mí", href: "/sobre-mi" },
-        { name: "Contacto", href: "/contacto" },
-    ];
+        { name: t('home'), href: "/" },
+        { name: t('services'), href: "/servicios" },
+        { name: t('about'), href: "/sobre-mi" },
+        { name: t('contact'), href: "/contacto" },
+    ] as const;
 
     return (
         <header className="sticky top-0 z-50 w-full bg-white/80 backdrop-blur-md border-b border-sand-200 supports-[backdrop-filter]:bg-white/60">
@@ -77,7 +79,7 @@ export function Navbar() {
                             className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
                             onClick={() => setIsOpen(!isOpen)}
                         >
-                            <span className="sr-only">Abrir menú principal</span>
+                            <span className="sr-only">{t('openMenu')}</span>
                             {isOpen ? (
                                 <X className="h-6 w-6" aria-hidden="true" />
                             ) : (

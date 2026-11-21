@@ -1,8 +1,10 @@
 "use client";
 
 import { useRef, useState, useEffect } from "react";
+import { useTranslations } from "next-intl";
 
 export function ServicesSlider({ children }: { children: React.ReactNode }) {
+    const t = useTranslations('common');
     const sliderRef = useRef<HTMLDivElement>(null);
     const [activeIndex, setActiveIndex] = useState(0);
     const [totalSlides, setTotalSlides] = useState(0);
@@ -96,7 +98,7 @@ export function ServicesSlider({ children }: { children: React.ReactNode }) {
                             ? "bg-sage-600 w-6"
                             : "bg-gray-300 hover:bg-gray-400"
                             }`}
-                        aria-label={`Ir al servicio ${idx + 1}`}
+                        aria-label={t('slideLabel', { n: idx + 1 })}
                     />
                 ))}
             </div>

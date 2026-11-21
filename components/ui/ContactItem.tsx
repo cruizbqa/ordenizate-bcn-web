@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { useTranslations } from 'next-intl';
 import { Copy, Check } from 'lucide-react';
 
 interface ContactItemProps {
@@ -11,6 +12,7 @@ interface ContactItemProps {
 }
 
 export function ContactItem({ icon, title, content, copyable }: ContactItemProps) {
+    const t = useTranslations('common');
     const [copied, setCopied] = useState(false);
 
     const handleCopy = async () => {
@@ -36,8 +38,8 @@ export function ContactItem({ icon, title, content, copyable }: ContactItemProps
                         <button
                             onClick={handleCopy}
                             className="p-1.5 rounded-md hover:bg-sand-100 transition-colors text-gray-500 hover:text-sage-600"
-                            title="Copiar al portapapeles"
-                            aria-label={`Copiar ${title}`}
+                            title={t('copyTitle')}
+                            aria-label={t('copyLabel', { title })}
                         >
                             {copied ? (
                                 <Check className="w-4 h-4 text-green-600" />

@@ -1,6 +1,7 @@
-import { render, screen, fireEvent, waitFor } from '@testing-library/react';
+import { screen, fireEvent, waitFor } from '@testing-library/react';
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { ContactForm } from '@/components/contact/ContactForm';
+import { renderWithIntl } from '@/__tests__/test-utils';
 
 // Mock SITE_CONFIG
 vi.mock('@/lib/constants', () => ({
@@ -50,7 +51,7 @@ describe('ContactForm Component', () => {
     });
 
     it('renders all form fields', () => {
-        render(<ContactForm />);
+        renderWithIntl(<ContactForm />);
 
         expect(screen.getByLabelText(/Nombre/i)).toBeInTheDocument();
         expect(screen.getByLabelText(/Email/i)).toBeInTheDocument();
@@ -61,7 +62,7 @@ describe('ContactForm Component', () => {
     });
 
     it('shows "Campo obligatorio" errors when submitting empty form', async () => {
-        render(<ContactForm />);
+        renderWithIntl(<ContactForm />);
 
         const submitBtn = screen.getByRole('button', { name: /Enviar mensaje/i });
         fireEvent.click(submitBtn);
@@ -74,7 +75,7 @@ describe('ContactForm Component', () => {
     });
 
     it('shows "Email no válido" for incorrect email format', async () => {
-        render(<ContactForm />);
+        renderWithIntl(<ContactForm />);
 
         const emailInput = screen.getByLabelText(/Email/i);
         fireEvent.change(emailInput, { target: { value: 'invalid-email', name: 'email' } });
@@ -88,7 +89,7 @@ describe('ContactForm Component', () => {
     });
 
     it('submits correctly with valid data', async () => {
-        render(<ContactForm />);
+        renderWithIntl(<ContactForm />);
 
         fireEvent.change(screen.getByLabelText(/Nombre/i), { target: { value: 'Test User', name: 'name' } });
         fireEvent.change(screen.getByLabelText(/Email/i), { target: { value: 'test@example.com', name: 'email' } });
@@ -117,7 +118,7 @@ describe('ContactForm Component', () => {
             json: async () => ({ message: 'Rate limit exceeded' }),
         });
 
-        render(<ContactForm />);
+        renderWithIntl(<ContactForm />);
 
         fireEvent.change(screen.getByLabelText(/Nombre/i), { target: { value: 'Test User', name: 'name' } });
         fireEvent.change(screen.getByLabelText(/Email/i), { target: { value: 'test@example.com', name: 'email' } });
