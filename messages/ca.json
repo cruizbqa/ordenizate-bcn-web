@@ -90,5 +90,10 @@
     "copyTitle": "Copiar al porta-retalls",
     "copyLabel": "Copiar {title}",
     "whatsappMessage": "Hola Silvia, m'agradaria rebre informació sobre els teus serveis d'organització. T'explico breument el meu cas:"
+  },
+  "notFound": {
+    "title": "Pàgina no trobada",
+    "body": "Ho sentim, la pàgina que busques no existeix, s'ha mogut o l'URL no és correcta.",
+    "back": "Torna a l'inici"
   }
 }

@@ -90,5 +90,10 @@
     "copyTitle": "Copiar al portapapeles",
     "copyLabel": "Copiar {title}",
     "whatsappMessage": "Hola Silvia, me gustaría recibir información sobre tus servicios de organización. Te cuento brevemente mi caso:"
+  },
+  "notFound": {
+    "title": "Página no encontrada",
+    "body": "Lo sentimos, la página que buscas no existe, ha sido movida o la URL no es correcta.",
+    "back": "Volver al inicio"
   }
 }
