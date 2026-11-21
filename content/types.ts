@@ -15,6 +15,39 @@ export type PageMeta = {
     canonical: RouteHref;
 };
 
-export function getMeta(content: { meta: PageMeta }) {
-    return content.meta;
-}
+export type ServiceList = { title: string; items: string[] };
+export type ServiceCard = { title: string; text: string };
+export type ServiceItemContent = { title: string; description: string };
+
+/** Shared shape of the six service detail pages. */
+export type ServicePageContent = {
+    meta: PageMeta;
+    badge: string;
+    h1: string;
+    intro: string[];
+    note?: { label: string; text: string };
+    bullets?: ServiceList[];
+    includes?: { title: string; items: string[] };
+    cards?: ServiceCard[];
+    items?: ServiceItemContent[];
+    cta: string;
+    imageAlt: string;
+};
+
+export type HomeContent = typeof import('./es/home').home;
+
+export type ServiceHref =
+    | '/servicios/mudanzas'
+    | '/servicios/armarios'
+    | '/servicios/cocinas'
+    | '/servicios/estancias'
+    | '/servicios/infantil'
+    | '/servicios/online';
+
+export type ServicesIndexContent = {
+    meta: PageMeta;
+    header: { h1: string; intro: string };
+    services: { href: ServiceHref; label: string }[];
+    cta: string;
+    values: { heading: string; items: { title: string; desc: string }[] };
+};

@@ -11,7 +11,7 @@ export function ServiceItem({ title, description, icon }: ServiceItemProps) {
                 {icon}
             </div>
             <div>
-                <h3 className="font-semibold text-charcoal-900">{title}</h3>
+                <h2 className="font-semibold text-charcoal-900">{title}</h2>
                 <p className="text-sm text-gray-600 mt-1">{description}</p>
             </div>
         </div>
