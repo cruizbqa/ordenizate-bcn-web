@@ -1,5 +1,3 @@
-import type { PageMeta } from '../types';
-
 export const sobreMi = {
     meta: {
         title: 'Sobre Mí',
@@ -21,4 +19,4 @@ export const sobreMi = {
     closing: 'Porque el orden no es rigidez, es claridad, y la claridad libera.',
     cta: 'Hablemos',
     imageAlt: 'Silvia - Organizadora Profesional de Ordenízate',
-} satisfies { meta: PageMeta } & Record<string, unknown>;
+} as const;

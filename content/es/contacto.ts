@@ -1,5 +1,3 @@
-import type { PageMeta } from '../types';
-
 export const contacto = {
     meta: {
         title: 'Contacto',
@@ -21,4 +19,4 @@ export const contacto = {
     },
     areaText: 'Disponible para proyectos presenciales y asesorías online.',
     imageAlt: 'Espacio de trabajo ordenado',
-} satisfies PageMeta & Record<string, unknown>;
+} as const;

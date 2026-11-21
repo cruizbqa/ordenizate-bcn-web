@@ -51,3 +51,6 @@ export type ServicesIndexContent = {
     cta: string;
     values: { heading: string; items: { title: string; desc: string }[] };
 };
+
+export type AboutContent = typeof import('./es/sobre-mi').sobreMi;
+export type ContactContent = typeof import('./es/contacto').contacto;
