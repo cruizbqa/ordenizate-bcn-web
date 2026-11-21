@@ -89,17 +89,19 @@ export function ServicesSlider({ children }: { children: React.ReactNode }) {
             </div>
 
             {/* Indicadores de puntos (Dots) */}
-            <div className="flex justify-center gap-3 mt-6">
+            <div className="flex justify-center gap-1 mt-6">
                 {Array.from({ length: totalSlides }).map((_, idx) => (
                     <button
                         key={idx}
                         onClick={() => scrollToSlide(idx)}
-                        className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${activeIndex === idx
-                            ? "bg-sage-600 w-6"
-                            : "bg-gray-300 hover:bg-gray-400"
-                            }`}
+                        className="group flex h-7 w-7 items-center justify-center rounded-full"
                         aria-label={t('slideLabel', { n: idx + 1 })}
-                    />
+                    >
+                        <span className={`block h-2.5 rounded-full transition-all duration-300 ${activeIndex === idx
+                            ? "w-6 bg-sage-600"
+                            : "w-2.5 bg-gray-300 group-hover:bg-gray-400"
+                            }`} />
+                    </button>
                 ))}
             </div>
         </div>
