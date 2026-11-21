@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useTransition } from 'react';
-import { useMessages, useTranslations } from 'next-intl';
+import { useLocale, useMessages, useTranslations } from 'next-intl';
 import { Loader2, CheckCircle2 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { SITE_CONFIG } from '@/lib/constants';
@@ -14,6 +14,7 @@ import { Link } from '@/i18n/navigation';
 export function ContactForm() {
     const t = useTranslations('form');
     const messages = useMessages();
+    const locale = useLocale();
     const schema = createContactSchema((messages.form as { errors: ContactErrorMessages }).errors);
     const [isPending, startTransition] = useTransition();
     const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
@@ -68,7 +69,7 @@ export function ContactForm() {
                 const response = await fetch(`${SITE_CONFIG.basePath}/api/contact`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(formData),
+                    body: JSON.stringify({ ...formData, locale }),
                 });
 
                 const data = await response.json();

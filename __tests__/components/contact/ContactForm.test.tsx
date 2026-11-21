@@ -110,6 +110,7 @@ describe('ContactForm Component', () => {
         });
 
         expect(mockFetch).toHaveBeenCalledWith(expect.stringContaining('/api/contact'), expect.any(Object));
+        expect(JSON.parse(mockFetch.mock.calls[0][1].body).locale).toBe('es');
     });
 
     it('handles server errors gracefully', async () => {

@@ -1,8 +1,30 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { contactSchema } from '@/lib/contactSchema';
+import { createContactSchema, type ContactErrorMessages } from '@/lib/contactSchema';
+import esMessages from '@/messages/es.json';
+import caMessages from '@/messages/ca.json';
 import { Resend } from 'resend';
 import { Redis } from '@upstash/redis';
 import { Ratelimit } from '@upstash/ratelimit';
+
+const errorMessages: Record<'es' | 'ca', ContactErrorMessages> = {
+    es: esMessages.form.errors,
+    ca: caMessages.form.errors,
+};
+
+const apiMessages = {
+    es: {
+        rateLimit: 'Gracias por tu interés. Hemos recibido varias solicitudes en poco tiempo. Por favor, espera unos minutos y vuelve a intentarlo, o contáctanos por WhatsApp.',
+        config: 'Error de configuración del servidor. Por favor, contáctanos por otros medios.',
+        send: 'Ahora mismo no se pudo enviar. Por favor, inténtalo de nuevo en unos minutos o escríbenos por WhatsApp.',
+        unexpected: 'Ha ocurrido un error inesperado. Por favor, inténtalo de nuevo más tarde.',
+    },
+    ca: {
+        rateLimit: 'Gràcies pel teu interès. Hem rebut diverses sol·licituds en poc temps. Espera uns minuts i torna-ho a provar, o contacta\'ns per WhatsApp.',
+        config: 'Error de configuració del servidor. Contacta\'ns per altres mitjans.',
+        send: 'Ara mateix no s\'ha pogut enviar. Torna-ho a provar en uns minuts o escriu-nos per WhatsApp.',
+        unexpected: 'Hi ha hagut un error inesperat. Torna-ho a provar més tard.',
+    },
+};
 
 export async function POST(req: NextRequest) {
     try {
@@ -13,8 +35,13 @@ export async function POST(req: NextRequest) {
             return NextResponse.json({ ok: true });
         }
 
+        // The locale is chosen by the visitor; unknown values fall back to Spanish
+        const locale: 'es' | 'ca' = body.locale === 'ca' ? 'ca' : 'es';
+        const messages = apiMessages[locale];
+
         // 2. Validation
-        const validationResult = contactSchema.safeParse(body);
+        const schema = createContactSchema(errorMessages[locale]);
+        const validationResult = schema.safeParse(body);
         if (!validationResult.success) {
             return NextResponse.json(
                 {
@@ -60,7 +87,7 @@ export async function POST(req: NextRequest) {
                             {
                                 ok: false,
                                 code: 'RATE_LIMIT',
-                                message: 'Gracias por tu interés. Hemos recibido varias solicitudes en poco tiempo. Por favor, espera unos minutos y vuelve a intentarlo, o contáctanos por WhatsApp.',
+                                message: messages.rateLimit,
                                 retryAfterSeconds: retryAfter > 0 ? retryAfter : 60,
                             },
                             { status: 429, headers: { 'Retry-After': String(retryAfter > 0 ? retryAfter : 60) } }
@@ -78,7 +105,7 @@ export async function POST(req: NextRequest) {
         if (!resendApiKey) {
             console.error('[contact] RESEND_API_KEY is missing');
             return NextResponse.json(
-                { ok: false, code: 'SERVER_ERROR', message: 'Error de configuración del servidor. Por favor, contáctanos por otros medios.' },
+                { ok: false, code: 'SERVER_ERROR', message: messages.config },
                 { status: 500 }
             );
         }
@@ -101,8 +128,9 @@ export async function POST(req: NextRequest) {
             from: process.env.CONTACT_FROM_EMAIL as string,
             to: process.env.CONTACT_TO_EMAIL as string,
             replyTo: email,
-            subject: `Nuevo contacto de ${name} — Ordenízate Bcn`,
+            subject: `Nuevo contacto de ${name} — Ordenízate Bcn (${locale === 'ca' ? 'CA' : 'ES'})`,
             text: `
+Idioma: ${locale === 'ca' ? 'Català' : 'Castellano'}
 Nombre: ${name}
 Email: ${email}
 Ciudad: ${city}
@@ -116,7 +144,7 @@ ${message}
         if (error) {
             console.error('[contact] Resend error:', JSON.stringify(error));
             return NextResponse.json(
-                { ok: false, code: 'SERVER_ERROR', message: 'Ahora mismo no se pudo enviar. Por favor, inténtalo de nuevo en unos minutos o escríbenos por WhatsApp.' },
+                { ok: false, code: 'SERVER_ERROR', message: messages.send },
                 { status: 500 }
             );
         }
@@ -129,7 +157,7 @@ ${message}
             console.error('[contact] Stack:', error.stack);
         }
         return NextResponse.json(
-            { ok: false, code: 'SERVER_ERROR', message: 'Ha ocurrido un error inesperado. Por favor, inténtalo de nuevo más tarde.' },
+            { ok: false, code: 'SERVER_ERROR', message: apiMessages.es.unexpected },
             { status: 500 }
         );
     }
