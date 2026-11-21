@@ -108,6 +108,7 @@ export function ServicePageLayout({
                             src={`${SITE_CONFIG.basePath}${imageSrc}`}
                             alt={content.imageAlt}
                             fill
+                            sizes="(min-width: 768px) 33vw, 100vw"
                             className="object-cover"
                         />
                     </div>
