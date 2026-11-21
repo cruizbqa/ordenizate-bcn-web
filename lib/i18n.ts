@@ -16,3 +16,7 @@ export const ogLocale: Record<Locale, string> = {
   es: 'es_ES',
   ca: 'ca_ES',
 };
+
+export function localeOrDefault(locale: string): Locale {
+  return (locales as readonly string[]).includes(locale) ? (locale as Locale) : defaultLocale;
+}

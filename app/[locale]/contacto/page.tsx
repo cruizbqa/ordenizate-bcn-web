@@ -8,16 +8,19 @@ import { ContactItem } from '@/components/ui/ContactItem';
 import { ContactForm } from '@/components/contact/ContactForm';
 import { MapPin, Mail, MessageCircle } from 'lucide-react';
 import { getContent } from '@/content';
-import { buildMetadata } from '@/lib/metadata';
+import { buildMetadata, localizedUrl } from '@/lib/metadata';
+import { ogLocale, localeOrDefault } from '@/lib/i18n';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
     const { locale } = await params;
     const contacto = getContent(locale).contacto;
     return {
-        ...buildMetadata(contacto.meta),
+        ...buildMetadata(contacto.meta, locale),
         openGraph: {
             title: contacto.meta.ogTitle,
             description: contacto.meta.ogDescription,
+            url: localizedUrl('/contacto', locale),
+            locale: ogLocale[localeOrDefault(locale)],
             images: ['/images/contact-ordenizate.jpg'],
         },
     };

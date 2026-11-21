@@ -9,6 +9,7 @@ import NextImage from "next/image";
 import { Container } from "../ui/Container";
 import { Menu, X } from "lucide-react";
 import { InstagramIcon, WhatsAppIcon } from "../ui/Icons";
+import { LanguageSwitcher } from "./LanguageSwitcher";
 
 
 export function Navbar() {
@@ -41,7 +42,7 @@ export function Navbar() {
                     </div>
 
                     {/* Desktop Nav */}
-                    <div className="hidden md:flex md:gap-x-8 items-center">
+                    <nav aria-label={t('primary')} className="hidden md:flex md:gap-x-8 items-center">
                         {navigation.map((item) => (
                             <Link
                                 key={item.name}
@@ -51,6 +52,7 @@ export function Navbar() {
                                 {item.name}
                             </Link>
                         ))}
+                        <LanguageSwitcher />
                         <div className="flex items-center gap-2 ml-4">
                             <a
                                 href={SITE_CONFIG.contact.instagram.webUrl}
@@ -70,7 +72,7 @@ export function Navbar() {
                                 <WhatsAppIcon className="w-5 h-5" />
                             </a>
                         </div>
-                    </div>
+                    </nav>
 
                     {/* Mobile menu button */}
                     <div className="flex md:hidden">
@@ -95,6 +97,7 @@ export function Navbar() {
                 isOpen && (
                     <div className="md:hidden bg-white border-b border-sand-200">
                         <div className="space-y-1 px-4 pb-3 pt-2">
+                            <nav aria-label={t('mobile')}>
                             {navigation.map((item) => (
                                 <Link
                                     key={item.name}
@@ -105,7 +108,9 @@ export function Navbar() {
                                     {item.name}
                                 </Link>
                             ))}
+                            </nav>
                             <div className="pt-2 flex items-center gap-3 justify-center">
+                                <LanguageSwitcher />
                                 <a
                                     href={SITE_CONFIG.contact.instagram.webUrl}
                                     onClick={handleInstagramDeepLink}

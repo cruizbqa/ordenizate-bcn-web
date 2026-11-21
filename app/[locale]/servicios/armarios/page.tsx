@@ -7,7 +7,7 @@ import { ServicePageLayout } from '@/components/services/ServicePageLayout';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
     const { locale } = await params;
-    return buildMetadata(getContent(locale).armarios.meta);
+    return buildMetadata(getContent(locale).armarios.meta, locale);
 }
 
 export default async function ArmariosPage({ params }: { params: Promise<{ locale: string }> }) {

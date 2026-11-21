@@ -3,11 +3,16 @@ import { setRequestLocale } from 'next-intl/server';
 import { SITE_CONFIG } from '@/lib/constants';
 import { Container } from '@/components/ui/Container';
 import { Section } from '@/components/ui/Section';
+import { buildMetadata } from '@/lib/metadata';
 
-export const metadata: Metadata = {
-    title: 'Política de Privacidad | Ordenízate Bcn',
-    description: 'Política de privacidad y protección de datos tratados por Ordenízate Bcn.',
-};
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+    const { locale } = await params;
+    return buildMetadata({
+        title: 'Política de Privacidad',
+        description: 'Política de privacidad y protección de datos tratados por Ordenízate Bcn.',
+        canonical: '/politica-privacidad',
+    }, locale);
+}
 
 export default async function PoliticaPrivacidadPage({ params }: { params: Promise<{ locale: string }> }) {
     const { locale } = await params;

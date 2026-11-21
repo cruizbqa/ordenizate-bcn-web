@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
-import Link from 'next/link';
+import { Link } from '@/i18n/navigation';
 import { Container } from '@/components/ui/Container';
 import { Section } from '@/components/ui/Section';
 import { Truck, Home, Shirt, ChefHat, ToyBrick, Monitor } from 'lucide-react';
@@ -11,7 +11,7 @@ import { buildMetadata } from '@/lib/metadata';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
     const { locale } = await params;
-    return buildMetadata(getContent(locale).serviciosIndex.meta);
+    return buildMetadata(getContent(locale).serviciosIndex.meta, locale);
 }
 
 const serviceVisuals = {

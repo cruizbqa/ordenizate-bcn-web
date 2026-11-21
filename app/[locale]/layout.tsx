@@ -5,7 +5,9 @@ import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
 import "../globals.css";
 import { cn } from "@/lib/utils";
-import { htmlLang } from "@/lib/i18n";
+import { htmlLang, ogLocale, localeOrDefault } from "@/lib/i18n";
+import { localizedUrl } from "@/lib/metadata";
+import { getContent } from "@/content";
 import { routing } from "@/i18n/routing";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
@@ -26,29 +28,41 @@ const mosk = localFont({
   display: 'swap',
 });
 
-export const metadata: Metadata = {
-  metadataBase: new URL('https://ordenizate.es'),
-  title: {
-    template: '%s | Ordenízate Bcn',
-    default: 'Ordenízate Bcn | Organizadora Profesional en Barcelona',
-  },
-  description: "Servicios de organización profesional en Barcelona. Transformamos tu hogar con orden, estilo y calma. Mudanzas, armarios, cocinas y más.",
-  openGraph: {
-    title: 'Ordenízate Bcn',
-    description: 'Transforma tu espacio, transforma tu vida.',
-    url: 'https://ordenizate.es',
-    siteName: 'Ordenízate',
-    locale: 'es_ES',
-    type: 'website',
-    images: ['/images/hero-home-2.jpg'],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Ordenízate Bcn | Organizadora Profesional en Barcelona',
-    description: 'Transforma tu espacio, transforma tu vida.',
-    images: ['/images/hero-home-2.jpg'],
-  },
-};
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  const home = getContent(locale).home;
+
+  return {
+    metadataBase: new URL('https://ordenizate.es'),
+    title: {
+      template: '%s | Ordenízate Bcn',
+      default: home.meta.title,
+    },
+    description: home.meta.description,
+    openGraph: {
+      title: home.meta.ogTitle,
+      description: home.meta.ogDescription,
+      url: localizedUrl('/', locale),
+      siteName: 'Ordenízate',
+      locale: ogLocale[localeOrDefault(locale)],
+      type: 'website',
+      images: [
+        {
+          url: '/images/hero-home-2.jpg',
+          width: 1200,
+          height: 1800,
+          alt: home.meta.imageAlt,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: home.meta.twitterTitle,
+      description: home.meta.ogDescription,
+      images: ['/images/hero-home-2.jpg'],
+    },
+  };
+}
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -68,6 +82,7 @@ export default async function LocaleLayout({
   }
 
   setRequestLocale(locale);
+  const home = getContent(locale).home;
 
   return (
     <html lang={htmlLang[locale]} className="scroll-smooth">
@@ -87,7 +102,9 @@ export default async function LocaleLayout({
               "name": "Ordenízate",
               "image": "https://ordenizate.es/images/hero-home-2.jpg",
               "@id": "https://ordenizate.es",
-              "url": "https://ordenizate.es",
+              "url": localizedUrl('/', locale),
+              "inLanguage": htmlLang[locale],
+              "availableLanguage": ["es", "ca"],
               "telephone": "+34636757684",
               "address": {
                 "@type": "PostalAddress",
@@ -100,9 +117,9 @@ export default async function LocaleLayout({
                 "latitude": 41.3874,
                 "longitude": 2.1686
               },
-              "areaServed": "Barcelona y área metropolitana",
+              "areaServed": locale === 'ca' ? "Barcelona i àrea metropolitana" : "Barcelona y área metropolitana",
               "sameAs": ["https://instagram.com/ordenizatebcn/"],
-              "description": "Servicios de organización profesional en Barcelona. Transformamos tu hogar con orden, estilo y calma. Mudanzas, armarios, cocinas y más.",
+              "description": home.meta.description,
               "priceRange": "$$"
             })
           }}

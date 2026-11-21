@@ -9,7 +9,7 @@ import { buildMetadata } from '@/lib/metadata';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
     const { locale } = await params;
-    return buildMetadata(getContent(locale).sobreMi.meta);
+    return buildMetadata(getContent(locale).sobreMi.meta, locale);
 }
 
 export default async function AboutPage({ params }: { params: Promise<{ locale: string }> }) {

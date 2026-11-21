@@ -4,6 +4,17 @@ import { describe, it, expect, vi } from 'vitest';
 import { Navbar } from '@/components/layout/Navbar';
 import { renderWithIntl } from '@/__tests__/test-utils';
 
+// next-intl's Link reads the current pathname to resolve localized hrefs
+vi.mock('next/navigation', async (importOriginal) => {
+    const actual = await importOriginal<typeof import('next/navigation')>();
+    return {
+        ...actual,
+        usePathname: () => '/',
+        useParams: () => ({}),
+        useSearchParams: () => new URLSearchParams(),
+    };
+});
+
 // Mock next/link
 vi.mock('next/link', () => ({
     default: ({ href, children, ...props }: React.AnchorHTMLAttributes<HTMLAnchorElement> & { href: string }) => (

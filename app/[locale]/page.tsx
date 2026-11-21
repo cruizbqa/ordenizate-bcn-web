@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { Fragment } from 'react';
 import { setRequestLocale } from 'next-intl/server';
 import { SITE_CONFIG } from '@/lib/constants';
-import Link from 'next/link';
+import { Link } from '@/i18n/navigation';
 import NextImage from 'next/image';
 import { Button } from '@/components/ui/Button';
 import { Container } from '@/components/ui/Container';
@@ -10,20 +10,20 @@ import { Section } from '@/components/ui/Section';
 import { ServicesSlider } from '@/components/ui/ServicesSlider';
 import { Check, Home, Sparkles, Clock, Truck, Shirt, ChefHat, ToyBrick, Monitor } from 'lucide-react';
 import { getContent } from '@/content';
+import { buildMetadata, localizedUrl } from '@/lib/metadata';
+import { ogLocale, localeOrDefault } from '@/lib/i18n';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const home = getContent(locale).home;
   return {
-    title: home.meta.title,
-    description: home.meta.description,
-    alternates: { canonical: home.meta.canonical },
+    ...buildMetadata(home.meta, locale),
     openGraph: {
       title: home.meta.ogTitle,
       description: home.meta.ogDescription,
-      url: 'https://ordenizate.es',
+      url: localizedUrl('/', locale),
       siteName: 'Ordenízate',
-      locale: 'es_ES',
+      locale: ogLocale[localeOrDefault(locale)],
       type: 'website',
       images: [
         {

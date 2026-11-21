@@ -28,17 +28,20 @@ export function Footer() {
                     {/* Navigation */}
                     <div>
                         <h3 className="font-serif text-lg font-semibold text-charcoal-900 mb-4">{t('menu')}</h3>
+                        <nav aria-label={t('menu')}>
                         <ul className="space-y-3 text-sm text-gray-600">
                             <li><Link href="/" className="hover:text-sage-600 transition-colors">{t('home')}</Link></li>
                             <li><Link href="/servicios" className="hover:text-sage-600 transition-colors">{t('services')}</Link></li>
                             <li><Link href="/sobre-mi" className="hover:text-sage-600 transition-colors">{t('about')}</Link></li>
                             <li><Link href="/contacto" className="hover:text-sage-600 transition-colors">{t('contact')}</Link></li>
                         </ul>
+                        </nav>
                     </div>
 
                     {/* Services */}
                     <div>
                         <h3 className="font-serif text-lg font-semibold text-charcoal-900 mb-4">{t('services')}</h3>
+                        <nav aria-label={t('services')}>
                         <ul className="space-y-3 text-sm text-gray-600">
                             <li><Link href="/servicios/mudanzas" className="hover:text-sage-600 transition-colors">{t('servicesList.mudanzas')}</Link></li>
                             <li><Link href="/servicios/armarios" className="hover:text-sage-600 transition-colors">{t('servicesList.armarios')}</Link></li>
@@ -47,6 +50,7 @@ export function Footer() {
                             <li><Link href="/servicios/infantil" className="hover:text-sage-600 transition-colors">{t('servicesList.infantil')}</Link></li>
                             <li><Link href="/servicios/online" className="hover:text-sage-600 transition-colors">{t('servicesList.online')}</Link></li>
                         </ul>
+                        </nav>
                     </div>
 
                     {/* Contact & Social */}
@@ -66,8 +70,8 @@ export function Footer() {
                 <div className="border-t border-sand-200 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500">
                     <p>&copy; {new Date().getFullYear()} Ordenízate. {t('rights')}</p>
                     <div className="flex gap-6">
-                        <Link href="/aviso-legal" className="hover:text-sage-600">{t('legalNotice')}</Link>
-                        <Link href="/politica-privacidad" className="hover:text-sage-600">{t('privacy')}</Link>
+                        <Link href="/aviso-legal" locale="es" className="hover:text-sage-600">{t('legalNotice')}</Link>
+                        <Link href="/politica-privacidad" locale="es" className="hover:text-sage-600">{t('privacy')}</Link>
                     </div>
                 </div>
             </Container>

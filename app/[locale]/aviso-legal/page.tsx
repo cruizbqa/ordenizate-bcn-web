@@ -4,11 +4,16 @@ import Link from 'next/link';
 import { SITE_CONFIG } from '@/lib/constants';
 import { Container } from '@/components/ui/Container';
 import { Section } from '@/components/ui/Section';
+import { buildMetadata } from '@/lib/metadata';
 
-export const metadata: Metadata = {
-    title: 'Aviso Legal | Ordenízate Bcn',
-    description: 'Aviso legal y términos de uso del sitio web de Ordenízate Bcn.',
-};
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+    const { locale } = await params;
+    return buildMetadata({
+        title: 'Aviso Legal',
+        description: 'Aviso legal y términos de uso del sitio web de Ordenízate Bcn.',
+        canonical: '/aviso-legal',
+    }, locale);
+}
 
 export default async function AvisoLegalPage({ params }: { params: Promise<{ locale: string }> }) {
     const { locale } = await params;

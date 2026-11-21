@@ -4,6 +4,8 @@
     "services": "Serveis",
     "about": "Sobre mi",
     "contact": "Contacte",
+    "primary": "Navegació principal",
+    "mobile": "Menú mòbil",
     "openMenu": "Obre el menú principal"
   },
   "footer": {

@@ -7,7 +7,7 @@ import { ServicePageLayout } from '@/components/services/ServicePageLayout';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
     const { locale } = await params;
-    return buildMetadata(getContent(locale).online.meta);
+    return buildMetadata(getContent(locale).online.meta, locale);
 }
 
 export default async function OnlinePage({ params }: { params: Promise<{ locale: string }> }) {
