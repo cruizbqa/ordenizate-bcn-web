@@ -9,9 +9,11 @@ import { Container } from '@/components/ui/Container';
 import { Section } from '@/components/ui/Section';
 import { ServicesSlider } from '@/components/ui/ServicesSlider';
 import { Check, Home, Sparkles, Clock, Truck, Shirt, ChefHat, ToyBrick, Monitor } from 'lucide-react';
-import { home } from '@/content/es/home';
+import { getContent } from '@/content';
 
-export async function generateMetadata(): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  const home = getContent(locale).home;
   return {
     title: home.meta.title,
     description: home.meta.description,
@@ -55,6 +57,7 @@ const processIcons = [<Clock key="clock" />, <ShowcaseIcon key="showcase" />, <S
 export default async function HomePage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   setRequestLocale(locale);
+  const home = getContent(locale).home;
 
   return (
     <>
@@ -160,7 +163,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                     ))}
                   </ul>
                   <Button href={service.href} variant={visual.variant} className="mt-8 w-full">
-                    {'cta' in service ? service.cta : home.services.cta}
+                    {service.cta ?? home.services.cta}
                   </Button>
                 </div>
               );

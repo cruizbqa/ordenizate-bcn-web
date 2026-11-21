@@ -7,10 +7,12 @@ import { Section } from '@/components/ui/Section';
 import { ContactItem } from '@/components/ui/ContactItem';
 import { ContactForm } from '@/components/contact/ContactForm';
 import { MapPin, Mail, MessageCircle } from 'lucide-react';
-import { contacto } from '@/content/es/contacto';
+import { getContent } from '@/content';
 import { buildMetadata } from '@/lib/metadata';
 
-export async function generateMetadata(): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+    const { locale } = await params;
+    const contacto = getContent(locale).contacto;
     return {
         ...buildMetadata(contacto.meta),
         openGraph: {
@@ -24,6 +26,7 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function ContactPage({ params }: { params: Promise<{ locale: string }> }) {
     const { locale } = await params;
     setRequestLocale(locale);
+    const contacto = getContent(locale).contacto;
 
     return (
         <div className="pt-8">

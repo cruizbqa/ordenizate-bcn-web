@@ -1,6 +1,6 @@
 import type { ServicesIndexContent } from '../types';
 
-export const serviciosIndex = {
+export const serviciosIndex: ServicesIndexContent = {
     meta: {
         title: 'Servicios: Mudanzas y Organización',
         description: 'Descubre nuestros servicios de organización profesional en Barcelona. Mudanzas, hogar, armarios, cocinas y más.',
@@ -27,4 +27,4 @@ export const serviciosIndex = {
             { title: 'Sostenibilidad', desc: 'Fomentamos el consumo responsable y una gestión más consciente de lo que ya no se necesita.' },
         ],
     },
-} satisfies ServicesIndexContent;
+};

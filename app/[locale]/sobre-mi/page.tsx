@@ -4,14 +4,18 @@ import NextImage from 'next/image';
 import { SITE_CONFIG } from '@/lib/constants';
 import { Button } from '@/components/ui/Button';
 import { Container } from '@/components/ui/Container';
-import { sobreMi } from '@/content/es/sobre-mi';
+import { getContent } from '@/content';
 import { buildMetadata } from '@/lib/metadata';
 
-export const generateMetadata = (): Metadata => buildMetadata(sobreMi.meta);
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+    const { locale } = await params;
+    return buildMetadata(getContent(locale).sobreMi.meta);
+}
 
 export default async function AboutPage({ params }: { params: Promise<{ locale: string }> }) {
     const { locale } = await params;
     setRequestLocale(locale);
+    const sobreMi = getContent(locale).sobreMi;
 
     return (
         <div className="pt-8">

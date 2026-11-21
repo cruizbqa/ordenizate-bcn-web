@@ -6,10 +6,13 @@ import { Section } from '@/components/ui/Section';
 import { Truck, Home, Shirt, ChefHat, ToyBrick, Monitor } from 'lucide-react';
 import { Heart, Shield, Leaf } from 'lucide-react';
 import { ValueCard } from '@/components/ui/ValueCard';
-import { serviciosIndex } from '@/content/es/servicios-index';
+import { getContent } from '@/content';
 import { buildMetadata } from '@/lib/metadata';
 
-export const generateMetadata = (): Metadata => buildMetadata(serviciosIndex.meta);
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+    const { locale } = await params;
+    return buildMetadata(getContent(locale).serviciosIndex.meta);
+}
 
 const serviceVisuals = {
     '/servicios/mudanzas': { icon: Truck, border: 'border-brand-yellow', iconColor: 'text-brand-yellow' },
@@ -29,6 +32,7 @@ const valueIcons = [
 export default async function ServicesPage({ params }: { params: Promise<{ locale: string }> }) {
     const { locale } = await params;
     setRequestLocale(locale);
+    const serviciosIndex = getContent(locale).serviciosIndex;
 
     return (
         <div className="pt-8">

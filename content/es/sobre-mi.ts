@@ -1,4 +1,6 @@
-export const sobreMi = {
+import type { AboutContent } from '../types';
+
+export const sobreMi: AboutContent = {
     meta: {
         title: 'Sobre Mí',
         description: 'Conoce a la organizadora profesional detrás de Ordenízate Bcn.',
@@ -19,4 +21,4 @@ export const sobreMi = {
     closing: 'Porque el orden no es rigidez, es claridad, y la claridad libera.',
     cta: 'Hablemos',
     imageAlt: 'Silvia - Organizadora Profesional de Ordenízate',
-} as const;
+};

@@ -1,11 +1,14 @@
 import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
 import { Bubbles, Home, LampDesk, Container as LucideContainer } from 'lucide-react';
-import { estancias } from '@/content/es/estancias';
+import { getContent } from '@/content';
 import { buildMetadata } from '@/lib/metadata';
 import { ServicePageLayout } from '@/components/services/ServicePageLayout';
 
-export const generateMetadata = (): Metadata => buildMetadata(estancias.meta);
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+    const { locale } = await params;
+    return buildMetadata(getContent(locale).estancias.meta);
+}
 
 const itemIcons = [
     <Bubbles key="bubbles" className="text-brand-yellow" />,
@@ -16,6 +19,7 @@ const itemIcons = [
 export default async function EstanciasPage({ params }: { params: Promise<{ locale: string }> }) {
     const { locale } = await params;
     setRequestLocale(locale);
+    const estancias = getContent(locale).estancias;
 
     return (
         <ServicePageLayout

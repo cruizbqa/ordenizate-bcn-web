@@ -1,4 +1,6 @@
-export const contacto = {
+import type { ContactContent } from '../types';
+
+export const contacto: ContactContent = {
     meta: {
         title: 'Contacto',
         description: 'Contacta con Ordenízate. Organizadora profesional. Escríbenos por email o WhatsApp para empezar.',
@@ -19,4 +21,4 @@ export const contacto = {
     },
     areaText: 'Disponible para proyectos presenciales y asesorías online.',
     imageAlt: 'Espacio de trabajo ordenado',
-} as const;
+};

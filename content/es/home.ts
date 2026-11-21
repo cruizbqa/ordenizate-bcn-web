@@ -1,6 +1,6 @@
-import type { PageMeta } from '../types';
+import type { HomeContent } from '../types';
 
-export const home = {
+export const home: HomeContent = {
     meta: {
         title: 'Organizadora Profesional en Barcelona | Ordenízate',
         description: 'Servicio de organización profesional en Barcelona. Mudanzas, armarios, cocinas, hogar y consultoría online. Recupera tu tiempo y paz mental con sistemas de orden.',
@@ -9,11 +9,6 @@ export const home = {
         ogDescription: 'Transforma tu espacio, transforma tu vida.',
         twitterTitle: 'Ordenízate | Organización Profesional en Barcelona',
         imageAlt: 'Espacio Luminoso y Ordenado',
-    } satisfies PageMeta & {
-        ogTitle: string;
-        ogDescription: string;
-        twitterTitle: string;
-        imageAlt: string;
     },
     hero: {
         badge: 'Organización profesional · Servicio presencial y online',
@@ -142,4 +137,4 @@ export const home = {
         primary: 'Reservar Sesión',
         whatsapp: 'Contactar por WhatsApp',
     },
-} as const;
+};
