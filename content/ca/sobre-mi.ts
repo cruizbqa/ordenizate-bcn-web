@@ -2,7 +2,7 @@ import type { AboutContent } from '../types';
 
 export const sobreMi: AboutContent = {
     meta: {
-        title: 'Sobre mi',
+        title: 'Qui soc',
         description: 'Coneix l\'organitzadora professional darrere d\'Ordenízate Bcn.',
         canonical: '/sobre-mi',
     },
