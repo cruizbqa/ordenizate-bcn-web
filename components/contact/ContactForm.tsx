@@ -90,7 +90,7 @@ export function ContactForm() {
                     privacy: false,
                     website: '',
                 });
-            } catch (err) {
+            } catch {
                 setStatus('error');
                 setErrorMessage(t('errors.connection'));
             }

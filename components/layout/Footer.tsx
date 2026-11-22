@@ -5,7 +5,6 @@ import { Link } from "@/i18n/navigation";
 import { SITE_CONFIG } from "@/lib/constants";
 import { handleInstagramDeepLink } from "@/lib/utils";
 import { Container } from "../ui/Container";
-import { InstagramIcon } from "../ui/Icons";
 
 
 export function Footer() {
