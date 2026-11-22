@@ -12,7 +12,7 @@ export default defineConfig({
         exclude: ['node_modules', '.next', 'out'],
         server: {
             deps: {
-                inline: [/@testing-library\/jest-dom/],
+                inline: [/@testing-library\/jest-dom/, /next-intl/],
             },
         },
     },

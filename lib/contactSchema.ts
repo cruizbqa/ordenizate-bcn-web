@@ -1,29 +1,41 @@
-import { z } from "zod";
+import { z } from 'zod';
+import esMessages from '@/messages/es.json';
 
-export const contactSchema = z.object({
-    name: z.string()
-        .trim()
-        .min(1, "Campo obligatorio")
-        .max(80, "El nombre es demasiado largo"),
+export type ContactErrorMessages = {
+    required: string;
+    nameTooLong: string;
+    invalidEmail: string;
+    cityTooLong: string;
+    messageTooLong: string;
+};
 
-    email: z.string()
-        .trim()
-        .min(1, "Campo obligatorio")
-        .email("Email no válido"),
+export function createContactSchema(m: ContactErrorMessages) {
+    return z.object({
+        name: z.string()
+            .trim()
+            .min(1, m.required)
+            .max(80, m.nameTooLong),
 
-    city: z.string()
-        .trim()
-        .min(1, "Campo obligatorio")
-        .max(80, "El nombre de la ciudad es demasiado largo"),
+        email: z.string()
+            .trim()
+            .min(1, m.required)
+            .email(m.invalidEmail),
 
-    service: z.string().trim().min(1, "Campo obligatorio"),
+        city: z.string()
+            .trim()
+            .min(1, m.required)
+            .max(80, m.cityTooLong),
 
-    message: z.string()
-        .trim()
-        .max(2000, "El mensaje es demasiado largo"),
+        service: z.string().trim().min(1, m.required),
 
-    privacy: z.boolean().refine(val => val === true, "Campo obligatorio"),
-    website: z.string().optional(), // Honeypot
-});
+        message: z.string()
+            .trim()
+            .max(2000, m.messageTooLong),
 
+        privacy: z.boolean().refine(val => val === true, m.required),
+        website: z.string().optional(), // Honeypot
+    });
+}
+
+export const contactSchema = createContactSchema(esMessages.form.errors);
 export type ContactFormData = z.infer<typeof contactSchema>;

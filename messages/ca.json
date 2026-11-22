@@ -1,0 +1,99 @@
+{
+  "nav": {
+    "home": "Inici",
+    "services": "Serveis",
+    "about": "Qui soc",
+    "contact": "Contacte",
+    "primary": "Navegació principal",
+    "mobile": "Menú mòbil",
+    "openMenu": "Obre el menú principal"
+  },
+  "footer": {
+    "tagline": "Transformant espais i vides a través de l'ordre professional.",
+    "menu": "Menú",
+    "services": "Serveis",
+    "contact": "Contacte",
+    "home": "Inici",
+    "about": "Qui soc",
+    "location": "Barcelona, Espanya",
+    "rights": "Tots els drets reservats.",
+    "legalNotice": "Avís legal",
+    "privacy": "Política de Privacitat",
+    "servicesList": {
+      "mudanzas": "Mudances (Pre + Post)",
+      "armarios": "Armaris i Vestidors",
+      "cocinas": "Cuines i Rebosts",
+      "estancias": "Estades",
+      "infantil": "Organització Infantil",
+      "online": "Assessorament en línia"
+    }
+  },
+  "form": {
+    "labels": {
+      "name": "Nom",
+      "email": "Correu electrònic",
+      "city": "Ciutat",
+      "service": "Tipus de servei",
+      "message": "Missatge",
+      "optional": "(Opcional)"
+    },
+    "placeholders": {
+      "name": "El teu nom",
+      "email": "el-teu@email.com",
+      "city": "Ex: Barcelona",
+      "message": "Explica'm breument què necessites...",
+      "select": "Selecciona una opció"
+    },
+    "options": {
+      "mudanza": "Mudances (Pre/Post)",
+      "armarios": "Armaris i Vestidors",
+      "cocinas": "Cuines i Rebosts",
+      "estancias": "Estades",
+      "infantil": "Organització Infantil",
+      "online": "Assessorament en línia",
+      "otro": "Altre"
+    },
+    "errors": {
+      "required": "Camp obligatori",
+      "nameTooLong": "El nom és massa llarg",
+      "invalidEmail": "Correu electrònic no vàlid",
+      "cityTooLong": "El nom de la ciutat és massa llarg",
+      "messageTooLong": "El missatge és massa llarg",
+      "generic": "Ho sentim, alguna cosa ha fallat. Torna-ho a provar.",
+      "connection": "Error de connexió. Comprova la teva connexió a internet o escriu-nos per WhatsApp."
+    },
+    "privacy": "He llegit i accepto la <link>Política de Privacitat</link> i consento el tractament de les meves dades personals.",
+    "gdpr": {
+      "title": "Informació bàsica sobre protecció de dades:",
+      "controller": "Responsable:",
+      "purpose": "Finalitat:",
+      "purposeText": "Gestionar la teva sol·licitud de contacte.",
+      "legitimation": "Legitimació:",
+      "legitimationText": "Consentiment de la persona interessada.",
+      "recipients": "Destinataris:",
+      "recipientsText": "No se cediran dades a tercers, excepte obligació legal.",
+      "rights": "Drets:",
+      "rightsText": "Accedir, rectificar i suprimir les dades, així com altres drets explicats a la <link>informació addicional</link>."
+    },
+    "submit": "Enviar missatge",
+    "submitting": "Enviant...",
+    "success": {
+      "title": "Missatge enviat correctament!",
+      "body": "Gràcies per contactar amb mi. Et respondré personalment i valorarem la millor solució per al teu espai.",
+      "again": "Enviar un altre missatge"
+    },
+    "responseNote": "Et respondré personalment i valorarem la millor solució per al teu espai."
+  },
+  "common": {
+    "selectPlaceholder": "Selecciona una opció",
+    "slideLabel": "Ves al servei {n}",
+    "copyTitle": "Copiar al porta-retalls",
+    "copyLabel": "Copiar {title}",
+    "whatsappMessage": "Hola Silvia, m'agradaria rebre informació sobre els teus serveis d'organització. T'explico breument el meu cas:"
+  },
+  "notFound": {
+    "title": "Pàgina no trobada",
+    "body": "Ho sentim, la pàgina que busques no existeix, s'ha mogut o l'URL no és correcta.",
+    "back": "Torna a l'inici"
+  }
+}

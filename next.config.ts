@@ -1,11 +1,11 @@
 import type { NextConfig } from "next";
+import createNextIntlPlugin from 'next-intl/plugin';
+
+const withNextIntl = createNextIntlPlugin();
 
 const nextConfig: NextConfig = {
   /* config options here */
   reactCompiler: true,
-  images: {
-    unoptimized: true,
-  },
   experimental: {
     // turbopack options if needed
   },
@@ -13,16 +13,38 @@ const nextConfig: NextConfig = {
     return [
       {
         source: '/index.html',
-        destination: '/',
+        destination: '/es',
         permanent: true,
       },
       {
         source: '/:path((?!index$).*).html',
-        destination: '/:path*',
+        destination: '/es/:path*',
+        permanent: true,
+      },
+      {
+        source: '/ca/aviso-legal',
+        destination: '/es/aviso-legal',
+        permanent: true,
+      },
+      {
+        source: '/ca/politica-privacidad',
+        destination: '/es/politica-privacidad',
+        permanent: true,
+      },
+      {
+        source: '/',
+        destination: '/es',
+        permanent: true,
+      },
+      {
+        // Any legacy unprefixed path -> its Spanish prefixed URL.
+        // Locale-prefixed, API, Next internals, images and files with a dot are excluded.
+        source: '/:path((?!es(?:/|$)|ca(?:/|$)|api(?:/|$)|_next(?:/|$)|_vercel(?:/|$)|images(?:/|$))(?!.*\\.).*)',
+        destination: '/es/:path',
         permanent: true,
       },
     ];
   },
 };
 
-export default nextConfig;
+export default withNextIntl(nextConfig);

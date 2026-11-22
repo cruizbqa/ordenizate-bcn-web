@@ -3,22 +3,26 @@
 import { SITE_CONFIG } from "@/lib/constants";
 import { handleInstagramDeepLink } from "@/lib/utils";
 import { useState } from "react";
-import Link from "next/link";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import NextImage from "next/image";
 import { Container } from "../ui/Container";
 import { Menu, X } from "lucide-react";
 import { InstagramIcon, WhatsAppIcon } from "../ui/Icons";
+import { LanguageSwitcher } from "./LanguageSwitcher";
 
 
 export function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
+    const t = useTranslations('nav');
+    const tc = useTranslations('common');
 
     const navigation = [
-        { name: "Inicio", href: "/" },
-        { name: "Servicios", href: "/servicios" },
-        { name: "Sobre Mí", href: "/sobre-mi" },
-        { name: "Contacto", href: "/contacto" },
-    ];
+        { name: t('home'), href: "/" },
+        { name: t('services'), href: "/servicios" },
+        { name: t('about'), href: "/sobre-mi" },
+        { name: t('contact'), href: "/contacto" },
+    ] as const;
 
     return (
         <header className="sticky top-0 z-50 w-full bg-white/80 backdrop-blur-md border-b border-sand-200 supports-[backdrop-filter]:bg-white/60">
@@ -39,7 +43,7 @@ export function Navbar() {
                     </div>
 
                     {/* Desktop Nav */}
-                    <div className="hidden md:flex md:gap-x-8 items-center">
+                    <nav aria-label={t('primary')} className="hidden md:flex md:gap-x-8 items-center">
                         {navigation.map((item) => (
                             <Link
                                 key={item.name}
@@ -49,6 +53,7 @@ export function Navbar() {
                                 {item.name}
                             </Link>
                         ))}
+                        <LanguageSwitcher />
                         <div className="flex items-center gap-2 ml-4">
                             <a
                                 href={SITE_CONFIG.contact.instagram.webUrl}
@@ -59,7 +64,7 @@ export function Navbar() {
                                 <InstagramIcon className="w-5 h-5" />
                             </a>
                             <a
-                                href={SITE_CONFIG.contact.whatsapp.getLink()}
+                                href={SITE_CONFIG.contact.whatsapp.getLink(tc('whatsappMessage'))}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="p-2 rounded-full bg-green-500 text-white hover:bg-green-600 transition-colors"
@@ -68,7 +73,7 @@ export function Navbar() {
                                 <WhatsAppIcon className="w-5 h-5" />
                             </a>
                         </div>
-                    </div>
+                    </nav>
 
                     {/* Mobile menu button */}
                     <div className="flex md:hidden">
@@ -77,7 +82,7 @@ export function Navbar() {
                             className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
                             onClick={() => setIsOpen(!isOpen)}
                         >
-                            <span className="sr-only">Abrir menú principal</span>
+                            <span className="sr-only">{t('openMenu')}</span>
                             {isOpen ? (
                                 <X className="h-6 w-6" aria-hidden="true" />
                             ) : (
@@ -93,6 +98,7 @@ export function Navbar() {
                 isOpen && (
                     <div className="md:hidden bg-white border-b border-sand-200">
                         <div className="space-y-1 px-4 pb-3 pt-2">
+                            <nav aria-label={t('mobile')}>
                             {navigation.map((item) => (
                                 <Link
                                     key={item.name}
@@ -103,7 +109,9 @@ export function Navbar() {
                                     {item.name}
                                 </Link>
                             ))}
+                            </nav>
                             <div className="pt-2 flex items-center gap-3 justify-center">
+                                <LanguageSwitcher />
                                 <a
                                     href={SITE_CONFIG.contact.instagram.webUrl}
                                     onClick={handleInstagramDeepLink}
@@ -113,7 +121,7 @@ export function Navbar() {
                                     <InstagramIcon className="w-6 h-6" />
                                 </a>
                                 <a
-                                    href={SITE_CONFIG.contact.whatsapp.getLink()}
+                                    href={SITE_CONFIG.contact.whatsapp.getLink(tc('whatsappMessage'))}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="p-3 rounded-full bg-green-500 text-white hover:bg-green-600 transition-colors"

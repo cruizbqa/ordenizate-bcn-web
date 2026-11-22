@@ -1,7 +1,19 @@
-import { render, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { describe, it, expect, vi } from 'vitest';
 import { Navbar } from '@/components/layout/Navbar';
+import { renderWithIntl } from '@/__tests__/test-utils';
+
+// next-intl's Link reads the current pathname to resolve localized hrefs
+vi.mock('next/navigation', async (importOriginal) => {
+    const actual = await importOriginal<typeof import('next/navigation')>();
+    return {
+        ...actual,
+        usePathname: () => '/',
+        useParams: () => ({}),
+        useSearchParams: () => new URLSearchParams(),
+    };
+});
 
 // Mock next/link
 vi.mock('next/link', () => ({
@@ -26,32 +38,42 @@ vi.mock('@/lib/utils', async (importOriginal) => {
 
 describe('Navbar', () => {
     it('renders the brand logo link pointing to "/"', () => {
-        render(<Navbar />);
+        renderWithIntl(<Navbar />);
         const logoLink = screen.getAllByRole('link').find(
-            (el) => el.getAttribute('href') === '/'
+            (el) => el.getAttribute('href') === '/es'
         );
         expect(logoLink).toBeInTheDocument();
     });
 
     it('renders all primary navigation links', () => {
-        render(<Navbar />);
-        expect(screen.getByRole('link', { name: /inicio/i })).toHaveAttribute('href', '/');
-        expect(screen.getByRole('link', { name: /servicios/i })).toHaveAttribute('href', '/servicios');
-        expect(screen.getByRole('link', { name: /sobre mí/i })).toHaveAttribute('href', '/sobre-mi');
-        expect(screen.getByRole('link', { name: /contacto/i })).toHaveAttribute('href', '/contacto');
+        renderWithIntl(<Navbar />);
+        expect(screen.getByRole('link', { name: /inicio/i })).toHaveAttribute('href', '/es');
+        expect(screen.getByRole('link', { name: /servicios/i })).toHaveAttribute('href', '/es/servicios');
+        expect(screen.getByRole('link', { name: /sobre mí/i })).toHaveAttribute('href', '/es/sobre-mi');
+        expect(screen.getByRole('link', { name: /contacto/i })).toHaveAttribute('href', '/es/contacto');
     });
 
     it('renders a WhatsApp link with the correct phone number in the href', () => {
-        render(<Navbar />);
+        renderWithIntl(<Navbar />);
         const waLinks = screen.getAllByRole('link').filter(
             (el) => el.getAttribute('href')?.includes('34636757684')
         );
         expect(waLinks.length).toBeGreaterThan(0);
     });
 
+    it('localizes the WhatsApp prefill message', () => {
+        renderWithIntl(<Navbar />, 'ca');
+        const waLink = screen.getAllByRole('link').find(
+            (el) => el.getAttribute('href')?.startsWith('whatsapp://')
+        );
+        expect(decodeURIComponent(waLink?.getAttribute('href') ?? '')).toContain(
+            "m'agradaria rebre informació sobre els teus serveis"
+        );
+    });
+
     it('toggles mobile menu open and closed on button click', async () => {
         const user = userEvent.setup();
-        render(<Navbar />);
+        renderWithIntl(<Navbar />);
 
         const menuButton = screen.getByRole('button', { name: /abrir menú principal/i });
         expect(menuButton).toBeInTheDocument();

@@ -1,17 +1,21 @@
 'use client';
 
 import { useState, useTransition } from 'react';
-import Link from 'next/link';
+import { useLocale, useMessages, useTranslations } from 'next-intl';
 import { Loader2, CheckCircle2 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { SITE_CONFIG } from '@/lib/constants';
-import { contactSchema, type ContactFormData } from '@/lib/contactSchema';
+import { createContactSchema, type ContactFormData, type ContactErrorMessages } from '@/lib/contactSchema';
 import { Select } from '@/components/ui/Select';
 import { Input } from '@/components/ui/Input';
 import { Textarea } from '@/components/ui/Textarea';
-import { z } from 'zod';
+import { Link } from '@/i18n/navigation';
 
 export function ContactForm() {
+    const t = useTranslations('form');
+    const messages = useMessages();
+    const locale = useLocale();
+    const schema = createContactSchema((messages.form as { errors: ContactErrorMessages }).errors);
     const [isPending, startTransition] = useTransition();
     const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
     const [errorMessage, setErrorMessage] = useState('');
@@ -46,7 +50,7 @@ export function ContactForm() {
         setErrorMessage('');
 
         // 1. Client Side Validation
-        const validation = contactSchema.safeParse(formData);
+        const validation = schema.safeParse(formData);
 
         if (!validation.success) {
             const fieldErrors: Record<string, string> = {};
@@ -65,14 +69,14 @@ export function ContactForm() {
                 const response = await fetch(`${SITE_CONFIG.basePath}/api/contact`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(formData),
+                    body: JSON.stringify({ ...formData, locale }),
                 });
 
                 const data = await response.json();
 
                 if (!response.ok) {
                     setStatus('error');
-                    setErrorMessage(data.message || 'Lo sentimos, algo ha fallado. Por favor, inténtalo de nuevo.');
+                    setErrorMessage(data.message || t('errors.generic'));
                     return;
                 }
 
@@ -86,9 +90,9 @@ export function ContactForm() {
                     privacy: false,
                     website: '',
                 });
-            } catch (err) {
+            } catch {
                 setStatus('error');
-                setErrorMessage('Error de conexión. Por favor, comprueba tu internet o escríbenos por WhatsApp.');
+                setErrorMessage(t('errors.connection'));
             }
         });
     };
@@ -101,15 +105,15 @@ export function ContactForm() {
                         <CheckCircle2 className="w-16 h-16 text-sage-600 animate-in zoom-in spin-in-12 duration-1000" />
                     </div>
                 </div>
-                <h2 className="text-3xl font-serif font-bold text-charcoal-900 mb-4 text-balance">¡Mensaje enviado correctamente!</h2>
+                <h2 className="text-3xl font-serif font-bold text-charcoal-900 mb-4 text-balance">{t('success.title')}</h2>
                 <p className="text-gray-600 mb-10 max-w-sm mx-auto leading-relaxed">
-                    Gracias por contactar conmigo. Te responderé personalmente y valoraremos la mejor solución para tu espacio.
+                    {t('success.body')}
                 </p>
                 <button
                     onClick={() => setStatus('idle')}
                     className="text-sage-600 font-bold hover:text-sage-700 transition-colors underline underline-offset-4 decoration-2"
                 >
-                    Enviar otro mensaje
+                    {t('success.again')}
                 </button>
             </div>
         );
@@ -125,23 +129,23 @@ export function ContactForm() {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     <div className="space-y-0">
-                        <label htmlFor="name" className="text-sm font-medium text-charcoal-900 block mb-1.5 ml-1">Nombre</label>
+                        <label htmlFor="name" className="text-sm font-medium text-charcoal-900 block mb-1.5 ml-1">{t('labels.name')}</label>
                         <Input
                             type="text" id="name" name="name"
                             value={formData.name} onChange={handleChange}
                             maxLength={80}
-                            placeholder="Tu nombre"
+                            placeholder={t('placeholders.name')}
                             className={errors.name ? 'border-red-300 bg-red-50 focus:ring-red-200' : ''}
                         />
                         {errors.name && <p className="text-[10px] text-red-500 font-semibold ml-1 mt-1">{errors.name}</p>}
                     </div>
                     <div className="space-y-0">
-                        <label htmlFor="email" className="text-sm font-medium text-charcoal-900 block mb-1.5 ml-1">Email</label>
+                        <label htmlFor="email" className="text-sm font-medium text-charcoal-900 block mb-1.5 ml-1">{t('labels.email')}</label>
                         <Input
                             type="email" id="email" name="email"
                             value={formData.email} onChange={handleChange}
                             maxLength={100}
-                            placeholder="tu@email.com"
+                            placeholder={t('placeholders.email')}
                             className={errors.email ? 'border-red-300 bg-red-50 focus:ring-red-200' : ''}
                         />
                         {errors.email && <p className="text-[10px] text-red-500 font-semibold ml-1 mt-1">{errors.email}</p>}
@@ -150,27 +154,27 @@ export function ContactForm() {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     <div className="space-y-0">
-                        <label htmlFor="city" className="text-sm font-medium text-charcoal-900 block mb-1.5 ml-1">Ciudad</label>
+                        <label htmlFor="city" className="text-sm font-medium text-charcoal-900 block mb-1.5 ml-1">{t('labels.city')}</label>
                         <Input
                             type="text" id="city" name="city"
                             value={formData.city} onChange={handleChange}
                             maxLength={80}
-                            placeholder="Ej: Barcelona"
+                            placeholder={t('placeholders.city')}
                             className={errors.city ? 'border-red-300 bg-red-50 focus:ring-red-200' : ''}
                         />
                         {errors.city && <p className="text-[10px] text-red-500 font-semibold ml-1 mt-1">{errors.city}</p>}
                     </div>
                     <div className="space-y-0">
-                        <label className="text-sm font-medium text-charcoal-900 block mb-1.5 ml-1">Tipo de servicio</label>
+                        <label className="text-sm font-medium text-charcoal-900 block mb-1.5 ml-1">{t('labels.service')}</label>
                         <Select
                             options={[
-                                { value: "mudanza", label: "Mudanzas (Pre/Post)" },
-                                { value: "armarios", label: "Armarios y Vestidores" },
-                                { value: "cocinas", label: "Cocinas y Despensas" },
-                                { value: "estancias", label: "Estancias" },
-                                { value: "infantil", label: "Organización Infantil" },
-                                { value: "online", label: "Asesoría Online" },
-                                { value: "otro", label: "Otro" },
+                                { value: "mudanza", label: t('options.mudanza') },
+                                { value: "armarios", label: t('options.armarios') },
+                                { value: "cocinas", label: t('options.cocinas') },
+                                { value: "estancias", label: t('options.estancias') },
+                                { value: "infantil", label: t('options.infantil') },
+                                { value: "online", label: t('options.online') },
+                                { value: "otro", label: t('options.otro') },
                             ]}
                             value={formData.service}
                             onChange={(val: string) => {
@@ -179,13 +183,14 @@ export function ContactForm() {
                             }}
                             error={errors.service}
                             disabled={isPending}
+                            placeholder={t('placeholders.select')}
                         />
                     </div>
                 </div>
 
                 <div className="space-y-0">
                     <div className="flex justify-between items-end px-1 mb-1.5">
-                        <label htmlFor="message" className="text-sm font-medium text-charcoal-900 block">Mensaje <span className="text-gray-500 font-normal">(Opcional)</span></label>
+                        <label htmlFor="message" className="text-sm font-medium text-charcoal-900 block">{t('labels.message')} <span className="text-gray-500 font-normal">{t('labels.optional')}</span></label>
                         <span className={`text-[10px] font-medium ${formData.message.length > 1900 ? 'text-red-500' : 'text-gray-400'}`}>
                             {formData.message.length}/2000
                         </span>
@@ -194,7 +199,7 @@ export function ContactForm() {
                         id="message" name="message" rows={4}
                         value={formData.message} onChange={handleChange}
                         maxLength={2000}
-                        placeholder="Cuéntame brevemente qué necesitas..."
+                        placeholder={t('placeholders.message')}
                         className={errors.message ? 'border-red-300 bg-red-50 focus:ring-red-200' : ''}
                     ></Textarea>
                     {errors.message && <p className="text-[10px] text-red-500 font-semibold ml-1 mt-1">{errors.message}</p>}
@@ -217,7 +222,11 @@ export function ContactForm() {
                             />
                         </div>
                         <label htmlFor="privacy" className="text-xs text-gray-600 leading-tight cursor-pointer font-medium select-none">
-                            He leído y acepto la <Link href="/politica-privacidad" className="text-sage-600 underline font-bold hover:text-sage-700">Política de Privacidad</Link> y consiento el tratamiento de mis datos personales.
+                            {t.rich('privacy', {
+                                link: (chunks) => (
+                                    <Link href="/politica-privacidad" locale="es" className="text-sage-600 underline font-bold hover:text-sage-700">{chunks}</Link>
+                                ),
+                            })}
                         </label>
                     </div>
                     {errors.privacy && <p className="text-[10px] text-red-500 font-semibold ml-1">{errors.privacy}</p>}
@@ -237,10 +246,10 @@ export function ContactForm() {
                     {isPending ? (
                         <>
                             <Loader2 className="w-6 h-6 animate-spin" />
-                            Enviando...
+                            {t('submitting')}
                         </>
                     ) : (
-                        'Enviar mensaje'
+                        t('submit')
                     )}
                 </button>
 
@@ -248,23 +257,26 @@ export function ContactForm() {
                 <div className="mt-6 pt-6 border-t border-sand-100 italic">
                     <div className="grid grid-cols-1 gap-4 text-[10px] leading-relaxed text-gray-500 text-left px-1">
                         <p>
-                            <strong>Información básica sobre protección de datos:</strong><br />
-                            <strong>Responsable:</strong> {SITE_CONFIG.legal.owner}.
-                            <strong> Finalidad:</strong> Gestionar su solicitud de contacto.
-                            <strong> Legitimación:</strong> Consentimiento del interesado.
-                            <strong> Destinatarios:</strong> No se cederán datos a terceros, salvo obligación legal.
-                            <strong> Derechos:</strong> Acceder, rectificar y suprimir los datos, así como otros derechos explicados en la <Link href="/politica-privacidad" className="underline font-bold">información adicional</Link>.
+                            <strong>{t('gdpr.title')}</strong><br />
+                            <strong>{t('gdpr.controller')}</strong> {SITE_CONFIG.legal.owner}.
+                            <strong> {t('gdpr.purpose')}</strong> {t('gdpr.purposeText')}
+                            <strong> {t('gdpr.legitimation')}</strong> {t('gdpr.legitimationText')}
+                            <strong> {t('gdpr.recipients')}</strong> {t('gdpr.recipientsText')}
+                            <strong> {t('gdpr.rights')}</strong> {t.rich('gdpr.rightsText', {
+                                link: (chunks) => (
+                                    <Link href="/politica-privacidad" locale="es" className="underline font-bold">{chunks}</Link>
+                                ),
+                            })}
                         </p>
                     </div>
                 </div>
 
                 <div className="text-center mt-6 pt-6 border-t border-sand-100 space-y-1">
                     <p className="text-sm text-sage-800 font-bold tracking-tight">
-                        Te responderé personalmente y valoraremos la mejor solución para tu espacio.
+                        {t('responseNote')}
                     </p>
                 </div>
             </form>
         </div>
     );
 }
-

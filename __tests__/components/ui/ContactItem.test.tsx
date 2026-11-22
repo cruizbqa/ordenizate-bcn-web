@@ -1,8 +1,9 @@
-import { render, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { describe, it, expect, vi, afterEach } from 'vitest';
 import { ContactItem } from '@/components/ui/ContactItem';
 import { Mail } from 'lucide-react';
+import { renderWithIntl } from '@/__tests__/test-utils';
 
 afterEach(() => {
     vi.unstubAllGlobals();
@@ -10,7 +11,7 @@ afterEach(() => {
 
 describe('ContactItem', () => {
     it('renders the title and content', () => {
-        render(
+        renderWithIntl(
             <ContactItem
                 icon={<Mail />}
                 title="Email"
@@ -22,7 +23,7 @@ describe('ContactItem', () => {
     });
 
     it('does NOT render a copy button when copyable is false', () => {
-        render(
+        renderWithIntl(
             <ContactItem
                 icon={<Mail />}
                 title="Área"
@@ -33,7 +34,7 @@ describe('ContactItem', () => {
     });
 
     it('renders a copy button when copyable is true', () => {
-        render(
+        renderWithIntl(
             <ContactItem
                 icon={<Mail />}
                 title="Email"
@@ -54,7 +55,7 @@ describe('ContactItem', () => {
             clipboard: { writeText }
         });
 
-        render(
+        renderWithIntl(
             <ContactItem
                 icon={<Mail />}
                 title="Email"

@@ -1,0 +1,99 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "services": "Servicios",
+    "about": "Sobre Mí",
+    "contact": "Contacto",
+    "primary": "Navegación principal",
+    "mobile": "Menú móvil",
+    "openMenu": "Abrir menú principal"
+  },
+  "footer": {
+    "tagline": "Transformando espacios y vidas a través del orden profesional.",
+    "menu": "Menú",
+    "services": "Servicios",
+    "contact": "Contacto",
+    "home": "Inicio",
+    "about": "Sobre Mí",
+    "location": "Barcelona, España",
+    "rights": "Todos los derechos reservados.",
+    "legalNotice": "Aviso Legal",
+    "privacy": "Política de Privacidad",
+    "servicesList": {
+      "mudanzas": "Mudanzas (Pre + Post)",
+      "armarios": "Armarios y Vestidores",
+      "cocinas": "Cocinas y Despensas",
+      "estancias": "Estancias",
+      "infantil": "Organización Infantil",
+      "online": "Asesoría Online"
+    }
+  },
+  "form": {
+    "labels": {
+      "name": "Nombre",
+      "email": "Email",
+      "city": "Ciudad",
+      "service": "Tipo de servicio",
+      "message": "Mensaje",
+      "optional": "(Opcional)"
+    },
+    "placeholders": {
+      "name": "Tu nombre",
+      "email": "tu@email.com",
+      "city": "Ej: Barcelona",
+      "message": "Cuéntame brevemente qué necesitas...",
+      "select": "Selecciona una opción"
+    },
+    "options": {
+      "mudanza": "Mudanzas (Pre/Post)",
+      "armarios": "Armarios y Vestidores",
+      "cocinas": "Cocinas y Despensas",
+      "estancias": "Estancias",
+      "infantil": "Organización Infantil",
+      "online": "Asesoría Online",
+      "otro": "Otro"
+    },
+    "errors": {
+      "required": "Campo obligatorio",
+      "nameTooLong": "El nombre es demasiado largo",
+      "invalidEmail": "Email no válido",
+      "cityTooLong": "El nombre de la ciudad es demasiado largo",
+      "messageTooLong": "El mensaje es demasiado largo",
+      "generic": "Lo sentimos, algo ha fallado. Por favor, inténtalo de nuevo.",
+      "connection": "Error de conexión. Por favor, comprueba tu internet o escríbenos por WhatsApp."
+    },
+    "privacy": "He leído y acepto la <link>Política de Privacidad</link> y consiento el tratamiento de mis datos personales.",
+    "gdpr": {
+      "title": "Información básica sobre protección de datos:",
+      "controller": "Responsable:",
+      "purpose": "Finalidad:",
+      "purposeText": "Gestionar su solicitud de contacto.",
+      "legitimation": "Legitimación:",
+      "legitimationText": "Consentimiento del interesado.",
+      "recipients": "Destinatarios:",
+      "recipientsText": "No se cederán datos a terceros, salvo obligación legal.",
+      "rights": "Derechos:",
+      "rightsText": "Acceder, rectificar y suprimir los datos, así como otros derechos explicados en la <link>información adicional</link>."
+    },
+    "submit": "Enviar mensaje",
+    "submitting": "Enviando...",
+    "success": {
+      "title": "¡Mensaje enviado correctamente!",
+      "body": "Gracias por contactar conmigo. Te responderé personalmente y valoraremos la mejor solución para tu espacio.",
+      "again": "Enviar otro mensaje"
+    },
+    "responseNote": "Te responderé personalmente y valoraremos la mejor solución para tu espacio."
+  },
+  "common": {
+    "selectPlaceholder": "Selecciona una opción",
+    "slideLabel": "Ir al servicio {n}",
+    "copyTitle": "Copiar al portapapeles",
+    "copyLabel": "Copiar {title}",
+    "whatsappMessage": "Hola Silvia, me gustaría recibir información sobre tus servicios de organización. Te cuento brevemente mi caso:"
+  },
+  "notFound": {
+    "title": "Página no encontrada",
+    "body": "Lo sentimos, la página que buscas no existe, ha sido movida o la URL no es correcta.",
+    "back": "Volver al inicio"
+  }
+}

@@ -1,6 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { describe, it, expect, vi } from 'vitest';
 import { Button } from '@/components/ui/Button';
+import { renderWithIntl } from '@/__tests__/test-utils';
 
 // Mock next/link to avoid Next.js router context requirement
 vi.mock('next/link', () => ({
@@ -9,6 +10,16 @@ vi.mock('next/link', () => ({
     ),
 }));
 
+vi.mock('next/navigation', async (importOriginal) => {
+    const actual = await importOriginal<typeof import('next/navigation')>();
+    return {
+        ...actual,
+        usePathname: () => '/',
+        useParams: () => ({}),
+        useSearchParams: () => new URLSearchParams(),
+    };
+});
+
 describe('Button', () => {
     it('renders a <button> element by default', () => {
         render(<Button>Click me</Button>);
@@ -16,10 +27,10 @@ describe('Button', () => {
     });
 
     it('renders a <a> link when href is provided', () => {
-        render(<Button href="/contacto">Contacto</Button>);
+        renderWithIntl(<Button href="/contacto">Contacto</Button>);
         const link = screen.getByRole('link', { name: 'Contacto' });
         expect(link).toBeInTheDocument();
-        expect(link).toHaveAttribute('href', '/contacto');
+        expect(link).toHaveAttribute('href', '/es/contacto');
     });
 
     it('renders disabled state', () => {

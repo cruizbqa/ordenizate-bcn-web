@@ -1,5 +1,10 @@
 import { cn } from "@/lib/utils";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
+
+// next-intl types href as the app's pathname union; Button is a generic boundary
+const LocalizedLink = Link as unknown as React.ComponentType<
+    Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, 'href'> & { href: string }
+>;
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     variant?: "primary" | "secondary" | "outline" | "ghost";
@@ -41,10 +46,21 @@ export function Button({
     const styles = cn(baseStyles, variants[variant], sizes[size], className);
 
     if (href) {
+        const linkProps = props as React.AnchorHTMLAttributes<HTMLAnchorElement>;
+
+        // External links must bypass the locale-aware router
+        if (/^[a-z]+:/i.test(href) || href.startsWith('//')) {
+            return (
+                <a href={href} className={styles} {...linkProps}>
+                    {children}
+                </a>
+            );
+        }
+
         return (
-            <Link href={href} className={styles} {...(props as React.AnchorHTMLAttributes<HTMLAnchorElement>)}>
+            <LocalizedLink href={href} className={styles} {...linkProps}>
                 {children}
-            </Link>
+            </LocalizedLink>
         );
     }
 
