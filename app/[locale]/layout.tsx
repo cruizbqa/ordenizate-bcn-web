@@ -120,7 +120,13 @@ export default async function LocaleLayout({
               "areaServed": locale === 'ca' ? "Barcelona i àrea metropolitana" : "Barcelona y área metropolitana",
               "sameAs": ["https://instagram.com/ordenizatebcn/"],
               "description": home.meta.description,
-              "priceRange": "$$"
+              "priceRange": "$$",
+              "makesOffer": home.services.items.map((service) => ({
+                "@type": "Service",
+                "name": service.title,
+                "url": localizedUrl(service.href, locale),
+                "provider": { "@id": "https://ordenizate.es" },
+              }))
             })
           }}
         />
