@@ -1,6 +1,12 @@
 import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
+
+export async function generateMetadata() {
+  const t = await getTranslations('notFound');
+  return { title: t('title') };
+}
 
 export default function NotFound() {
   const t = useTranslations('notFound');
